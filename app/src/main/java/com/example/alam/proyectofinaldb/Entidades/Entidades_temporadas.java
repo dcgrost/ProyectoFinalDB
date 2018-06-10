@@ -1,4 +1,4 @@
-package com.example.alam.proyectofinal.Entidades;
+package com.example.alam.proyectofinaldb.Entidades;
 
 import java.util.Date;
 

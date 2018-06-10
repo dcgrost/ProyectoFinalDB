@@ -167,6 +167,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:layout_weight="1"
+                        android:onClick="Baja"
                         android:text="@string/action_baja"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -183,6 +184,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:layout_weight="1"
+                        android:onClick="Actualiza"
                         android:text="@string/action_modifica"
                         android:textStyle="bold" />
 
@@ -193,6 +195,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:layout_weight="1"
+                        android:onClick="Limpia"
                         android:text="@string/action_limpia"
                         android:textStyle="bold" />
                 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.example.alam.proyectofinal.Entidades;
+package com.example.alam.proyectofinaldb.Entidades;
 
 public class Entidades_peliculasUsuarios {
 

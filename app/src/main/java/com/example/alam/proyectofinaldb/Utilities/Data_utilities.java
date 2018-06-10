@@ -17,7 +17,7 @@ public class Data_utilities {
             + UcampoCorreo +" varchar(30) not null, "
             + UcampoFechaN +" date not null, "
             + UcampoContra +" varchar(20) not null, "
-            + UcampoSaldo +" float not null)";
+            + UcampoSaldo +" real not null)";
 
     //Tabla Peliculas
     public static final String tablaPeliculas = "Peliculas";
@@ -30,10 +30,10 @@ public class Data_utilities {
     public static final String PcampoPrecio = "peliculas_precio";
 
     public static final String creaTablaPeliculas = "create table "+ tablaPeliculas +" ( "
-            + PcampoId +" int primary key autoincrement, "
+            + PcampoId +" integer primary key autoincrement, "
             + PcampoTitulo +" varchar(50) not null, "
             + PcampoGenero +"  varchar(20) not null, "
-            + PcampoSinopsis +" text not null, "
+            + PcampoSinopsis +" varchar(255) not null, "
             + PcampoIdiomaOriginal +" varchar(255) not null, "
             + PcampoFechaEstreno +" date not null, "
             + PcampoPrecio +" real not null)";
@@ -48,10 +48,10 @@ public class Data_utilities {
     public static final String ScampoFechaEstreno = "series_fechaEstreno";
 
     public static final String creaTablaSeries = "create table"+ tablaSeries +" ( "
-            + ScampoId + " int primary key autoincrement, "
+            + ScampoId + " integer primary key autoincrement, "
             + ScampoTitulo +" varchar(50) not null, "
             + ScampoGenero +" varchar(20) not null, "
-            + ScampoSinopsis +" text not null, "
+            + ScampoSinopsis +" varchar(255) not null, "
             + ScampoIdiomaOriginal +" varchar(255) not null, "
             + ScampoFechaEstreno +" date not null)";
 
@@ -65,12 +65,12 @@ public class Data_utilities {
     public static final String TcampoSeriesID= "temporadas_series_id";
 
     public static final String creaTablaTemporadas = "create table"+ tablaTempoaradas +" ( "
-            + TcampoId + " int primary key autoincrement, "
+            + TcampoId + " integer primary key autoincrement, "
             + TcampoTitulo +" varchar(50) not null, "
             + TcampoFechaEstreno +" date not null, "
             + TcampoFechaProduccion +" date not null, "
             + TcampoImagen +" text not null, "
-            + TcampoSeriesID +" int not null)" +
+            + TcampoSeriesID +" integer not null)" +
             "foreign key ('"+ TcampoSeriesID +"') references '"+ tablaSeries +"'('"+ ScampoId +"'))";
 
     //Tabla Capitulos
@@ -83,12 +83,12 @@ public class Data_utilities {
     public static final String CcampoTemporadasID= "capitulos_temporadas_id";
 
     public static final String creaTablaCapitulos = "create table"+ tablaCapitulos +" ( "
-            + CcampoId + " int primary key autoincrement, "
+            + CcampoId + " integer primary key autoincrement, "
             + CcampoTitulo +" varchar(50) not null, "
             + CcampoDuracion +" varchar(10) not null, "
             + CcampoPrecio +" real not null, "
             + CcampoSinopsis +" text not null, "
-            + CcampoTemporadasID +" int not null)" +
+            + CcampoTemporadasID +" integer not null)" +
             "foreign key ('"+ TcampoSeriesID +"') references '"+ tablaSeries +"'('"+ ScampoId +"'))";
 
     //Tabla PeliculasUsuarios
@@ -98,24 +98,24 @@ public class Data_utilities {
     public static final String PUcampoPeliculasID = "peliculasUsuarios_peliculas_id";
 
     public static final String creaTablaPeliculasUsuarios = "create table"+ tablaPeliculasUsuarios +" ( "
-            + PUcampoId + " int primary key autoincrement, "
-            + PUcampoUsuariosID +" int not null, "
-            + PUcampoPeliculasID +" int not null, " +
+            + PUcampoId + " integer primary key autoincrement, "
+            + PUcampoUsuariosID +" integer not null, "
+            + PUcampoPeliculasID +" integer not null, " +
             "foreign key ('"+ PUcampoUsuariosID +"') references '"+ tablaUsuarios +"'('"+ UcampoId +"')" +
             "foreign key ('"+ PUcampoPeliculasID +"') references '"+ tablaPeliculas +"'('"+ PcampoId +"')";
 
-    //Tabla SeriesUsuarios
-    public static final String tablaSeriesUsuarios = "SeriesUsuarios";
-    public static final String SUcampoId = "seriesUsuarios_id";
-    public static final String SUcampoUsuariosID = "seriesUsuarios_usuarios_id";
-    public static final String SUcampoPeliculasID = "seriesUsuarios_series_id";
+    //Tabla CapitulosUsuarios
+    public static final String tablaCapitulosUsuarios = "CapitulosUsuarios";
+    public static final String CUcampoId = "seriesUsuarios_id";
+    public static final String CUcampoUsuariosID = "seriesUsuarios_usuarios_id";
+    public static final String CUcampoCapitulosID = "seriesUsuarios_series_id";
 
-    public static final String creaTablaSeriesUsuarios = "create table"+ tablaSeriesUsuarios +" ( "
-            + SUcampoId + " int primary key autoincrement, "
-            + SUcampoUsuariosID +" int not null, "
-            + SUcampoPeliculasID +" int not null, " +
-            "foreign key ('"+ SUcampoUsuariosID +"') references '"+ tablaUsuarios +"'('"+ UcampoId +"')" +
-            "foreign key ('"+ SUcampoPeliculasID +"') references '"+ tablaPeliculas +"'('"+ PcampoId +"')";
+    public static final String creaTablaCapitulosUsuarios = "create table"+ tablaCapitulosUsuarios +" ( "
+            + CUcampoId + " integer primary key autoincrement, "
+            + CUcampoUsuariosID +" integer not null, "
+            + CUcampoCapitulosID +" integer not null, " +
+            "foreign key ('"+ CUcampoUsuariosID +"') references '"+ tablaUsuarios +"'('"+ UcampoId +"')" +
+            "foreign key ('"+ CUcampoCapitulosID +"') references '"+ tablaCapitulos +"'('"+ CcampoId +"')";
 
     //Tabla Criticas
     public static final String tablaCriticas = "Criticas";
@@ -127,12 +127,12 @@ public class Data_utilities {
     public static final String CRcampoCapitulosID = "criticas_capitulos_id";
 
     public static final String creaTablaCriticas = "create table"+ tablaCriticas +" ( "
-            + CRcampoId + " int primary key autoincrement, "
+            + CRcampoId + " integer primary key autoincrement, "
             + CRcampoComentario +" text not null, "
             + CRcampoFecha +" date not null, "
-            + CRcampoUsuariosID +" int not null, "
-            + CRcampoPeliculasID +" int not null, "
-            + CRcampoCapitulosID +" int not null, " +
+            + CRcampoUsuariosID +" integer not null, "
+            + CRcampoPeliculasID +" integer not null, "
+            + CRcampoCapitulosID +" integer not null, " +
             "foreign key ('"+ CRcampoUsuariosID +"') references '"+ tablaUsuarios +"'('"+ UcampoId +"')" +
             "foreign key ('"+ CRcampoPeliculasID +"') references '"+ tablaPeliculas +"'('"+ PcampoId +"')" +
             "foreign key ('"+ CRcampoCapitulosID +"') references '"+ tablaCapitulos +"'('"+ CcampoId +"')";
@@ -147,12 +147,12 @@ public class Data_utilities {
     public static final String SUBcampoCapitulosID = "subtitulos_capitulos_id";
 
     public static final String creaTablaSubtitulos = "create table"+ tablaSubtitulos +" ( "
-            + SUBcampoId + " int primary key autoincrement, "
+            + SUBcampoId + " integer primary key autoincrement, "
             + SUBcampoIdioma +" varchar(50) not null, "
             + SUBcampoAutor +" varchar(50) not null, "
             + SUBcampoPrecio +" real not null, "
-            + SUBcampoPeliculasID +" int not null, "
-            + SUBcampoCapitulosID +" int not null, " +
+            + SUBcampoPeliculasID +" integer not null, "
+            + SUBcampoCapitulosID +" integer not null, " +
             "foreign key ('"+ SUBcampoPeliculasID +"') references '"+ tablaPeliculas +"'('"+ PcampoId +"')" +
             "foreign key ('"+ SUBcampoCapitulosID +"') references '"+ tablaCapitulos +"'('"+ CcampoId +"')";
 }
