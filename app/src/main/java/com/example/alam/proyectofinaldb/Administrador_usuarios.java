@@ -87,7 +87,7 @@ public class Administrador_usuarios extends AppCompatActivity {
         }
     }
 
-    public void Busca (View view){
+    public void Busca(View view){
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administrar", null, 1);
         SQLiteDatabase db = admin.getWritableDatabase();
 
@@ -114,6 +114,43 @@ public class Administrador_usuarios extends AppCompatActivity {
                 et_saldo.setText("");
             }
         }
+    }
+
+    public void Limpia(View view){
+        et_nombre.setText("");
+        et_fechaN.setText("");
+        et_correo.setText("");
+        et_contra.setText("");
+        et_saldo.setText("");
+    }
+
+    public void Actualiza(View view){
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administrar", null, 1);
+        SQLiteDatabase db = admin.getWritableDatabase();
+
+        String nombre = et_nombre.getText().toString();
+        String fechaN = et_fechaN.getText().toString();
+        String correo = et_correo.getText().toString();
+        String contra = et_contra.getText().toString();
+        String saldo = et_saldo.getText().toString();
+        String[] parametro = {nombre};
+
+        ContentValues actualiza = new ContentValues();
+        actualiza.put(Data_utilities.UcampoNombre, nombre);
+        actualiza.put(Data_utilities.UcampoFechaN, fechaN);
+        actualiza.put(Data_utilities.UcampoCorreo, correo);
+        actualiza.put(Data_utilities.UcampoContra, contra);
+        actualiza.put(Data_utilities.UcampoSaldo, saldo);
+
+        db.update(Data_utilities.tablaUsuarios, actualiza, Data_utilities.UcampoNombre + "=?",parametro);
+        Toast.makeText(this, "Actualizacion exitosa", Toast.LENGTH_SHORT).show();
+        db.close();
+
+        et_nombre.setText("");
+        et_fechaN.setText("");
+        et_correo.setText("");
+        et_contra.setText("");
+        et_saldo.setText("");
     }
 
     private boolean validarEmail(String email) {
