@@ -42,6 +42,8 @@ public class Administrador_peliculas extends AppCompatActivity {
         String fechaE = et_fechaE.getText().toString();
         String precio = et_precio.getText().toString();
 
+        int imagen = R.drawable.notfound;
+
         if (titulo.isEmpty() && genero.isEmpty() && sinopsis.isEmpty() && idiomaO.isEmpty() && fechaE.isEmpty() && precio.isEmpty()){
             Toast.makeText(this, "Ingresa todos los datos", Toast.LENGTH_SHORT).show();
         }
@@ -75,6 +77,7 @@ public class Administrador_peliculas extends AppCompatActivity {
             alta.put(Data_utilities.PcampoIdiomaOriginal, idiomaO);
             alta.put(Data_utilities.PcampoFechaEstreno, fechaE);
             alta.put(Data_utilities.PcampoPrecio, precio);
+            alta.put(Data_utilities.PcampoImg, imagen);
 
             db.insert(Data_utilities.tablaPeliculas, Data_utilities.PcampoId, alta);
             Toast.makeText(this, "Registrado correctamente", Toast.LENGTH_SHORT).show();
