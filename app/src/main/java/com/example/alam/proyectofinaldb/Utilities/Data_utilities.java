@@ -163,4 +163,7 @@ public class Data_utilities {
     public static final String LlU = ""+tablaUsuarios+"("+UcampoId+", "+UcampoNombre+", "+UcampoCorreo+", "+UcampoFechaN+", "+UcampoContra+", "+UcampoSaldo+")";
     //Llenar tablaPeliculas
     public static final String LlP = ""+tablaPeliculas+"("+PcampoId+", "+PcampoTitulo+", "+PcampoGenero+", "+PcampoSinopsis+", "+PcampoIdiomaOriginal+", "+PcampoFechaEstreno+", "+PcampoPrecio+","+PcampoImg+")";
+
+    public static final String qPeliculas = "select "+PcampoImg+", "+PcampoTitulo+", "+PcampoSinopsis+" from "+tablaPeliculas+" where "+PcampoGenero+" = '";
+    public static final String qSeries = "select "+ScampoTitulo+", "+ScampoSinopsis+" from "+tablaSeries+" where "+ScampoGenero+" = '";
 }

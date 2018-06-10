@@ -22,8 +22,9 @@
         <activity android:name=".Administrador_series" />
         <activity android:name=".Administrador_usuarios" />
         <activity android:name=".Tipo" />
+        <activity android:name=".Peliculas" />
         <activity android:name=".Genero" />
-        <activity android:name=".Peliculas"></activity>
+        <activity android:name=".Series"></activity>
     </application>
 
 </manifest>
