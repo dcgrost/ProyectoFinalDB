@@ -49,10 +49,10 @@
                         android:layout_height="match_parent">
 
                         <EditText
-                            android:id="@+id/nombre"
+                            android:id="@+id/titulo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/prompt_nombre"
+                            android:hint="@string/prompt_titulo"
                             android:inputType="textPersonName"
                             android:maxLines="1"
                             android:singleLine="true" />
@@ -70,15 +70,45 @@
                 </LinearLayout>
 
                 <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_width="270dp"
+                    android:layout_height="match_parent">
 
                     <EditText
-                        android:id="@+id/email"
+                        android:id="@+id/genero"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/prompt_email"
-                        android:inputType="textEmailAddress"
+                        android:hint="@string/prompt_genero"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:singleLine="true" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="270dp"
+                    android:layout_height="match_parent">
+
+                    <EditText
+                        android:id="@+id/sinopsis"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/prompt_sinopsis"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:singleLine="true" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="270dp"
+                    android:layout_height="match_parent">
+
+                    <EditText
+                        android:id="@+id/idiomaO"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/prompt_idiomaO"
+                        android:inputType="textPersonName"
                         android:maxLines="1"
                         android:singleLine="true" />
 
@@ -89,10 +119,10 @@
                     android:layout_height="match_parent">
 
                     <EditText
-                        android:id="@+id/fechaN"
+                        android:id="@+id/fechaE"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/prompt_fechaN"
+                        android:hint="@string/prompt_fechaE"
                         android:inputType="date"
                         android:maxLines="1"
                         android:singleLine="true" />
@@ -104,28 +134,10 @@
                     android:layout_height="match_parent">
 
                     <EditText
-                        android:id="@+id/password"
+                        android:id="@+id/precio"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/prompt_password"
-                        android:imeActionId="6"
-                        android:imeActionLabel="@string/action_sign_in_short"
-                        android:imeOptions="actionUnspecified"
-                        android:inputType="textPassword"
-                        android:maxLines="1"
-                        android:singleLine="true" />
-
-                </android.support.design.widget.TextInputLayout>
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <EditText
-                        android:id="@+id/saldo"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/prompt_saldo"
+                        android:hint="@string/prompt_precio"
                         android:inputType="numberDecimal"
                         android:maxLines="1"
                         android:singleLine="true" />
@@ -155,7 +167,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:layout_weight="1"
-                        android:onClick="Baja"
                         android:text="@string/action_baja"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -172,7 +183,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:layout_weight="1"
-                        android:onClick="Actualiza"
                         android:text="@string/action_modifica"
                         android:textStyle="bold" />
 
@@ -183,7 +193,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:layout_weight="1"
-                        android:onClick="Limpia"
                         android:text="@string/action_limpia"
                         android:textStyle="bold" />
                 </LinearLayout>

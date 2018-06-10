@@ -44,7 +44,7 @@ public class Registro extends AppCompatActivity {
         float saldo = 100.00f;
 
         if (nombre.length() == 0 && fechaN.length() == 0 && correo.length() == 0 && contra.length() == 0){
-            Toast.makeText(this, "Ingresa datos", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Ingresa todos los datos", Toast.LENGTH_SHORT).show();
         }
         if (correo.length() == 0){
             Toast.makeText(this, "Ingresa una correo electrónico", Toast.LENGTH_SHORT).show();

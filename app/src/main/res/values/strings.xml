@@ -19,11 +19,16 @@
     <string name="action_modify_peliculas">Peliculas</string>
     <string name="action_modify_series">Series</string>
     <string name="modify">¿Qué deseas administar?</string>
-    <string name="prompt_id">ID</string>
     <string name="prompt_saldo">Saldo</string>
     <string name="action_alta">Alta</string>
     <string name="action_baja">Baja</string>
     <string name="action_modifica">Actualiza</string>
     <string name="action_busca">Busca</string>
     <string name="action_limpia">Limpia</string>
+    <string name="prompt_titulo">Título</string>
+    <string name="prompt_genero">Género</string>
+    <string name="prompt_sinopsis">Sinopsis</string>
+    <string name="prompt_idiomaO">Idioma original</string>
+    <string name="prompt_fechaE">Fecha de estreno (AAAA-MM-DD)</string>
+    <string name="prompt_precio">Precio</string>
 </resources>
