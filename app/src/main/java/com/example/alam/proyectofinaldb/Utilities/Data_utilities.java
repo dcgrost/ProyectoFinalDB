@@ -47,8 +47,8 @@ public class Data_utilities {
     public static final String ScampoIdiomaOriginal = "series_idiomaOriginal";
     public static final String ScampoFechaEstreno = "series_fechaEstreno";
 
-    public static final String creaTablaSeries = "create table"+ tablaSeries +" ( "
-            + ScampoId + " integer primary key autoincrement, "
+    public static final String creaTablaSeries = "create table "+ tablaSeries +" ( "
+            + ScampoId +" integer primary key autoincrement, "
             + ScampoTitulo +" varchar(50) not null, "
             + ScampoGenero +" varchar(20) not null, "
             + ScampoSinopsis +" varchar(255) not null, "
@@ -64,7 +64,7 @@ public class Data_utilities {
     public static final String TcampoImagen = "temporadas_img";
     public static final String TcampoSeriesID= "temporadas_series_id";
 
-    public static final String creaTablaTemporadas = "create table"+ tablaTempoaradas +" ( "
+    public static final String creaTablaTemporadas = "create table "+ tablaTempoaradas +" ( "
             + TcampoId + " integer primary key autoincrement, "
             + TcampoTitulo +" varchar(50) not null, "
             + TcampoFechaEstreno +" date not null, "
@@ -82,7 +82,7 @@ public class Data_utilities {
     public static final String CcampoSinopsis = "capitulos_sinopsis";
     public static final String CcampoTemporadasID= "capitulos_temporadas_id";
 
-    public static final String creaTablaCapitulos = "create table"+ tablaCapitulos +" ( "
+    public static final String creaTablaCapitulos = "create table "+ tablaCapitulos +" ( "
             + CcampoId + " integer primary key autoincrement, "
             + CcampoTitulo +" varchar(50) not null, "
             + CcampoDuracion +" varchar(10) not null, "
@@ -97,7 +97,7 @@ public class Data_utilities {
     public static final String PUcampoUsuariosID = "peliculasUsuarios_usuarios_id";
     public static final String PUcampoPeliculasID = "peliculasUsuarios_peliculas_id";
 
-    public static final String creaTablaPeliculasUsuarios = "create table"+ tablaPeliculasUsuarios +" ( "
+    public static final String creaTablaPeliculasUsuarios = "create table "+ tablaPeliculasUsuarios +" ( "
             + PUcampoId + " integer primary key autoincrement, "
             + PUcampoUsuariosID +" integer not null, "
             + PUcampoPeliculasID +" integer not null, " +
@@ -110,7 +110,7 @@ public class Data_utilities {
     public static final String CUcampoUsuariosID = "seriesUsuarios_usuarios_id";
     public static final String CUcampoCapitulosID = "seriesUsuarios_series_id";
 
-    public static final String creaTablaCapitulosUsuarios = "create table"+ tablaCapitulosUsuarios +" ( "
+    public static final String creaTablaCapitulosUsuarios = "create table "+ tablaCapitulosUsuarios +" ( "
             + CUcampoId + " integer primary key autoincrement, "
             + CUcampoUsuariosID +" integer not null, "
             + CUcampoCapitulosID +" integer not null, " +
@@ -126,7 +126,7 @@ public class Data_utilities {
     public static final String CRcampoPeliculasID = "criticas_peliculas_id";
     public static final String CRcampoCapitulosID = "criticas_capitulos_id";
 
-    public static final String creaTablaCriticas = "create table"+ tablaCriticas +" ( "
+    public static final String creaTablaCriticas = "create table "+ tablaCriticas +" ( "
             + CRcampoId + " integer primary key autoincrement, "
             + CRcampoComentario +" text not null, "
             + CRcampoFecha +" date not null, "
@@ -146,7 +146,7 @@ public class Data_utilities {
     public static final String SUBcampoPeliculasID = "subtitulos_peliculas_id";
     public static final String SUBcampoCapitulosID = "subtitulos_capitulos_id";
 
-    public static final String creaTablaSubtitulos = "create table"+ tablaSubtitulos +" ( "
+    public static final String creaTablaSubtitulos = "create table "+ tablaSubtitulos +" ( "
             + SUBcampoId + " integer primary key autoincrement, "
             + SUBcampoIdioma +" varchar(50) not null, "
             + SUBcampoAutor +" varchar(50) not null, "
