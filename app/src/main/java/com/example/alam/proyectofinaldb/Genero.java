@@ -19,6 +19,7 @@ public class Genero extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_genero);
 
+
         listaDatos = (ListView)findViewById(R.id.listView);
         lista = new ArrayList<datos_listView>();
 
