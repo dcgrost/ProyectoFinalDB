@@ -26,6 +26,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper{
         db.execSQL("insert into "+Data_utilities.LlU+" values('503','Alondra','alondra@gmail.com','1996-05-27','Alondra123','1000')");
         db.execSQL("insert into "+Data_utilities.LlU+" values('504','Oscar','oscar@gmail.com','1995-01-28','Oscar123','100')");
         db.execSQL("insert into "+Data_utilities.LlU+" values('505','Omar','omar@gmail.com','1994-11-01','Omar123','10')");
+        db.execSQL("insert into "+Data_utilities.LlU+" values('506','Prueba','aldp@admin.com','1994-11-01','Admin123','10')");
 
 
         db.execSQL("insert into "+Data_utilities.LlP+" values('500','Avengers','Acción','Los vengadores se unsen por primera vez','Inglés','2012-05-04','10','R.drawable.avengers')");

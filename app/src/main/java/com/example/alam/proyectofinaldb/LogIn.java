@@ -5,10 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
+import com.example.alam.proyectofinaldb.Utilities.Data_utilities;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 
 public class LogIn extends AppCompatActivity {
 
@@ -25,17 +29,31 @@ public class LogIn extends AppCompatActivity {
     }
 
     public void Iniciar (View view){
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administrar", null, 1);
+        SQLiteDatabase db = admin.getWritableDatabase();
+
         String correo = et_correo.getText().toString();
         String contra = et_contra.getText().toString();
+        Cursor fila = db.rawQuery("select "+Data_utilities.UcampoCorreo+", "+Data_utilities.UcampoContra+" from "+Data_utilities.tablaUsuarios+" where "+Data_utilities.UcampoCorreo+" = '"+correo+"' and "+Data_utilities.UcampoContra+" = '"+contra+"'",null);
 
         if (correo.length() != 0 && contra.length() !=0 && validarContra(contra) && validarEmail(correo)){
             if (correo.contentEquals("ldp@admin.com") && contra.contentEquals("Admin123")){
                 Intent myIntent = new Intent(view.getContext(), Administrador.class);
                 startActivity(myIntent);
-            }/*else{
-                Intent myIntent = new Intent(view.getContext(), MainMenu.class);
-                startActivity(myIntent);
-            }*/
+            }else{//Metodo para verificar usuario en DB
+                try{
+                    fila.moveToFirst();
+                    String vCorreo = fila.getString(0);
+                    String vContra = fila.getString(1);
+                    fila.close();
+                    if (correo.contentEquals(vCorreo) && contra.contentEquals(vContra)){
+                        Intent myIntent = new Intent(view.getContext(), Tipo.class);
+                        startActivity(myIntent);
+                    }
+                }catch (Exception e){
+                    Toast.makeText(this, "El usuario no existe", Toast.LENGTH_SHORT).show();
+                }
+            }
         }else{
             if (correo.length() == 0 && contra.length() == 0){
                 Toast.makeText(this, "Ingresa datos", Toast.LENGTH_SHORT).show();

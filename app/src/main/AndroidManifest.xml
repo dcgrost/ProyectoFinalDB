@@ -20,7 +20,8 @@
         <activity android:name=".Administrador" />
         <activity android:name=".Administrador_peliculas" />
         <activity android:name=".Administrador_series" />
-        <activity android:name=".Administrador_usuarios"></activity>
+        <activity android:name=".Administrador_usuarios" />
+        <activity android:name=".Tipo"></activity>
     </application>
 
 </manifest>
