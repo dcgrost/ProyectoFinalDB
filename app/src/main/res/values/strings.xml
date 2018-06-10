@@ -31,4 +31,5 @@
     <string name="prompt_idiomaO">Idioma original</string>
     <string name="prompt_fechaE">Fecha de estreno (AAAA-MM-DD)</string>
     <string name="prompt_precio">Precio</string>
+    <string name="ver">¿Qué deseas ver?</string>
 </resources>
