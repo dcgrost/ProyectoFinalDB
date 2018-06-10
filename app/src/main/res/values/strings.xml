@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">ProyectoFinalDB</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Correo electrónico</string>
+    <string name="prompt_password">Contraseña</string>
+    <string name="prompt_nombre">Nombre de usuario</string>
+    <string name="prompt_fechaN">Fecha de nacimiento (AAAA-MM-DD)</string>
+    <string name="action_sign_in">Iniciar sesión</string>
+    <string name="action_sign_up">Registrate</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">El correo no es válido</string>
+    <string name="error_invalid_password">La contraseña debe contar con al menos 1 número, una letra mayúscula y mínimo 6 caracteres</string>
+    <string name="error_incorrect_password">La contraseña no es correcta</string>
+    <string name="error_field_required">Llena todos los campos</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+            completions."
+    </string>
+</resources>
