@@ -1,7 +1,10 @@
 package com.example.alam.proyectofinaldb;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -17,8 +20,8 @@ public class Genero extends AppCompatActivity {
         setContentView(R.layout.activity_genero);
 
         listaDatos = (ListView)findViewById(R.id.listView);
-
         lista = new ArrayList<datos_listView>();
+
 
         lista.add(new datos_listView(1, "Acción", "Emocionate con las explosiones", R.drawable.ic_accion));
         lista.add(new datos_listView(2, "Aventurate", "Viaja por el amazonas o descubre mundos mágicos", R.drawable.ic_aventura));
@@ -35,5 +38,21 @@ public class Genero extends AppCompatActivity {
         adaptador_listView miadaptador = new adaptador_listView(getApplicationContext(), lista);
 
         listaDatos.setAdapter(miadaptador);
+
+        listaDatos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0){
+                    // Abre una nueva Activity:
+                    Intent myIntent = new Intent(view.getContext(), Peliculas.class);
+                    startActivity(myIntent);
+                }
+                else if(position == 1){
+                    // Abre una nueva Activity:
+                    Intent myIntent = new Intent(view.getContext(), Peliculas.class);
+                    startActivity(myIntent);
+                }
+            }
+        });
     }
 }
