@@ -155,6 +155,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:layout_weight="1"
+                        android:onClick="Baja"
                         android:text="@string/action_baja"
                         android:textStyle="bold" />
                 </LinearLayout>

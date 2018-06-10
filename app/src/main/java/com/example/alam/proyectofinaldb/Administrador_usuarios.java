@@ -113,6 +113,8 @@ public class Administrador_usuarios extends AppCompatActivity {
                 et_contra.setText("");
                 et_saldo.setText("");
             }
+        }else{
+            Toast.makeText(this, "Ingresa un nombre", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -144,6 +146,24 @@ public class Administrador_usuarios extends AppCompatActivity {
 
         db.update(Data_utilities.tablaUsuarios, actualiza, Data_utilities.UcampoNombre + "=?",parametro);
         Toast.makeText(this, "Actualizacion exitosa", Toast.LENGTH_SHORT).show();
+        db.close();
+
+        et_nombre.setText("");
+        et_fechaN.setText("");
+        et_correo.setText("");
+        et_contra.setText("");
+        et_saldo.setText("");
+    }
+
+    public void Baja(View view){
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administrar", null, 1);
+        SQLiteDatabase db = admin.getWritableDatabase();
+
+        String nombre = et_nombre.getText().toString();
+        String[] parametro = {nombre};
+
+        db.delete(Data_utilities.tablaUsuarios, Data_utilities.UcampoNombre + "=?",parametro);
+        Toast.makeText(this, "Eliminación exitosa", Toast.LENGTH_SHORT).show();
         db.close();
 
         et_nombre.setText("");
