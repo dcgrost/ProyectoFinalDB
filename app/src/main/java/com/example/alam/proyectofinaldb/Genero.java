@@ -28,6 +28,8 @@ public class Genero extends AppCompatActivity {
         lista.add(new datos_listView(6, "Horror", "Ni Dross da tanto miedo", R.drawable.ic_horror));
         lista.add(new datos_listView(7, "Musical", "A nadie le gustan, pero no hay más", R.drawable.ic_musical));
         lista.add(new datos_listView(8, "Romance", "Eres un mandilón", R.drawable.ic_romance));
+        lista.add(new datos_listView(8, "Animación", "Diversión para los más pequeños", R.drawable.ic_animacion));
+        lista.add(new datos_listView(8, "Drama", "Te gusta sufrir", R.drawable.ic_comedia));
         //lista.add(new datos_listView(db_id, db_titulo, db_sinopsis, db_imagen));
 
         adaptador_listView miadaptador = new adaptador_listView(getApplicationContext(), lista);
