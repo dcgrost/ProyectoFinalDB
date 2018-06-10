@@ -65,7 +65,7 @@ public class Data_utilities {
     public static final String TcampoSeriesID= "temporadas_series_id";
 
     public static final String creaTablaTemporadas = "create table "+ tablaTempoaradas +" ( "
-            + TcampoId + " integer primary key autoincrement, "
+            + TcampoId +" integer primary key autoincrement, "
             + TcampoTitulo +" varchar(50) not null, "
             + TcampoFechaEstreno +" date not null, "
             + TcampoFechaProduccion +" date not null, "
