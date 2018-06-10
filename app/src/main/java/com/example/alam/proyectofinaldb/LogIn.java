@@ -29,7 +29,7 @@ public class LogIn extends AppCompatActivity {
         String contra = et_contra.getText().toString();
 
         if (correo.length() != 0 && contra.length() !=0 && validarContra(contra) && validarEmail(correo)){
-            /*if (correo.contentEquals("ldp@admin.com") && contra.contentEquals("Admin123")){
+            if (correo.contentEquals("ldp@admin.com") && contra.contentEquals("Admin123")){
                 Intent myIntent = new Intent(view.getContext(), Administrador.class);
                 startActivity(myIntent);
             }/*else{

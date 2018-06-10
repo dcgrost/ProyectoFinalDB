@@ -2,11 +2,11 @@ package com.example.alam.proyectofinaldb;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -15,21 +15,20 @@ import com.example.alam.proyectofinaldb.Utilities.Data_utilities;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Registro extends AppCompatActivity {
+public class Administrador_usuarios extends AppCompatActivity {
 
-    AutoCompleteTextView et_correo;
-    EditText et_contra, et_nombre, et_fechaN;
+    EditText et_nombre, et_correo, et_fechaN, et_contra, et_saldo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registro);
+        setContentView(R.layout.activity_administrador_usuarios);
 
-        et_correo = (AutoCompleteTextView)findViewById(R.id.email);
-        et_contra = (EditText) findViewById(R.id.password);
-        et_nombre = (EditText) findViewById(R.id.nombre);
-        et_fechaN = (EditText) findViewById(R.id.fechaN);
-
+        et_nombre = (EditText)findViewById(R.id.nombre);
+        et_correo = (EditText)findViewById(R.id.email);
+        et_fechaN = (EditText)findViewById(R.id.fechaN);
+        et_contra = (EditText)findViewById(R.id.password);
+        et_saldo = (EditText)findViewById(R.id.saldo);
     }
 
     public void Alta(View view){
@@ -40,8 +39,7 @@ public class Registro extends AppCompatActivity {
         String fechaN = et_fechaN.getText().toString();
         String correo = et_correo.getText().toString();
         String contra = et_contra.getText().toString();
-
-        float saldo = 100.00f;
+        String saldo = et_saldo.getText().toString();
 
         if (nombre.length() == 0 && fechaN.length() == 0 && correo.length() == 0 && contra.length() == 0){
             Toast.makeText(this, "Ingresa datos", Toast.LENGTH_SHORT).show();
@@ -85,9 +83,36 @@ public class Registro extends AppCompatActivity {
             et_fechaN.setText("");
             et_correo.setText("");
             et_contra.setText("");
+            et_saldo.setText("");
+        }
+    }
 
-            Intent myIntent = new Intent(view.getContext(), LogIn.class);
-            startActivity(myIntent);
+    public void Busca (View view){
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administrar", null, 1);
+        SQLiteDatabase db = admin.getWritableDatabase();
+
+        String nombre = et_nombre.getText().toString();
+        String[] parametro = {nombre};
+        String[] campos = {Data_utilities.UcampoCorreo, Data_utilities.UcampoFechaN, Data_utilities.UcampoContra, Data_utilities.UcampoSaldo};
+
+        if(!nombre.isEmpty()){
+            try{
+                Cursor fila = db.query(Data_utilities.tablaUsuarios, campos, Data_utilities.UcampoNombre + "=?", parametro, null, null, null);
+                fila.moveToFirst();
+                et_correo.setText(fila.getString(0));
+                et_fechaN.setText(fila.getString(1));
+                et_contra.setText(fila.getString(2));
+                et_saldo.setText(fila.getString(3));
+                fila.close();
+            }catch (Exception e){
+                Toast.makeText(this, "El usuario no existe", Toast.LENGTH_SHORT).show();
+
+                et_nombre.setText("");
+                et_fechaN.setText("");
+                et_correo.setText("");
+                et_contra.setText("");
+                et_saldo.setText("");
+            }
         }
     }
 

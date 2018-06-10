@@ -16,7 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Registro"></activity>
+        <activity android:name=".Registro" />
+        <activity android:name=".Administrador" />
+        <activity android:name=".Administrador_peliculas" />
+        <activity android:name=".Administrador_series" />
+        <activity android:name=".Administrador_usuarios"></activity>
     </application>
 
 </manifest>
