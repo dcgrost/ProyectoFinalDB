@@ -46,7 +46,7 @@ public class Peliculas extends AppCompatActivity {
             pelicula.setPeliculas_id(fila.getInt(0));
             pelicula.setPeliculas_titulo(fila.getString(1));
             pelicula.setPeliculas_sinopsis(fila.getString(2));
-            pelicula.setPeliculas_Imagen(fila.getInt(3));
+            pelicula.setPeliculas_imagen(fila.getInt(3));
 
             listaPeliculas.add(pelicula);
         }
@@ -54,7 +54,7 @@ public class Peliculas extends AppCompatActivity {
         lista = new ArrayList<datos_listView>();
 
         for (int i=0;i<listaPeliculas.size();i++){
-            lista.add(new datos_listView(listaPeliculas.get(i).getPeliculas_id(), listaPeliculas.get(i).getPeliculas_titulo(), listaPeliculas.get(i).getPeliculas_sinopsis(), listaPeliculas.get(i).getPeliculas_Imagen()));
+            lista.add(new datos_listView(listaPeliculas.get(i).getPeliculas_id(), listaPeliculas.get(i).getPeliculas_titulo(), listaPeliculas.get(i).getPeliculas_sinopsis(), listaPeliculas.get(i).getPeliculas_imagen()));
         }
 
         adaptador_listView miadaptador = new adaptador_listView(getApplicationContext(), lista);

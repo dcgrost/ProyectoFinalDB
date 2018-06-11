@@ -83,11 +83,11 @@ public class Entidades_peliculas {
         this.peliculas_precio = peliculas_precio;
     }
 
-    public int getPeliculas_Imagen() {
+    public int getPeliculas_imagen() {
         return peliculas_imagen;
     }
 
-    public void setImagen(int imagen) {
+    public void setPeliculas_imagen(int imagen) {
         this.peliculas_imagen = imagen;
     }
 }
