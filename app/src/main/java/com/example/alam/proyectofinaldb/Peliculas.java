@@ -9,5 +9,10 @@ public class Peliculas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_peliculas);
+
+        String tipo = getIntent().getStringExtra("tipo");
+        String genero = getIntent().getStringExtra("genero");
+
+
     }
 }
