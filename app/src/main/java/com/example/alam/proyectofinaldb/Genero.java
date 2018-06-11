@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.alam.proyectofinaldb.Utilities.Data_utilities;
 
@@ -47,17 +46,15 @@ public class Genero extends AppCompatActivity {
                 if (position == 0){
                     if(tipo.contentEquals("Data_utilities.tablaPeliculas")){
                         Intent myIntent = new Intent(view.getContext(), Peliculas.class);
-                        myIntent.putExtra("tipo", "Data_utilities.tablaPeliculas");
-                        myIntent.putExtra("genero", "Data_utilities.PcampoGenero = Acción");
+                        myIntent.putExtra("genero", "Acción");
                         startActivity(myIntent);
                     }else{
                         Intent myIntent = new Intent(view.getContext(), Series.class);
-                        myIntent.putExtra("tipo", "Data_utilities.tablaSeries");
-                        myIntent.putExtra("genero", "Data_utilities.ScampoGenero = Acción");
+                        myIntent.putExtra("genero", "Acción");
                         startActivity(myIntent);
                     }
                 }if (position == 1){
-                    if(tipo.contentEquals(Data_utilities.tablaPeliculas)){
+                    if(tipo.contentEquals("Data_utilities.tablaPeliculas")){
                         Intent myIntent = new Intent(view.getContext(), Peliculas.class);
                         myIntent.putExtra("tipo", "Data_utilities.tablaPeliculas");
                         myIntent.putExtra("genero", "Data_utilities.PcampoGenero = Aventura");
@@ -69,7 +66,7 @@ public class Genero extends AppCompatActivity {
                         startActivity(myIntent);
                     }
                 }if (position == 2){
-                    if(tipo.contentEquals(Data_utilities.tablaPeliculas)){
+                    if(tipo.contentEquals("Data_utilities.tablaPeliculas")){
                         Intent myIntent = new Intent(view.getContext(), Peliculas.class);
                         myIntent.putExtra("tipo", "Data_utilities.tablaPeliculas");
                         myIntent.putExtra("genero", "Data_utilities.PcampoGenero = Ciencia ficción");
@@ -81,7 +78,7 @@ public class Genero extends AppCompatActivity {
                         startActivity(myIntent);
                     }
                 }if (position == 3){
-                    if(tipo.contentEquals(Data_utilities.tablaPeliculas)){
+                    if(tipo.contentEquals("Data_utilities.tablaPeliculas")){
                         Intent myIntent = new Intent(view.getContext(), Peliculas.class);
                         myIntent.putExtra("tipo", "Data_utilities.tablaPeliculas");
                         myIntent.putExtra("genero", "Data_utilities.PcampoGenero = Comedia");
@@ -93,7 +90,7 @@ public class Genero extends AppCompatActivity {
                         startActivity(myIntent);
                     }
                 }if (position == 4){
-                    if(tipo.contentEquals(Data_utilities.tablaPeliculas)){
+                    if(tipo.contentEquals("Data_utilities.tablaPeliculas")){
                         Intent myIntent = new Intent(view.getContext(), Peliculas.class);
                         myIntent.putExtra("tipo", "Data_utilities.tablaPeliculas");
                         myIntent.putExtra("genero", "Data_utilities.PcampoGenero = Documental");
@@ -105,7 +102,7 @@ public class Genero extends AppCompatActivity {
                         startActivity(myIntent);
                     }
                 }if (position == 5){
-                    if(tipo.contentEquals(Data_utilities.tablaPeliculas)){
+                    if(tipo.contentEquals("Data_utilities.tablaPeliculas")){
                         Intent myIntent = new Intent(view.getContext(), Peliculas.class);
                         myIntent.putExtra("tipo", "Data_utilities.tablaPeliculas");
                         myIntent.putExtra("genero", "Data_utilities.PcampoGenero = Horror");
@@ -117,7 +114,7 @@ public class Genero extends AppCompatActivity {
                         startActivity(myIntent);
                     }
                 }if (position == 6){
-                    if(tipo.contentEquals(Data_utilities.tablaPeliculas)){
+                    if(tipo.contentEquals("Data_utilities.tablaPeliculas")){
                         Intent myIntent = new Intent(view.getContext(), Peliculas.class);
                         myIntent.putExtra("tipo", "Data_utilities.tablaPeliculas");
                         myIntent.putExtra("genero", "Data_utilities.PcampoGenero = Musical");
@@ -129,7 +126,7 @@ public class Genero extends AppCompatActivity {
                         startActivity(myIntent);
                     }
                 }if (position == 7){
-                    if(tipo.contentEquals(Data_utilities.tablaPeliculas)){
+                    if(tipo.contentEquals("Data_utilities.tablaPeliculas")){
                         Intent myIntent = new Intent(view.getContext(), Peliculas.class);
                         myIntent.putExtra("tipo", "Data_utilities.tablaPeliculas");
                         myIntent.putExtra("genero", "Data_utilities.PcampoGenero = Romance");
@@ -141,7 +138,7 @@ public class Genero extends AppCompatActivity {
                         startActivity(myIntent);
                     }
                 }if (position == 8){
-                    if(tipo.contentEquals(Data_utilities.tablaPeliculas)){
+                    if(tipo.contentEquals("Data_utilities.tablaPeliculas")){
                         Intent myIntent = new Intent(view.getContext(), Peliculas.class);
                         myIntent.putExtra("tipo", "Data_utilities.tablaPeliculas");
                         myIntent.putExtra("genero", "Data_utilities.PcampoGenero = Animación");
@@ -153,7 +150,7 @@ public class Genero extends AppCompatActivity {
                         startActivity(myIntent);
                     }
                 }if (position == 9){
-                    if(tipo.contentEquals(Data_utilities.tablaPeliculas)){
+                    if(tipo.contentEquals("Data_utilities.tablaPeliculas")){
                         Intent myIntent = new Intent(view.getContext(), Peliculas.class);
                         myIntent.putExtra("tipo", "Data_utilities.tablaPeliculas");
                         myIntent.putExtra("genero", "Data_utilities.PcampoGenero = Drama");

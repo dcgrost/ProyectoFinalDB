@@ -1,5 +1,7 @@
 package com.example.alam.proyectofinaldb;
 
+import com.example.alam.proyectofinaldb.Entidades.Entidades_peliculas;
+
 public class datos_listView {
     private int id;
     private String titulo;

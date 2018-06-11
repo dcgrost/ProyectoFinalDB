@@ -7,16 +7,14 @@
     android:background="@drawable/gradient_background"
     tools:context=".Peliculas">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="152dp"
-        android:gravity="center_horizontal"
-        android:text="@string/action_modify_peliculas"
-        android:textSize="29sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
 </android.support.constraint.ConstraintLayout>

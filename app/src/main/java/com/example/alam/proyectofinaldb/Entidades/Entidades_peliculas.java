@@ -11,8 +11,9 @@ public class Entidades_peliculas {
     private String peliculas_idiomaOriginal;
     private Date peliculas_fechaEstreno;
     private float peliculas_precio;
+    private int peliculas_imagen;
 
-    public Entidades_peliculas(int peliculas_id, String peliculas_titulo, String peliculas_genero, String peliculas_sinopsis, String peliculas_idiomaOriginal, Date peliculas_anioInicio, float peliculas_precio) {
+    public Entidades_peliculas(int peliculas_id, String peliculas_titulo, String peliculas_genero, String peliculas_sinopsis, String peliculas_idiomaOriginal, Date peliculas_fechaEstreno, float peliculas_precio, int peliculas_imagen) {
         this.peliculas_id = peliculas_id;
         this.peliculas_titulo = peliculas_titulo;
         this.peliculas_genero = peliculas_genero;
@@ -20,6 +21,10 @@ public class Entidades_peliculas {
         this.peliculas_idiomaOriginal = peliculas_idiomaOriginal;
         this.peliculas_fechaEstreno = peliculas_fechaEstreno;
         this.peliculas_precio = peliculas_precio;
+        this.peliculas_imagen = peliculas_imagen;
+    }
+
+    public Entidades_peliculas() {
     }
 
     public int getPeliculas_id() {
@@ -62,11 +67,11 @@ public class Entidades_peliculas {
         this.peliculas_idiomaOriginal = peliculas_idiomaOriginal;
     }
 
-    public Date getPeliculas_anioInicio() {
+    public Date getPeliculas_fechaEstreno() {
         return peliculas_fechaEstreno;
     }
 
-    public void setPeliculas_anioInicio(Date peliculas_anioInicio) {
+    public void setPeliculas_fechaEstreno(Date peliculas_fechaEstreno) {
         this.peliculas_fechaEstreno = peliculas_fechaEstreno;
     }
 
@@ -76,5 +81,13 @@ public class Entidades_peliculas {
 
     public void setPeliculas_precio(float peliculas_precio) {
         this.peliculas_precio = peliculas_precio;
+    }
+
+    public int getPeliculasImagen() {
+        return peliculas_imagen;
+    }
+
+    public void setPeliculasImagen(int imagen) {
+        this.peliculas_imagen = imagen;
     }
 }
