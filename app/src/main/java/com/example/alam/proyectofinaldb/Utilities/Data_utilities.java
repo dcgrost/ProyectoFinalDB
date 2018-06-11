@@ -66,14 +66,15 @@ public class Data_utilities {
     public static final String TcampoImagen = "temporadas_img";
     public static final String TcampoSeriesID= "temporadas_series_id";
 
-    public static final String creaTablaTemporadas = "create table "+ tablaTempoaradas +" ( "
+    public static final String creaTablaTemporadas = "create table "
+            + tablaTempoaradas +" ("
             + TcampoId +" integer primary key autoincrement, "
             + TcampoTitulo +" varchar(50) not null, "
             + TcampoFechaEstreno +" date not null, "
             + TcampoFechaProduccion +" date not null, "
             + TcampoImagen +" text not null, "
-            + TcampoSeriesID +" integer not null" +
-            " foreign key ("+ TcampoSeriesID +") references "+ tablaSeries +" ("+ ScampoId +"))";
+            + TcampoSeriesID +" integer, "
+            + " FOREIGN KEY ("+TcampoSeriesID+") REFERENCES "+tablaSeries+"("+ ScampoId +"));";
 
     //Tabla Capitulos
     public static final String tablaCapitulos = "Capitulos";
@@ -84,14 +85,15 @@ public class Data_utilities {
     public static final String CcampoSinopsis = "capitulos_sinopsis";
     public static final String CcampoTemporadasID= "capitulos_temporadas_id";
 
-    public static final String creaTablaCapitulos = "create table "+ tablaCapitulos +" ( "
+    public static final String creaTablaCapitulos = "create table "
+            + tablaCapitulos +" ("
             + CcampoId + " integer primary key autoincrement, "
             + CcampoTitulo +" varchar(50) not null, "
             + CcampoDuracion +" varchar(10) not null, "
             + CcampoPrecio +" real not null, "
             + CcampoSinopsis +" text not null, "
-            + CcampoTemporadasID +" integer not null)" +
-            "foreign key ('"+ CcampoTemporadasID +"') references '"+ tablaSeries +"'('"+ TcampoId +"'))";
+            + CcampoTemporadasID +" integer, " +
+            " foreign key ('"+ CcampoTemporadasID +"') references '"+ tablaSeries +"'('"+ TcampoId +"'));";
 
     //Tabla PeliculasUsuarios
     public static final String tablaPeliculasUsuarios = "PeliculasUsuarios";
@@ -99,12 +101,13 @@ public class Data_utilities {
     public static final String PUcampoUsuariosID = "peliculasUsuarios_usuarios_id";
     public static final String PUcampoPeliculasID = "peliculasUsuarios_peliculas_id";
 
-    public static final String creaTablaPeliculasUsuarios = "create table "+ tablaPeliculasUsuarios +" ( "
+    public static final String creaTablaPeliculasUsuarios = "create table "
+            + tablaPeliculasUsuarios +" ("
             + PUcampoId + " integer primary key autoincrement, "
-            + PUcampoUsuariosID +" integer not null, "
-            + PUcampoPeliculasID +" integer not null, " +
-            "foreign key ('"+ PUcampoUsuariosID +"') references '"+ tablaUsuarios +"'('"+ UcampoId +"')" +
-            "foreign key ('"+ PUcampoPeliculasID +"') references '"+ tablaPeliculas +"'('"+ PcampoId +"')";
+            + PUcampoUsuariosID +" integer, "
+            + PUcampoPeliculasID +" integer, " +
+            " foreign key ('"+ PUcampoUsuariosID +"') references '"+ tablaUsuarios +"'('"+ UcampoId +"'), " +
+            " foreign key ('"+ PUcampoPeliculasID +"') references '"+ tablaPeliculas +"'('"+ PcampoId +"'));";
 
     //Tabla CapitulosUsuarios
     public static final String tablaCapitulosUsuarios = "CapitulosUsuarios";
@@ -112,12 +115,13 @@ public class Data_utilities {
     public static final String CUcampoUsuariosID = "seriesUsuarios_usuarios_id";
     public static final String CUcampoCapitulosID = "seriesUsuarios_series_id";
 
-    public static final String creaTablaCapitulosUsuarios = "create table "+ tablaCapitulosUsuarios +" ( "
+    public static final String creaTablaCapitulosUsuarios = "create table "
+            + tablaCapitulosUsuarios +" ("
             + CUcampoId + " integer primary key autoincrement, "
-            + CUcampoUsuariosID +" integer not null, "
-            + CUcampoCapitulosID +" integer not null, " +
-            "foreign key ('"+ CUcampoUsuariosID +"') references '"+ tablaUsuarios +"'('"+ UcampoId +"')" +
-            "foreign key ('"+ CUcampoCapitulosID +"') references '"+ tablaCapitulos +"'('"+ CcampoId +"')";
+            + CUcampoUsuariosID +" integer, "
+            + CUcampoCapitulosID +" integer, " +
+            " foreign key ('"+ CUcampoUsuariosID +"') references '"+ tablaUsuarios +"'('"+ UcampoId +"'), " +
+            " foreign key ('"+ CUcampoCapitulosID +"') references '"+ tablaCapitulos +"'('"+ CcampoId +"'));";
 
     //Tabla Criticas
     public static final String tablaCriticas = "Criticas";
@@ -128,16 +132,17 @@ public class Data_utilities {
     public static final String CRcampoPeliculasID = "criticas_peliculas_id";
     public static final String CRcampoCapitulosID = "criticas_capitulos_id";
 
-    public static final String creaTablaCriticas = "create table "+ tablaCriticas +" ( "
+    public static final String creaTablaCriticas = "create table "
+            + tablaCriticas +" ("
             + CRcampoId + " integer primary key autoincrement, "
             + CRcampoComentario +" text not null, "
             + CRcampoFecha +" date not null, "
             + CRcampoUsuariosID +" integer not null, "
             + CRcampoPeliculasID +" integer , "
             + CRcampoCapitulosID +" integer , " +
-            "foreign key ('"+ CRcampoUsuariosID +"') references '"+ tablaUsuarios +"'('"+ UcampoId +"')" +
-            "foreign key ('"+ CRcampoPeliculasID +"') references '"+ tablaPeliculas +"'('"+ PcampoId +"')" +
-            "foreign key ('"+ CRcampoCapitulosID +"') references '"+ tablaCapitulos +"'('"+ CcampoId +"')";
+            " foreign key ('"+ CRcampoUsuariosID +"') references '"+ tablaUsuarios +"'('"+ UcampoId +"'), " +
+            " foreign key ('"+ CRcampoPeliculasID +"') references '"+ tablaPeliculas +"'('"+ PcampoId +"'), " +
+            " foreign key ('"+ CRcampoCapitulosID +"') references '"+ tablaCapitulos +"'('"+ CcampoId +"'));";
 
     //Tabla Subtitulos
     public static final String tablaSubtitulos = "Subtitulos";
@@ -153,16 +158,13 @@ public class Data_utilities {
             + SUBcampoIdioma +" varchar(50) not null, "
             + SUBcampoAutor +" varchar(50) not null, "
             + SUBcampoPrecio +" real not null, "
-            + SUBcampoPeliculasID +" integer , "
-            + SUBcampoCapitulosID +" integer , " +
-            "foreign key ('"+ SUBcampoPeliculasID +"') references '"+ tablaPeliculas +"'('"+ PcampoId +"')" +
-            "foreign key ('"+ SUBcampoCapitulosID +"') references '"+ tablaCapitulos +"'('"+ CcampoId +"')";
+            + SUBcampoPeliculasID +" integer, "
+            + SUBcampoCapitulosID +" integer, " +
+            " foreign key ('"+ SUBcampoPeliculasID +"') references '"+ tablaPeliculas +"'('"+ PcampoId +"'), " +
+            " foreign key ('"+ SUBcampoCapitulosID +"') references '"+ tablaCapitulos +"'('"+ CcampoId +"'));";
 
     //Llenar tablaUsuarios
     public static final String LlU = ""+tablaUsuarios+"("+UcampoId+", "+UcampoNombre+", "+UcampoCorreo+", "+UcampoFechaN+", "+UcampoContra+", "+UcampoSaldo+")";
     //Llenar tablaPeliculas
     public static final String LlP = ""+tablaPeliculas+"("+PcampoId+", "+PcampoTitulo+", "+PcampoGenero+", "+PcampoSinopsis+", "+PcampoIdiomaOriginal+", "+PcampoFechaEstreno+", "+PcampoPrecio+","+PcampoImg+")";
-
-    public static final String qPeliculas = "select "+PcampoImg+", "+PcampoTitulo+", "+PcampoSinopsis+" from "+tablaPeliculas+" where "+PcampoGenero+" = '";
-    public static final String qSeries = "select "+ScampoTitulo+", "+ScampoSinopsis+" from "+tablaSeries+" where "+ScampoGenero+" = '";
 }

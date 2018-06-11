@@ -56,109 +56,91 @@ public class Genero extends AppCompatActivity {
                 }if (position == 1){
                     if(tipo.contentEquals("Data_utilities.tablaPeliculas")){
                         Intent myIntent = new Intent(view.getContext(), Peliculas.class);
-                        myIntent.putExtra("tipo", "Data_utilities.tablaPeliculas");
-                        myIntent.putExtra("genero", "Data_utilities.PcampoGenero = Aventura");
+                        myIntent.putExtra("genero", "Aventura");
                         startActivity(myIntent);
                     }else{
                         Intent myIntent = new Intent(view.getContext(), Series.class);
-                        myIntent.putExtra("tipo", "Data_utilities.tablaSeries");
-                        myIntent.putExtra("genero", "Data_utilities.ScampoGenero = Aventura");
+                        myIntent.putExtra("genero", "Aventura");
                         startActivity(myIntent);
                     }
                 }if (position == 2){
                     if(tipo.contentEquals("Data_utilities.tablaPeliculas")){
                         Intent myIntent = new Intent(view.getContext(), Peliculas.class);
-                        myIntent.putExtra("tipo", "Data_utilities.tablaPeliculas");
-                        myIntent.putExtra("genero", "Data_utilities.PcampoGenero = Ciencia ficción");
+                        myIntent.putExtra("genero", "Ciencia ficción");
                         startActivity(myIntent);
                     }else{
                         Intent myIntent = new Intent(view.getContext(), Series.class);
-                        myIntent.putExtra("tipo", "Data_utilities.tablaSeries");
-                        myIntent.putExtra("genero", "Data_utilities.ScampoGenero = Ciencia ficción");
+                        myIntent.putExtra("genero", "Ciencia ficción");
                         startActivity(myIntent);
                     }
                 }if (position == 3){
                     if(tipo.contentEquals("Data_utilities.tablaPeliculas")){
                         Intent myIntent = new Intent(view.getContext(), Peliculas.class);
-                        myIntent.putExtra("tipo", "Data_utilities.tablaPeliculas");
-                        myIntent.putExtra("genero", "Data_utilities.PcampoGenero = Comedia");
+                        myIntent.putExtra("genero", "Comedia");
                         startActivity(myIntent);
                     }else{
                         Intent myIntent = new Intent(view.getContext(), Series.class);
-                        myIntent.putExtra("tipo", "Data_utilities.tablaSeries");
-                        myIntent.putExtra("genero", "Data_utilities.ScampoGenero = Comedia");
+                        myIntent.putExtra("genero", "Comedia");
                         startActivity(myIntent);
                     }
                 }if (position == 4){
                     if(tipo.contentEquals("Data_utilities.tablaPeliculas")){
                         Intent myIntent = new Intent(view.getContext(), Peliculas.class);
-                        myIntent.putExtra("tipo", "Data_utilities.tablaPeliculas");
-                        myIntent.putExtra("genero", "Data_utilities.PcampoGenero = Documental");
+                        myIntent.putExtra("genero", "Documental");
                         startActivity(myIntent);
                     }else{
                         Intent myIntent = new Intent(view.getContext(), Series.class);
-                        myIntent.putExtra("tipo", "Data_utilities.tablaSeries");
-                        myIntent.putExtra("genero", "Data_utilities.ScampoGenero = Documental");
+                        myIntent.putExtra("genero", "Documental");
                         startActivity(myIntent);
                     }
                 }if (position == 5){
                     if(tipo.contentEquals("Data_utilities.tablaPeliculas")){
                         Intent myIntent = new Intent(view.getContext(), Peliculas.class);
-                        myIntent.putExtra("tipo", "Data_utilities.tablaPeliculas");
-                        myIntent.putExtra("genero", "Data_utilities.PcampoGenero = Horror");
+                        myIntent.putExtra("genero", "Horror");
                         startActivity(myIntent);
                     }else{
                         Intent myIntent = new Intent(view.getContext(), Series.class);
-                        myIntent.putExtra("tipo", "Data_utilities.tablaSeries");
-                        myIntent.putExtra("genero", "Data_utilities.ScampoGenero = Horror");
+                        myIntent.putExtra("genero", "Horror");
                         startActivity(myIntent);
                     }
                 }if (position == 6){
                     if(tipo.contentEquals("Data_utilities.tablaPeliculas")){
                         Intent myIntent = new Intent(view.getContext(), Peliculas.class);
-                        myIntent.putExtra("tipo", "Data_utilities.tablaPeliculas");
-                        myIntent.putExtra("genero", "Data_utilities.PcampoGenero = Musical");
+                        myIntent.putExtra("genero", "Musical");
                         startActivity(myIntent);
                     }else{
                         Intent myIntent = new Intent(view.getContext(), Series.class);
-                        myIntent.putExtra("tipo", "Data_utilities.tablaSeries");
-                        myIntent.putExtra("genero", "Data_utilities.ScampoGenero = Musical");
+                        myIntent.putExtra("genero", "Musical");
                         startActivity(myIntent);
                     }
                 }if (position == 7){
                     if(tipo.contentEquals("Data_utilities.tablaPeliculas")){
                         Intent myIntent = new Intent(view.getContext(), Peliculas.class);
-                        myIntent.putExtra("tipo", "Data_utilities.tablaPeliculas");
-                        myIntent.putExtra("genero", "Data_utilities.PcampoGenero = Romance");
+                        myIntent.putExtra("genero", "Romance");
                         startActivity(myIntent);
                     }else{
                         Intent myIntent = new Intent(view.getContext(), Series.class);
-                        myIntent.putExtra("tipo", "Data_utilities.tablaSeries");
-                        myIntent.putExtra("genero", "Data_utilities.ScampoGenero = Romance");
+                        myIntent.putExtra("genero", "Romance");
                         startActivity(myIntent);
                     }
                 }if (position == 8){
                     if(tipo.contentEquals("Data_utilities.tablaPeliculas")){
                         Intent myIntent = new Intent(view.getContext(), Peliculas.class);
-                        myIntent.putExtra("tipo", "Data_utilities.tablaPeliculas");
-                        myIntent.putExtra("genero", "Data_utilities.PcampoGenero = Animación");
+                        myIntent.putExtra("genero", "Animación");
                         startActivity(myIntent);
                     }else{
                         Intent myIntent = new Intent(view.getContext(), Series.class);
-                        myIntent.putExtra("tipo", "Data_utilities.tablaSeries");
-                        myIntent.putExtra("genero", "Data_utilities.ScampoGenero = Animación");
+                        myIntent.putExtra("genero", "Animación");
                         startActivity(myIntent);
                     }
                 }if (position == 9){
                     if(tipo.contentEquals("Data_utilities.tablaPeliculas")){
                         Intent myIntent = new Intent(view.getContext(), Peliculas.class);
-                        myIntent.putExtra("tipo", "Data_utilities.tablaPeliculas");
-                        myIntent.putExtra("genero", "Data_utilities.PcampoGenero = Drama");
+                        myIntent.putExtra("genero", "Drama");
                         startActivity(myIntent);
                     }else{
                         Intent myIntent = new Intent(view.getContext(), Series.class);
-                        myIntent.putExtra("tipo", "Data_utilities.tablaSeries");
-                        myIntent.putExtra("genero", "Data_utilities.ScampoGenero = Drama");
+                        myIntent.putExtra("genero", "Drama");
                         startActivity(myIntent);
                     }
                 }

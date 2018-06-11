@@ -4,6 +4,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -26,8 +28,6 @@ public class Peliculas extends AppCompatActivity {
 
         String genero = getIntent().getStringExtra("genero");
 
-        Toast.makeText(this, "El género es: "+genero,Toast.LENGTH_SHORT).show();
-
         listaDatos = (ListView)findViewById(R.id.listView);
 
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administrar", null, 1);
@@ -46,7 +46,7 @@ public class Peliculas extends AppCompatActivity {
             pelicula.setPeliculas_id(fila.getInt(0));
             pelicula.setPeliculas_titulo(fila.getString(1));
             pelicula.setPeliculas_sinopsis(fila.getString(2));
-            pelicula.setPeliculasImagen(fila.getInt(3));
+            pelicula.setPeliculas_Imagen(fila.getInt(3));
 
             listaPeliculas.add(pelicula);
         }
@@ -54,10 +54,20 @@ public class Peliculas extends AppCompatActivity {
         lista = new ArrayList<datos_listView>();
 
         for (int i=0;i<listaPeliculas.size();i++){
-            lista.add(new datos_listView(listaPeliculas.get(i).getPeliculas_id(), listaPeliculas.get(i).getPeliculas_titulo(), listaPeliculas.get(i).getPeliculas_sinopsis(), listaPeliculas.get(i).getPeliculasImagen()));
+            lista.add(new datos_listView(listaPeliculas.get(i).getPeliculas_id(), listaPeliculas.get(i).getPeliculas_titulo(), listaPeliculas.get(i).getPeliculas_sinopsis(), listaPeliculas.get(i).getPeliculas_Imagen()));
         }
 
         adaptador_listView miadaptador = new adaptador_listView(getApplicationContext(), lista);
         listaDatos.setAdapter(miadaptador);
+
+        /*listaDatos.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if(position == 0){
+                    listaPeliculas.get(0).getPeliculas_id();
+                }
+            }
+        });*/
     }
 }

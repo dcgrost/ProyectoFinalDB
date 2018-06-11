@@ -19,6 +19,12 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper{
         db.execSQL(Data_utilities.creaTablaUsuarios);
         db.execSQL(Data_utilities.creaTablaPeliculas);
         db.execSQL(Data_utilities.creaTablaSeries);
+        db.execSQL(Data_utilities.creaTablaTemporadas);
+        db.execSQL(Data_utilities.creaTablaCapitulos);
+        db.execSQL(Data_utilities.creaTablaPeliculasUsuarios);
+        db.execSQL(Data_utilities.creaTablaCapitulosUsuarios);
+        db.execSQL(Data_utilities.creaTablaCriticas);
+        db.execSQL(Data_utilities.creaTablaSubtitulos);
 
         db.execSQL("insert into "+Data_utilities.LlU+" values('1','Alam','grost1995@gmail.com','1995-06-18','1014180713Aa','1000')");
         db.execSQL("insert into "+Data_utilities.LlU+" values('2','Adrian','adrian@gmail.com','1998-03-07','Adrian123','100')");
@@ -57,6 +63,12 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper{
         db.execSQL("drop table if exists " + Data_utilities.tablaUsuarios);
         db.execSQL("drop table if exists " + Data_utilities.tablaPeliculas);
         db.execSQL("drop table if exists " + Data_utilities.tablaSeries);
+        db.execSQL("drop table if exists " + Data_utilities.tablaTempoaradas);
+        db.execSQL("drop table if exists " + Data_utilities.tablaCapitulos);
+        db.execSQL("drop table if exists " + Data_utilities.tablaPeliculasUsuarios);
+        db.execSQL("drop table if exists " + Data_utilities.tablaCapitulosUsuarios);
+        db.execSQL("drop table if exists " + Data_utilities.tablaCriticas);
+        db.execSQL("drop table if exists " + Data_utilities.tablaSubtitulos);
         onCreate(db);
     }
 }
