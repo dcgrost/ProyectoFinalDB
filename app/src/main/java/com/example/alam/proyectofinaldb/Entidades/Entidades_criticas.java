@@ -20,6 +20,9 @@ public class Entidades_criticas {
         this.criticas_capitulos_id = criticas_capitulos_id;
     }
 
+    public Entidades_criticas() {
+    }
+
     public int getCriticas_id() {
         return criticas_id;
     }

@@ -7,15 +7,20 @@ public class Entidades_capitulos {
     private String capitulos_duracion;
     private float capitulos_precio;
     private String capitulos_sinopsis;
+    private int capitulos_imagen;
     private int capitulos_temporadas_id;
 
-    public Entidades_capitulos(int capitulos_id, String capitulos_titulo, String capitulos_duracion, float capitulos_precio, String capitulos_sinopsis, int capitulos_temporadas_id) {
+    public Entidades_capitulos(int capitulos_id, String capitulos_titulo, String capitulos_duracion, float capitulos_precio, String capitulos_sinopsis, int capitulos_imagen, int capitulos_temporadas_id) {
         this.capitulos_id = capitulos_id;
         this.capitulos_titulo = capitulos_titulo;
         this.capitulos_duracion = capitulos_duracion;
         this.capitulos_precio = capitulos_precio;
         this.capitulos_sinopsis = capitulos_sinopsis;
+        this.capitulos_imagen = capitulos_imagen;
         this.capitulos_temporadas_id = capitulos_temporadas_id;
+    }
+
+    public Entidades_capitulos() {
     }
 
     public int getCapitulos_id() {
@@ -56,6 +61,14 @@ public class Entidades_capitulos {
 
     public void setCapitulos_sinopsis(String capitulos_sinopsis) {
         this.capitulos_sinopsis = capitulos_sinopsis;
+    }
+
+    public int getCapitulos_imagen() {
+        return capitulos_imagen;
+    }
+
+    public void setCapitulos_imagen(int capitulos_imagen) {
+        this.capitulos_imagen = capitulos_imagen;
     }
 
     public int getCapitulos_temporadas_id() {

@@ -24,7 +24,8 @@
         <activity android:name=".Tipo" />
         <activity android:name=".Peliculas" />
         <activity android:name=".Genero" />
-        <activity android:name=".Series"></activity>
+        <activity android:name=".Series" />
+        <activity android:name=".Ver_pelicula"></activity>
     </application>
 
 </manifest>

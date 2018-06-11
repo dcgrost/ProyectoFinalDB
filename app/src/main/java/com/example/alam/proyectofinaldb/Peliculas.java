@@ -1,5 +1,6 @@
 package com.example.alam.proyectofinaldb;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -60,14 +61,42 @@ public class Peliculas extends AppCompatActivity {
         adaptador_listView miadaptador = new adaptador_listView(getApplicationContext(), lista);
         listaDatos.setAdapter(miadaptador);
 
-        /*listaDatos.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        listaDatos.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(position == 0){
-                    listaPeliculas.get(0).getPeliculas_id();
+                    String titulo = listaPeliculas.get(0).getPeliculas_titulo();
+                    Intent myIntent = new Intent(view.getContext(), Ver_pelicula.class);
+                    myIntent.putExtra("titulo", titulo);
+                    startActivity(myIntent);
+                }if(position == 1){
+                    String titulo = listaPeliculas.get(1).getPeliculas_titulo();
+                    Intent myIntent = new Intent(view.getContext(), Ver_pelicula.class);
+                    myIntent.putExtra("titulo", titulo);
+                    startActivity(myIntent);
+                }if(position == 2){
+                    String titulo = listaPeliculas.get(2).getPeliculas_titulo();
+                    Intent myIntent = new Intent(view.getContext(), Ver_pelicula.class);
+                    myIntent.putExtra("titulo", titulo);
+                    startActivity(myIntent);
+                }if(position == 3){
+                    String titulo = listaPeliculas.get(3).getPeliculas_titulo();
+                    Intent myIntent = new Intent(view.getContext(), Ver_pelicula.class);
+                    myIntent.putExtra("titulo", titulo);
+                    startActivity(myIntent);
+                }if(position == 4){
+                    String titulo = listaPeliculas.get(4).getPeliculas_titulo();
+                    Intent myIntent = new Intent(view.getContext(), Ver_pelicula.class);
+                    myIntent.putExtra("titulo", titulo);
+                    startActivity(myIntent);
+                }if(position == 5){
+                    String titulo = listaPeliculas.get(5).getPeliculas_titulo();
+                    Intent myIntent = new Intent(view.getContext(), Ver_pelicula.class);
+                    myIntent.putExtra("titulo", titulo);
+                    startActivity(myIntent);
                 }
             }
-        });*/
+        });
     }
 }

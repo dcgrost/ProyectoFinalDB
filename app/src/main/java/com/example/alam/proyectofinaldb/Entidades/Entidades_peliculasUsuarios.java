@@ -12,6 +12,9 @@ public class Entidades_peliculasUsuarios {
         this.peliculasUsuarios_peliculas_id = peliculasUsuarios_peliculas_id;
     }
 
+    public Entidades_peliculasUsuarios() {
+    }
+
     public int getPeliculasUsuarios_id() {
         return peliculasUsuarios_id;
     }

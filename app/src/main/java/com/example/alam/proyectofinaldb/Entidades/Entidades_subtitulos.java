@@ -18,6 +18,9 @@ public class Entidades_subtitulos {
         this.subtitulos_capitulos_id = subtitulos_capitulos_id;
     }
 
+    public Entidades_subtitulos() {
+    }
+
     public int getSubtitulos_id() {
         return subtitulos_id;
     }

@@ -12,6 +12,9 @@ public class Entidades_seriesUsuarios {
         this.seriesUsuarios_series_id = seriesUsuarios_series_id;
     }
 
+    public Entidades_seriesUsuarios() {
+    }
+
     public int getSeriesUsuarios_id() {
         return seriesUsuarios_id;
     }

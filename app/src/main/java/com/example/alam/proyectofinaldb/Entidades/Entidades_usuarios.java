@@ -20,6 +20,9 @@ public class Entidades_usuarios {
         this.usuarios_saldo = usuarios_saldo;
     }
 
+    public Entidades_usuarios() {
+    }
+
     public int getUsuarios_id() {
         return usuarios_id;
     }

@@ -9,15 +9,20 @@ public class Entidades_temporadas {
     private String temporadas_fechaEstreno;
     private String temporadas_fechaProduccion;
     private String temporadas_img;
+    private int temporadas_imagen;
     private Date temporadas_series_id;
 
-    public Entidades_temporadas(int temporadas_id, String temporadas_titulo, String temporadas_fechaEstreno, String temporadas_fechaProduccion, String temporadas_img, Date temporadas_series_id) {
+    public Entidades_temporadas(int temporadas_id, String temporadas_titulo, String temporadas_fechaEstreno, String temporadas_fechaProduccion, String temporadas_img, int temporadas_imagen, Date temporadas_series_id) {
         this.temporadas_id = temporadas_id;
         this.temporadas_titulo = temporadas_titulo;
         this.temporadas_fechaEstreno = temporadas_fechaEstreno;
         this.temporadas_fechaProduccion = temporadas_fechaProduccion;
         this.temporadas_img = temporadas_img;
+        this.temporadas_imagen = temporadas_imagen;
         this.temporadas_series_id = temporadas_series_id;
+    }
+
+    public Entidades_temporadas() {
     }
 
     public int getTemporadas_id() {
@@ -58,6 +63,14 @@ public class Entidades_temporadas {
 
     public void setTemporadas_img(String temporadas_img) {
         this.temporadas_img = temporadas_img;
+    }
+
+    public int getTemporadas_imagen() {
+        return temporadas_imagen;
+    }
+
+    public void setTemporadas_imagen(int temporadas_imagen) {
+        this.temporadas_imagen = temporadas_imagen;
     }
 
     public Date getTemporadas_series_id() {
