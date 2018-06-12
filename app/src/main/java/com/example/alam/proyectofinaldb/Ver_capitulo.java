@@ -10,22 +10,19 @@ import android.widget.TextView;
 import com.example.alam.proyectofinaldb.Entidades.Entidades_peliculas;
 import com.example.alam.proyectofinaldb.Utilities.Data_utilities;
 
-import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.Locale;
 
-public class Ver_pelicula extends AppCompatActivity {
+public class Ver_capitulo extends AppCompatActivity {
 
     TextView tv_titulo, tv_sinopsis, tv_genero, tv_idiomaO, tv_fechaE, tv_precio;
     ImageView img;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ver_pelicula);
+        setContentView(R.layout.activity_ver_capitulo);
 
-        String titulo = getIntent().getStringExtra("titulo");
+        String capitulo = getIntent().getStringExtra("capitulo");
 
         tv_titulo = (TextView)findViewById(R.id.titulo);
         tv_sinopsis = (TextView)findViewById(R.id.sinopsis);
@@ -38,12 +35,18 @@ public class Ver_pelicula extends AppCompatActivity {
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administrar", null, 1);
         SQLiteDatabase db = admin.getWritableDatabase();
 
-        String nombre = titulo;
-        String[] parametro = {nombre};
-        String[] campos = {Data_utilities.PcampoTitulo, Data_utilities.PcampoSinopsis, Data_utilities.PcampoGenero, Data_utilities.PcampoIdiomaOriginal, Data_utilities.PcampoFechaEstreno, Data_utilities.PcampoPrecio, Data_utilities.PcampoImg};
+        Entidades_peliculas pelicula = null;
 
-        Cursor fila = db.query(Data_utilities.tablaPeliculas, campos, Data_utilities.PcampoTitulo + "=?", parametro, null, null, null);
+        String query = "select "+Data_utilities.CcampoId+", "+Data_utilities.CcampoTitulo+", "+Data_utilities.CcampoSinopsis+", "
+                +Data_utilities.ScampoGenero+", "+Data_utilities.ScampoIdiomaOriginal+", "+Data_utilities.TcampoFechaEstreno+" from "
+                +Data_utilities.tablaPeliculas+ " as "+Data_utilities.PcampoId+" inner join "+Data_utilities.tablaTempoaradas+" as "
+                +Data_utilities.TcampoId+" on "+Data_utilities.CcampoTemporadasID+" = "+Data_utilities.TcampoId+" inner join "+
+                Data_utilities.tablaSeries+" as "+Data_utilities.ScampoId+" on "+Data_utilities.TcampoSeriesID+" = "
+                +Data_utilities.ScampoId+" where "+Data_utilities.CcampoId+" = '"+capitulo+"'";
+
+        Cursor fila = db.rawQuery(query,null);
         fila.moveToFirst();
+
         tv_titulo.setText(fila.getString(0));
         tv_sinopsis.setText(fila.getString(1));
         tv_genero.setText(fila.getString(2));

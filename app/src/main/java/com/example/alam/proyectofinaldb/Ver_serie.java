@@ -66,32 +66,32 @@ public class Ver_serie extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(position == 0){
                     int temporada = listaTemporadas.get(0).getTemporadas_id();
-                    Intent myIntent = new Intent(view.getContext(), Ver_serie.class);
+                    Intent myIntent = new Intent(view.getContext(), Ver_temporada.class);
                     myIntent.putExtra("temporada", temporada);
                     startActivity(myIntent);
                 }if(position == 1){
                     int temporada = listaTemporadas.get(1).getTemporadas_id();
-                    Intent myIntent = new Intent(view.getContext(), Ver_serie.class);
+                    Intent myIntent = new Intent(view.getContext(), Ver_temporada.class);
                     myIntent.putExtra("temporada", temporada);
                     startActivity(myIntent);
                 }if(position == 2){
                     int temporada = listaTemporadas.get(2).getTemporadas_id();
-                    Intent myIntent = new Intent(view.getContext(), Ver_serie.class);
+                    Intent myIntent = new Intent(view.getContext(), Ver_temporada.class);
                     myIntent.putExtra("temporada", temporada);
                     startActivity(myIntent);
                 }if(position == 3){
                     int temporada = listaTemporadas.get(3).getTemporadas_id();
-                    Intent myIntent = new Intent(view.getContext(), Ver_serie.class);
+                    Intent myIntent = new Intent(view.getContext(), Ver_temporada.class);
                     myIntent.putExtra("temporada", temporada);
                     startActivity(myIntent);
                 }if(position == 4){
                     int temporada = listaTemporadas.get(4).getTemporadas_id();
-                    Intent myIntent = new Intent(view.getContext(), Ver_serie.class);
+                    Intent myIntent = new Intent(view.getContext(), Ver_temporada.class);
                     myIntent.putExtra("temporada", temporada);
                     startActivity(myIntent);
                 }if(position == 5){
                     int temporada = listaTemporadas.get(5).getTemporadas_id();
-                    Intent myIntent = new Intent(view.getContext(), Ver_serie.class);
+                    Intent myIntent = new Intent(view.getContext(), Ver_temporada.class);
                     myIntent.putExtra("temporada", temporada);
                     startActivity(myIntent);
                 }
