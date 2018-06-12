@@ -39,4 +39,6 @@
     <string name="prompt_idiomaOd">Idioma original:</string>
     <string name="prompt_fechaEd">Fecha de estreno:</string>
     <string name="prompt_preciod">Precio:</string>
+    <string name="prompt_puntuacion">Puntuación media (5.0)</string>
+    <string name="prompt_fechaI">Fecha de inicio (AAAA-MM-DD)</string>
 </resources>

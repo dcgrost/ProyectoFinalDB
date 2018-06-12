@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +17,10 @@ import android.widget.Toast;
 
 import com.example.alam.proyectofinaldb.Utilities.Data_utilities;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -48,8 +53,7 @@ public class Administrador_peliculas extends AppCompatActivity {
         String idiomaO = et_idiomaO.getText().toString();
         String fechaE = et_fechaE.getText().toString();
         String precio = et_precio.getText().toString();
-
-        int imagen = R.drawable.notfound;
+        String imagen = iv_img.getDrawable().toString();
 
         if (titulo.isEmpty() && genero.isEmpty() && sinopsis.isEmpty() && idiomaO.isEmpty() && fechaE.isEmpty() && precio.isEmpty()){
             Toast.makeText(this, "Ingresa todos los datos", Toast.LENGTH_SHORT).show();
@@ -96,6 +100,7 @@ public class Administrador_peliculas extends AppCompatActivity {
             et_idiomaO.setText("");
             et_fechaE.setText("");
             et_precio.setText("");
+            iv_img.setImageResource(R.drawable.notfound);
         }
     }
 
@@ -105,7 +110,7 @@ public class Administrador_peliculas extends AppCompatActivity {
 
         String titulo = et_titulo.getText().toString();
         String[] parametro = {titulo};
-        String[] campos = {Data_utilities.PcampoGenero, Data_utilities.PcampoSinopsis, Data_utilities.PcampoIdiomaOriginal, Data_utilities.PcampoFechaEstreno, Data_utilities.PcampoPrecio};
+        String[] campos = {Data_utilities.PcampoGenero, Data_utilities.PcampoSinopsis, Data_utilities.PcampoIdiomaOriginal, Data_utilities.PcampoFechaEstreno, Data_utilities.PcampoPrecio, Data_utilities.PcampoImg};
 
         if(!titulo.isEmpty()){
             try{
@@ -116,6 +121,7 @@ public class Administrador_peliculas extends AppCompatActivity {
                 et_idiomaO.setText(fila.getString(2));
                 et_fechaE.setText(fila.getString(3));
                 et_precio.setText(fila.getString(4));
+                iv_img.setImageResource(fila.getInt(5));
                 fila.close();
             }catch (Exception e){
                 Toast.makeText(this, "La pelicula no existe", Toast.LENGTH_SHORT).show();
@@ -126,6 +132,7 @@ public class Administrador_peliculas extends AppCompatActivity {
                 et_idiomaO.setText("");
                 et_fechaE.setText("");
                 et_precio.setText("");
+                iv_img.setImageResource(R.drawable.notfound);
             }
         }else{
             Toast.makeText(this, "Ingresa un nombre", Toast.LENGTH_SHORT).show();
@@ -139,6 +146,7 @@ public class Administrador_peliculas extends AppCompatActivity {
         et_idiomaO.setText("");
         et_fechaE.setText("");
         et_precio.setText("");
+        iv_img.setImageResource(R.drawable.notfound);
     }
 
     public void Actualiza(View view){
@@ -171,6 +179,7 @@ public class Administrador_peliculas extends AppCompatActivity {
         et_idiomaO.setText("");
         et_fechaE.setText("");
         et_precio.setText("");
+        iv_img.setImageResource(R.drawable.notfound);
     }
 
     public void Baja(View view){
@@ -190,6 +199,7 @@ public class Administrador_peliculas extends AppCompatActivity {
         et_idiomaO.setText("");
         et_fechaE.setText("");
         et_precio.setText("");
+        iv_img.setImageResource(R.drawable.notfound);
     }
 
     private boolean validarFecha(String fecha) {
