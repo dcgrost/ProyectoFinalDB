@@ -40,7 +40,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper{
         db.execSQL("insert into "+Data_utilities.LlP+" values('3','Los Goonies','Aventura','Un grupo de niños buscan un tesoro','Inglés','1985-05-04','10','R.drawable.goonies')");
         db.execSQL("insert into "+Data_utilities.LlP+" values('4','Narnia','Aventura','Cuatro niños viajan en un ropero mágico','Inglés','2005-12-09','10','R.drawable.narnia')");
         db.execSQL("insert into "+Data_utilities.LlP+" values('5','Up','Animación','Un niño y un viejo viajan en una casa voladora','Inglés','2009-05-24','10','R.drawable.up')");
-        db.execSQL("insert into "+Data_utilities.LlP+" values('6','Nemo','Animación','Un pez busca a su pececito perdido','Inglés','2003-07-04','10','R.drawable.nemo')");
+        db.execSQL("insert into "+Data_utilities.LlP+" values('6','Buscando a Nemo','Animación','Un pez busca a su pececito perdido','Inglés','2003-07-04','10','R.drawable.nemo')");
         db.execSQL("insert into "+Data_utilities.LlP+" values('7','Hangover','Comedia','Un grupo de amigos son drogados en una despedida de soltero','Inglés','2009-05-14','10','R.drawable.hangover')");
         db.execSQL("insert into "+Data_utilities.LlP+" values('8','Scary Movie','Comedia','Una pelicula con muchas parodias a peliculas de terror','Inglés','2000-08-04','10','R.drawable.scarymovie')");
         db.execSQL("insert into "+Data_utilities.LlP+" values('9','Inside job','Documental','¿A quién le importan los documentales?','Inglés','2010-05-04','10','R.drawable.insidejob')");

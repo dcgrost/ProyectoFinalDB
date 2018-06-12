@@ -48,7 +48,7 @@ public class Data_utilities {
     public static final String ScampoSinopsis = "series_sinopsis";
     public static final String ScampoIdiomaOriginal = "series_idiomaOriginal";
     public static final String ScampoFechaEstreno = "series_fechaEstreno";
-    public static final String ScampoImg= "peliculas_img";
+    public static final String ScampoImagen= "series_img";
 
     public static final String creaTablaSeries = "create table "+ tablaSeries +" ( "
             + ScampoId +" integer primary key autoincrement, "
@@ -56,8 +56,8 @@ public class Data_utilities {
             + ScampoGenero +" varchar(20) not null, "
             + ScampoSinopsis +" varchar(255) not null, "
             + ScampoIdiomaOriginal +" varchar(255) not null, "
-            + ScampoFechaEstreno +" date not null)"
-            + ScampoImg +" text not null)";
+            + ScampoFechaEstreno +" date not null, "
+            + ScampoImagen +" text not null)";
 
     //Tabla Temporadas
     public static final String tablaTempoaradas = "Temporadas";
@@ -67,7 +67,6 @@ public class Data_utilities {
     public static final String TcampoFechaProduccion = "temporadas_fechaProduccion";
     public static final String TcampoImagen = "temporadas_img";
     public static final String TcampoSeriesID= "temporadas_series_id";
-    public static final String TcampoImg= "peliculas_img";
 
     public static final String creaTablaTemporadas = "create table "
             + tablaTempoaradas +" ("
@@ -77,7 +76,6 @@ public class Data_utilities {
             + TcampoFechaProduccion +" date not null, "
             + TcampoImagen +" text not null, "
             + TcampoSeriesID +" integer, "
-            + TcampoImg +" text not null)"
             + " FOREIGN KEY ("+TcampoSeriesID+") REFERENCES "+tablaSeries+"("+ ScampoId +"));";
 
     //Tabla Capitulos
@@ -88,6 +86,7 @@ public class Data_utilities {
     public static final String CcampoPrecio = "capitulos_precio";
     public static final String CcampoSinopsis = "capitulos_sinopsis";
     public static final String CcampoTemporadasID= "capitulos_temporadas_id";
+    public static final String CcampoImagen= "capitulos_img";
 
     public static final String creaTablaCapitulos = "create table "
             + tablaCapitulos +" ("
@@ -96,6 +95,7 @@ public class Data_utilities {
             + CcampoDuracion +" varchar(10) not null, "
             + CcampoPrecio +" real not null, "
             + CcampoSinopsis +" text not null, "
+            + CcampoImagen +" text not null, "
             + CcampoTemporadasID +" integer, " +
             " foreign key ('"+ CcampoTemporadasID +"') references '"+ tablaSeries +"'('"+ TcampoId +"'));";
 

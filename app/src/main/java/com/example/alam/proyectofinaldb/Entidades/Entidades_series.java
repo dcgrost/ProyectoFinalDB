@@ -10,25 +10,16 @@ public class Entidades_series {
     private String series_sinopsis;
     private String series_idiomaOriginal;
     private Date series_fechaEstreno;
-    private int peliculas_imagen;
+    private int series_imagen;
 
-    public Entidades_series(int series_id, String series_titulo, String series_genero, String series_sinopsis, String series_idiomaOriginal, Date series_fechaEstreno) {
+    public Entidades_series(int series_id, String series_titulo, String series_genero, String series_sinopsis, String series_idiomaOriginal, Date series_fechaEstreno, int series_imagen) {
         this.series_id = series_id;
         this.series_titulo = series_titulo;
         this.series_genero = series_genero;
         this.series_sinopsis = series_sinopsis;
         this.series_idiomaOriginal = series_idiomaOriginal;
         this.series_fechaEstreno = series_fechaEstreno;
-    }
-
-    public Entidades_series(int series_id, String series_titulo, String series_genero, String series_sinopsis, String series_idiomaOriginal, Date series_fechaEstreno, int peliculas_imagen) {
-        this.series_id = series_id;
-        this.series_titulo = series_titulo;
-        this.series_genero = series_genero;
-        this.series_sinopsis = series_sinopsis;
-        this.series_idiomaOriginal = series_idiomaOriginal;
-        this.series_fechaEstreno = series_fechaEstreno;
-        this.peliculas_imagen = peliculas_imagen;
+        this.series_imagen = series_imagen;
     }
 
     public Entidades_series() {
@@ -82,11 +73,11 @@ public class Entidades_series {
         this.series_fechaEstreno = series_fechaEstreno;
     }
 
-    public int getPeliculas_imagen() {
-        return peliculas_imagen;
+    public int getSeries_imagen() {
+        return series_imagen;
     }
 
-    public void setPeliculas_imagen(int peliculas_imagen) {
-        this.peliculas_imagen = peliculas_imagen;
+    public void setSeries_imagen(int series_imagen) {
+        this.series_imagen = series_imagen;
     }
 }
