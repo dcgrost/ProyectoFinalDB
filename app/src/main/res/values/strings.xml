@@ -41,4 +41,6 @@
     <string name="prompt_preciod">Precio:</string>
     <string name="prompt_puntuacion">Puntuación media (5.0)</string>
     <string name="prompt_fechaI">Fecha de inicio (AAAA-MM-DD)</string>
+    <string name="action_compra">Compra</string>
+    <string name="action_critica">Critica</string>
 </resources>

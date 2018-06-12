@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
@@ -16,9 +17,10 @@
             android:layout_width="300dp"
             android:layout_height="150dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:layout_weight="1"
             android:contentDescription="@string/img"
-            app:srcCompat="@color/colorAccent" />
+            app:srcCompat="@drawable/alien" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,9 +35,12 @@
                 android:hint="@string/prompt_titulo"
                 android:maxLines="1"
                 android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginLeft="10dp"
                 android:gravity="center_horizontal"
                 android:textSize="25sp"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:layout_marginRight="10dp" />
 
             <TextView
                 android:id="@+id/sinopsis"
@@ -43,10 +48,13 @@
                 android:layout_height="match_parent"
                 android:gravity="center_horizontal"
                 android:hint="@string/prompt_sinopsis"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
                 android:maxLines="5"
                 android:singleLine="false"
                 android:layout_gravity="center_horizontal"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:layout_marginRight="10dp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -62,10 +70,11 @@
             android:layout_weight="1"
             android:hint="@string/prompt_generod"
             android:maxLines="1"
-            android:gravity="right"
-            android:layout_marginRight="10dp"
+            android:gravity="end"
+            android:layout_marginEnd="10dp"
             android:singleLine="true"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:layout_marginRight="10dp" />
 
         <TextView
             android:id="@+id/genero"
@@ -90,18 +99,19 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="@string/prompt_idiomaOd"
-            android:gravity="right"
-            android:layout_marginRight="10dp"
+            android:gravity="end"
+            android:layout_marginEnd="10dp"
             android:maxLines="1"
             android:singleLine="true"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:layout_marginRight="10dp" />
 
         <TextView
             android:id="@+id/idiomaO"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Idioma original"
+            android:hint="@string/prompt_idiomaO"
             android:maxLines="1"
             android:singleLine="true"
             android:textSize="25sp" />
@@ -119,11 +129,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="@string/prompt_fechaEd"
-            android:gravity="right"
-            android:layout_marginRight="10dp"
+            android:gravity="end"
+            android:layout_marginEnd="10dp"
             android:maxLines="1"
             android:singleLine="true"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:layout_marginRight="10dp" />
 
         <TextView
             android:id="@+id/fechaE"
@@ -148,11 +159,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="@string/prompt_preciod"
-            android:gravity="right"
-            android:layout_marginRight="10dp"
+            android:gravity="end"
+            android:layout_marginEnd="10dp"
             android:maxLines="1"
             android:singleLine="true"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:layout_marginRight="10dp" />
 
         <TextView
             android:id="@+id/precio"
@@ -169,10 +181,27 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"></LinearLayout>
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/compra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/action_compra"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/critica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/action_critica"
+            tools:ignore="ButtonStyle" />
+    </LinearLayout>
 
     <TextView
-        android:id="@+id/critica"
+        android:id="@+id/critica_t"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"

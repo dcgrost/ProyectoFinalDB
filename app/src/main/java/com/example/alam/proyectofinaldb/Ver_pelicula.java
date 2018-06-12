@@ -10,12 +10,15 @@ import android.widget.TextView;
 import com.example.alam.proyectofinaldb.Entidades.Entidades_peliculas;
 import com.example.alam.proyectofinaldb.Utilities.Data_utilities;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Ver_pelicula extends AppCompatActivity {
 
     TextView tv_titulo, tv_sinopsis, tv_genero, tv_idiomaO, tv_fechaE, tv_precio;
     ImageView img;
+    NumberFormat peso = NumberFormat.getCurrencyInstance(Locale.ENGLISH);
 
 
     @Override

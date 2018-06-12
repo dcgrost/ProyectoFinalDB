@@ -26,6 +26,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper{
         db.execSQL(Data_utilities.creaTablaCriticas);
         db.execSQL(Data_utilities.creaTablaSubtitulos);
 
+        //Llenando tabla Usuarios
         db.execSQL("insert into "+Data_utilities.LlU+" values('1','Alam','grost1995@gmail.com','1995-06-18','1014180713Aa','1000')");
         db.execSQL("insert into "+Data_utilities.LlU+" values('2','Adrian','adrian@gmail.com','1998-03-07','Adrian123','100')");
         db.execSQL("insert into "+Data_utilities.LlU+" values('3','Edith','edith@gmail.com','1969-12-10','Edith123','500')");
@@ -34,7 +35,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper{
         db.execSQL("insert into "+Data_utilities.LlU+" values('6','Omar','omar@gmail.com','1994-11-01','Omar123','10')");
         db.execSQL("insert into "+Data_utilities.LlU+" values('7','Prueba','aldp@admin.com','1994-11-01','Admin123','10')");
 
-
+        //Llenando tabla Peliculas
         db.execSQL("insert into "+Data_utilities.LlP+" values('1','Avengers','Acción','Los vengadores se unsen por primera vez','Inglés','2012-05-04','10','R.drawable.avengers')");
         db.execSQL("insert into "+Data_utilities.LlP+" values('2','Thor','Acción','Un dios se convierte en super heroe','Inglés','2011-05-06','10','R.drawable.thor')");
         db.execSQL("insert into "+Data_utilities.LlP+" values('3','Los Goonies','Aventura','Un grupo de niños buscan un tesoro','Inglés','1985-05-04','10','R.drawable.goonies')");
@@ -56,9 +57,32 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper{
         db.execSQL("insert into "+Data_utilities.LlP+" values('19','Alien','Ciencia ficción','Siete pasajeros o son ocho?','Inglés','1979-11-21','10','R.drawable.alien')");
         db.execSQL("insert into "+Data_utilities.LlP+" values('20','Regreso al futuro','Ciencia ficción','Un joven se enoja si le dicen gallina, termina mal','Inglés','1985-07-03','10','R.drawable.volver')");
 
+        //Llenando tabla Series
+        db.execSQL("insert into "+Data_utilities.LlS+" values('1','Happy','Drama','Un Expolicia alcoholico se cree loco cuando un unicornio le ruega que salve a una niña','Inglés','2017-07-03','8.0','R.drawable.happy')");
+        db.execSQL("insert into "+Data_utilities.LlS+" values('2','El tirador','Acción','Un marine retirado regresa a la accion','Inglés','2018-03-05','8.8','R.drawable.tirador')");
+        db.execSQL("insert into "+Data_utilities.LlS+" values('3','Luck Cage','Acción','Ex convicto lucha por limpiar su nombre','Inglés','2016-08-23','9.0','R.drawable.luck')");
+        db.execSQL("insert into "+Data_utilities.LlS+" values('4','Marco Polo','Aventura','Aventuras del aventurero Marco Polo','Inglés','2017-09-05','8.2','R.drawable.marco')");
+        db.execSQL("insert into "+Data_utilities.LlS+" values('5','Punisher','Accion','Un exmarine pretende descargar su furia contra los criminales','Inglés','2017-02-13','8.6','R.drawable.punisher')");
+        db.execSQL("insert into "+Data_utilities.LlS+" values('6','Troya','Aventura','En busca de la mujer prometida por afrodita','Inglés','2018-01-15','8.4','R.drawable.troya')");
+        db.execSQL("insert into "+Data_utilities.LlS+" values('7','Rick y Morty','Animacion','Las historias de un cientifico brillante y su descendiente mas tonto','Inglés','2015-05-03','9.5','R.drawable.rick')");
+        db.execSQL("insert into "+Data_utilities.LlS+" values('8','Hora de aventura','Animación','Las aventuras de un niño y su perro','Inglés','2014-08-12','8.9','R.drawable.hora')");
+        db.execSQL("insert into "+Data_utilities.LlS+" values('9','Un show mas','Animación','Las venturas de unos amigos en un parque','Inglés','2014-14-23','9.0','R.drawable.show')");
+        db.execSQL("insert into "+Data_utilities.LlS+" values('10','El principe del Rap','Comedia','Él es un sabelotodo de Filadelfia','Inglés','1995-03-05','8.8','R.drawable.principe')");
+        db.execSQL("insert into "+Data_utilities.LlS+" values('11','F.R.I.E.N.D.S','Comedia','Un grupo de amigos que viven en Manhattan','Inglés','2017-07-03','8.0','R.drawable.friends')");
+        db.execSQL("insert into "+Data_utilities.LlS+" values('12','Club de Cuervos','Comedia','Hermanos y rivales por manejar un equipo de futbol','Español','2017-11-25','8.6','R.drawable.club')");
+        db.execSQL("insert into "+Data_utilities.LlS+" values('13','Orange is de new black','Drama','Mercy no merece su condena','Inglés','2017-07-03','9.0','R.drawable.orage')");
+        db.execSQL("insert into "+Data_utilities.LlS+" values('14','Better call Saul','Drama','La historia de un abogado llamado Jimmy','Inglés','2017-03-05','9.4','R.drawable.better')");
+        db.execSQL("insert into "+Data_utilities.LlS+" values('15','Weeds','Drama','Mujer cambia el luto por el canabbis','Inglés','2012-01-21','8.0','R.drawable.weeds')");
+        db.execSQL("insert into "+Data_utilities.LlS+" values('16','Stranger things','Ciencia Ficcion','Algo esta pasando y nadia sabe que es','Inglés','2017-11-07','9.5','R.drawable.stranger')");
+        db.execSQL("insert into "+Data_utilities.LlS+" values('17','Black Mirror','Ciencia ficción','El futuro y la tecnologia estan mas cerca de lo que crees','Inglés','2017-07-03','9.0','R.drawable.blackM')");
+        db.execSQL("insert into "+Data_utilities.LlS+" values('18','The Rain','Ciencia ficción','La lluvia es mortal y los extraños tambien','Inglés','2018-03-25','8.7','R.drawable.rain')");
+        db.execSQL("insert into "+Data_utilities.LlS+" values('19','Residue','Horror','Imagenes paranormales grabadas comprueban que las imagenes no mienten','Inglés','2015-12-03','8.0','R.drawable.residue')");
+        db.execSQL("insert into "+Data_utilities.LlS+" values('20','Black','Horror','Un hombre poseido por la muerte y una mujer capaz de preverlo','Inglés','2017-07-05','7.8','R.drawable.black')");
 
-        db.execSQL("insert into "+Data_utilities.LlS+" values('1','Happy','Comedia','Un Expolicia alcoholico se cree loco cuando un unicornio le ruega que salve a una niña','Inglés','2017-07-03','8.0','R.drawable.happy')");
-
+        //Llenando tabla Usuarios
+        db.execSQL("insert into "+Data_utilities.LlSUB+" values('1','Español','Pedro','10','1','1')");
+        db.execSQL("insert into "+Data_utilities.LlSUB+" values('2','Frances','Peter','10','1','1')");
+        db.execSQL("insert into "+Data_utilities.LlSUB+" values('3','Portuges','Pedrinho','10','1','1')");
     }
 
     @Override
