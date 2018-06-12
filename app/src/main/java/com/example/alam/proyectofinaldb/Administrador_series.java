@@ -65,27 +65,26 @@ public class Administrador_series extends AppCompatActivity {
             Toast.makeText(this, "Ingresa un idioma original", Toast.LENGTH_SHORT).show();
         }
         if (fechaE.isEmpty()){
-            Toast.makeText(this, "Ingresa una fecha de inicio", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Ingresa una fecha de estreno", Toast.LENGTH_SHORT).show();
         }
         if (puntuacionM.isEmpty()){
-            Toast.makeText(this, "Ingresa una puntuación media", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Ingresa un precio", Toast.LENGTH_SHORT).show();
         }
         if (!fechaE.isEmpty() && !validarFecha(fechaE)){
             Toast.makeText(this, "Ingresa una fecha con el formato AAAA-MM-DD", Toast.LENGTH_SHORT).show();
         }
         if (!titulo.isEmpty() && !genero.isEmpty() && !sinopsis.isEmpty() && !idiomaO.isEmpty() && !fechaE.isEmpty() && !puntuacionM.isEmpty() && validarFecha(fechaE)){
 
-            ContentValues alta = new ContentValues();
-            alta.put(Data_utilities.ScampoTitulo, titulo);
-            alta.put(Data_utilities.ScampoGenero, genero);
-            alta.put(Data_utilities.ScampoSinopsis, sinopsis);
-            alta.put(Data_utilities.ScampoIdiomaOriginal, idiomaO);
-            alta.put(Data_utilities.ScampoFechaInicio, fechaE);
-            alta.put(Data_utilities.ScampoPuntuacionM, puntuacionM);
-            alta.put(Data_utilities.ScampoImg, imagen);
+            ContentValues actualiza = new ContentValues();
+            actualiza.put(Data_utilities.ScampoTitulo, titulo);
+            actualiza.put(Data_utilities.ScampoGenero, genero);
+            actualiza.put(Data_utilities.ScampoSinopsis, sinopsis);
+            actualiza.put(Data_utilities.ScampoIdiomaOriginal, idiomaO);
+            actualiza.put(Data_utilities.ScampoFechaInicio, fechaE);
+            actualiza.put(Data_utilities.ScampoPuntuacionM, puntuacionM);
 
-            long x = db.insert(Data_utilities.tablaPeliculas, Data_utilities.PcampoId, alta);
-            Toast.makeText(this, "Registrado correctamente "+x, Toast.LENGTH_SHORT).show();
+            db.insert(Data_utilities.tablaSeries,Data_utilities.ScampoId,actualiza);
+            Toast.makeText(this, "Actualizacion exitosa", Toast.LENGTH_SHORT).show();
             db.close();
 
             et_titulo.setText("");

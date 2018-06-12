@@ -59,7 +59,7 @@ public class Data_utilities {
             + ScampoIdiomaOriginal +" varchar(255) not null, "
             + ScampoFechaInicio +" date not null, "
             + ScampoPuntuacionM +" float(2,1) not null, "
-            + ScampoImg +" text not null)";
+            + ScampoImg +" text)";
 
     //Tabla Temporadas
     public static final String tablaTempoaradas = "Temporadas";
