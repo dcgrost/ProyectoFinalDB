@@ -31,7 +31,7 @@
         <activity android:name=".Ver_pelicula" />
         <activity android:name=".Ver_serie" />
         <activity android:name=".Ver_temporada" />
-        <activity android:name=".Ver_capitulo"></activity>
+        <activity android:name=".Ver_capitulo" />
     </application>
 
 </manifest>

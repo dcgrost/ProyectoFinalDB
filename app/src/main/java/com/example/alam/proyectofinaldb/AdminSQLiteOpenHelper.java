@@ -79,6 +79,10 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper{
         db.execSQL("insert into "+Data_utilities.LlS+" values('19','Residue','Horror','Imagenes paranormales grabadas comprueban que las imagenes no mienten','Inglés','2015-12-03','8.0','R.drawable.residue')");
         db.execSQL("insert into "+Data_utilities.LlS+" values('20','Black','Horror','Un hombre poseido por la muerte y una mujer capaz de preverlo','Inglés','2017-07-05','7.8','R.drawable.black')");
 
+        //Llenando tabla temporadas
+        db.execSQL("insert into "+Data_utilities.LlT+" values('1','Happy: Temporada 1','2017-12-06','2017-05-15','R.drawable.HT1','1')");
+        db.execSQL("insert into "+Data_utilities.LlT+" values('2','Happy: Temporada 2','2017-12-06','2017-05-15','R.drawable.HT1','1')");
+
         //Llenando tabla Usuarios
         db.execSQL("insert into "+Data_utilities.LlSUB+" values('1','Español','Pedro','10',null,null)");
         db.execSQL("insert into "+Data_utilities.LlSUB+" values('2','Frances','Peter','10',null,null)");

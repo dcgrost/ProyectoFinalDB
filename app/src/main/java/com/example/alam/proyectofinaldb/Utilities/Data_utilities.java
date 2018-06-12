@@ -175,6 +175,8 @@ public class Data_utilities {
     public static final String LlP = ""+tablaPeliculas+"("+PcampoId+", "+PcampoTitulo+", "+PcampoGenero+", "+PcampoSinopsis+", "+PcampoIdiomaOriginal+", "+PcampoFechaEstreno+", "+PcampoPrecio+","+PcampoImg+")";
     //Lenar series
     public static final String LlS = ""+tablaSeries+"("+ScampoId+", "+ScampoTitulo+", "+ScampoGenero+", "+ScampoSinopsis+", "+ScampoIdiomaOriginal+", "+ScampoFechaInicio+", "+ScampoPuntuacionM+", "+ScampoImg+")";
+    //Llenar temporadas
+    public static final String LlT = ""+tablaTempoaradas+"("+TcampoId+", "+TcampoTitulo+", "+TcampoFechaEstreno+", "+TcampoFechaProduccion+", "+TcampoImg+", "+TcampoSeriesID+")";
     //Llenar subtitulos
     public static final String LlSUB = ""+tablaSubtitulos+"("+SUBcampoId+", "+SUBcampoIdioma+", "+SUBcampoAutor+", "+SUBcampoPrecio+", "+SUBcampoPeliculasID+", "+SUBcampoCapitulosID+")";
 }

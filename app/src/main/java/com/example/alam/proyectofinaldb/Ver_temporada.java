@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.alam.proyectofinaldb.Entidades.Entidades_capitulos;
 import com.example.alam.proyectofinaldb.Entidades.Entidades_temporadas;
@@ -36,8 +37,9 @@ public class Ver_temporada extends AppCompatActivity {
         Entidades_capitulos capitulo = null;
         listaCapitulos = new ArrayList<Entidades_capitulos>();
 
-        String query = "select "+ Data_utilities.CcampoId+", "+Data_utilities.CcampoTitulo+", "+Data_utilities.CcampoSinopsis+", "+Data_utilities.CcampoImg+" from "+Data_utilities.tablaCapitulos
-                +" where "+Data_utilities.CcampoTemporadasID+" like '"+temporada+"'";
+        Toast.makeText(this, "el ID seleccionado es: "+temporada, Toast.LENGTH_SHORT).show();
+
+        String query = "select "+ Data_utilities.CcampoId+", "+Data_utilities.CcampoTitulo+", "+Data_utilities.CcampoSinopsis+", "+Data_utilities.CcampoImg+" from "+Data_utilities.tablaCapitulos+" inner join "+Data_utilities.tablaTempoaradas+" on "+Data_utilities.CcampoId+" = "+Data_utilities.CcampoTemporadasID+" where "+Data_utilities.ScampoTitulo+" like '"+temporada+"'";
 
         Cursor fila = db.rawQuery(query,null);
 
