@@ -1,5 +1,6 @@
 package com.example.alam.proyectofinaldb;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
