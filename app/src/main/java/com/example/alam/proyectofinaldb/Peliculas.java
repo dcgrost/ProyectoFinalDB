@@ -38,7 +38,7 @@ public class Peliculas extends AppCompatActivity {
         listaPeliculas = new ArrayList<Entidades_peliculas>();
 
         String query = "select "+Data_utilities.PcampoId+", "+Data_utilities.PcampoTitulo+", "+Data_utilities.PcampoSinopsis+", "+Data_utilities.PcampoImg+" from "+Data_utilities.tablaPeliculas
-                +" where "+Data_utilities.PcampoGenero+" = '"+genero+"'";
+                +" where "+Data_utilities.PcampoGenero+" like '"+genero+"'";
 
         Cursor fila = db.rawQuery(query,null);
 

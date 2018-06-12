@@ -1,12 +1,16 @@
 package com.example.alam.proyectofinaldb;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.alam.proyectofinaldb.Utilities.Data_utilities;
@@ -17,6 +21,7 @@ import java.util.regex.Pattern;
 public class Administrador_peliculas extends AppCompatActivity {
 
     EditText et_titulo, et_genero, et_sinopsis, et_idiomaO, et_fechaE, et_precio;
+    ImageView iv_img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +34,7 @@ public class Administrador_peliculas extends AppCompatActivity {
         et_idiomaO = (EditText)findViewById(R.id.idiomaO);
         et_fechaE = (EditText)findViewById(R.id.fechaE);
         et_precio = (EditText)findViewById(R.id.precio);
+        iv_img = (ImageView)findViewById(R.id.imagenId);
     }
 
     public void Alta(View view){
@@ -190,5 +196,20 @@ public class Administrador_peliculas extends AppCompatActivity {
         Pattern pattern = Pattern.compile(patron);
         Matcher match = pattern.matcher(fecha);
         return match.matches();
+    }
+
+    public void Subir(View view){
+        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        intent.setType("image/");
+        startActivityForResult(intent.createChooser(intent,"Seleccione una imágen"),10);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == RESULT_OK){
+            Uri path = data.getData();
+            iv_img.setImageURI(path);
+        }
     }
 }

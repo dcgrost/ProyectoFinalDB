@@ -61,8 +61,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="@string/prompt_generod"
-            android:layout_marginLeft="10dp"
             android:maxLines="1"
+            android:gravity="right"
+            android:layout_marginRight="10dp"
             android:singleLine="true"
             android:textSize="25sp" />
 
@@ -89,7 +90,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="@string/prompt_idiomaOd"
-            android:layout_marginLeft="10dp"
+            android:gravity="right"
+            android:layout_marginRight="10dp"
             android:maxLines="1"
             android:singleLine="true"
             android:textSize="25sp" />
@@ -117,7 +119,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="@string/prompt_fechaEd"
-            android:layout_marginLeft="10dp"
+            android:gravity="right"
+            android:layout_marginRight="10dp"
             android:maxLines="1"
             android:singleLine="true"
             android:textSize="25sp" />
@@ -145,7 +148,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="@string/prompt_preciod"
-            android:layout_marginLeft="10dp"
+            android:gravity="right"
+            android:layout_marginRight="10dp"
             android:maxLines="1"
             android:singleLine="true"
             android:textSize="25sp" />
