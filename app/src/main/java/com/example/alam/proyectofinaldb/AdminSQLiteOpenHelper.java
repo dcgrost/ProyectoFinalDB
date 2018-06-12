@@ -56,6 +56,13 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper{
         db.execSQL("insert into "+Data_utilities.LlP+" values('19','Alien','Ciencia ficción','Siete pasajeros o son ocho?','Inglés','1979-11-21','10','R.drawable.alien')");
         db.execSQL("insert into "+Data_utilities.LlP+" values('20','Regreso al futuro','Ciencia ficción','Un joven se enoja si le dicen gallina, termina mal','Inglés','1985-07-03','10','R.drawable.volver')");
 
+
+        //Insert Series
+
+        db.execSQL("insert into "+Data_utilities.LlS+" values('1','Happy','Programas de TV','Un Expolicia alcoholico se cree loco cuando un unicornio le ruega que salve a una niña','Inglés','2017-07-03','R.drawable.happy')");
+
+
+
     }
 
     @Override

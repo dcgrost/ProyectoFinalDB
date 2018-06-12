@@ -48,7 +48,7 @@ public class Data_utilities {
     public static final String ScampoSinopsis = "series_sinopsis";
     public static final String ScampoIdiomaOriginal = "series_idiomaOriginal";
     public static final String ScampoFechaEstreno = "series_fechaEstreno";
-    public static final String ScampoImagen= "series_img";
+    public static final String ScampoImagen = "series_img";
 
     public static final String creaTablaSeries = "create table "+ tablaSeries +" ( "
             + ScampoId +" integer primary key autoincrement, "
@@ -171,4 +171,9 @@ public class Data_utilities {
     public static final String LlU = ""+tablaUsuarios+"("+UcampoId+", "+UcampoNombre+", "+UcampoCorreo+", "+UcampoFechaN+", "+UcampoContra+", "+UcampoSaldo+")";
     //Llenar tablaPeliculas
     public static final String LlP = ""+tablaPeliculas+"("+PcampoId+", "+PcampoTitulo+", "+PcampoGenero+", "+PcampoSinopsis+", "+PcampoIdiomaOriginal+", "+PcampoFechaEstreno+", "+PcampoPrecio+","+PcampoImg+")";
+    //llenar tablaSeries
+    public static final String LlS = ""+tablaSeries+"("+ScampoId+", "+ScampoTitulo+", "+ScampoGenero+", "+ScampoSinopsis+", "+ScampoIdiomaOriginal+", "+ScampoFechaEstreno+", "+ScampoImagen+")";
 }
+
+
+
