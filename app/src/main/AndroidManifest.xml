@@ -2,9 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.alam.proyectofinaldb">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -29,7 +28,8 @@
         <activity android:name=".Peliculas" />
         <activity android:name=".Genero" />
         <activity android:name=".Series" />
-        <activity android:name=".Ver_pelicula"></activity>
+        <activity android:name=".Ver_pelicula" />
+        <activity android:name=".Ver_serie"></activity>
     </application>
 
 </manifest>

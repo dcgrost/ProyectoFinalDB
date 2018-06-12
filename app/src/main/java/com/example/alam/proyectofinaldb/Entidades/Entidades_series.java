@@ -9,16 +9,18 @@ public class Entidades_series {
     private String series_genero;
     private String series_sinopsis;
     private String series_idiomaOriginal;
-    private Date series_fechaEstreno;
+    private Date series_fechaInicio;
+    private float puntuacionM;
     private int series_imagen;
 
-    public Entidades_series(int series_id, String series_titulo, String series_genero, String series_sinopsis, String series_idiomaOriginal, Date series_fechaEstreno, int series_imagen) {
+    public Entidades_series(int series_id, String series_titulo, String series_genero, String series_sinopsis, String series_idiomaOriginal, Date series_fechaInicio, float puntuacionM, int series_imagen) {
         this.series_id = series_id;
         this.series_titulo = series_titulo;
         this.series_genero = series_genero;
         this.series_sinopsis = series_sinopsis;
         this.series_idiomaOriginal = series_idiomaOriginal;
-        this.series_fechaEstreno = series_fechaEstreno;
+        this.series_fechaInicio = series_fechaInicio;
+        this.puntuacionM = puntuacionM;
         this.series_imagen = series_imagen;
     }
 
@@ -65,12 +67,20 @@ public class Entidades_series {
         this.series_idiomaOriginal = series_idiomaOriginal;
     }
 
-    public Date getSeries_fechaEstreno() {
-        return series_fechaEstreno;
+    public Date getSeries_fechaInicio() {
+        return series_fechaInicio;
     }
 
-    public void setSeries_fechaEstreno(Date series_fechaEstreno) {
-        this.series_fechaEstreno = series_fechaEstreno;
+    public void setSeries_fechaInicio(Date series_fechaInicio) {
+        this.series_fechaInicio = series_fechaInicio;
+    }
+
+    public float getPuntuacionM() {
+        return puntuacionM;
+    }
+
+    public void setPuntuacionM(float puntuacionM) {
+        this.puntuacionM = puntuacionM;
     }
 
     public int getSeries_imagen() {

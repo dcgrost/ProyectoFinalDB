@@ -15,6 +15,12 @@ public class datos_listView {
         this.imagen = imagen;
     }
 
+    public datos_listView(int id, String titulo, int imagen) {
+        this.id = id;
+        this.titulo = titulo;
+        this.imagen = imagen;
+    }
+
     public int getId() {
         return id;
     }
