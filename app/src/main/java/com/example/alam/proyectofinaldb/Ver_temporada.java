@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class Ver_temporada extends AppCompatActivity {
 
     ListView listaDatos;
-    ArrayList<datos_listView> lista;
+    ArrayList<datos_listView2> lista;
     ArrayList<Entidades_temporadas> listaTemporadas;
 
     @Override
@@ -29,6 +29,7 @@ public class Ver_temporada extends AppCompatActivity {
         setContentView(R.layout.activity_ver_temporada);
 
         String serie = getIntent().getStringExtra("serie");
+        Toast.makeText(this, "La series seleccionada es: "+serie,Toast.LENGTH_SHORT).show();
 
         listaDatos = (ListView)findViewById(R.id.listView);
 
@@ -52,13 +53,13 @@ public class Ver_temporada extends AppCompatActivity {
             listaTemporadas.add(temporada);
         }
 
-        lista = new ArrayList<datos_listView>();
+        lista = new ArrayList<datos_listView2>();
 
         for (int i=0;i<listaTemporadas.size();i++){
-            lista.add(new datos_listView(listaTemporadas.get(i).getTemporadas_id(), listaTemporadas.get(i).getTemporadas_titulo(), listaTemporadas.get(i).getTemporadas_imagen()));
+            lista.add(new datos_listView2(listaTemporadas.get(i).getTemporadas_id(), listaTemporadas.get(i).getTemporadas_titulo(), listaTemporadas.get(i).getTemporadas_imagen()));
         }
 
-        adaptador_listView miadaptador = new adaptador_listView(getApplicationContext(), lista);
+        adaptador_listView2 miadaptador = new adaptador_listView2(getApplicationContext(), lista);
         listaDatos.setAdapter(miadaptador);
 
         listaDatos.setOnItemClickListener(new AdapterView.OnItemClickListener(){

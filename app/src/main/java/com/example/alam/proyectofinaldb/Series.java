@@ -64,7 +64,8 @@ public class Series extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    int serie = listaSeries.get(position).getSeries_id();
+                    int serieId = listaSeries.get(position).getSeries_id();
+                    String serie = String.valueOf(serieId);
                     Intent myIntent = new Intent(view.getContext(), Ver_temporada.class);
                     myIntent.putExtra("serie", serie);
                     startActivity(myIntent);
