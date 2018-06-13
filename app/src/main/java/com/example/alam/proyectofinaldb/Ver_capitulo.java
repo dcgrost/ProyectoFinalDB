@@ -40,10 +40,11 @@ public class Ver_capitulo extends AppCompatActivity {
 
         String query = "select "+Data_utilities.CcampoId+", "+Data_utilities.CcampoTitulo+", "+Data_utilities.CcampoSinopsis+", "
                 +Data_utilities.ScampoGenero+", "+Data_utilities.ScampoIdiomaOriginal+", "+Data_utilities.TcampoFechaEstreno+", "+Data_utilities.CcampoPrecio+", "+Data_utilities.CcampoImg+" from "
-                +Data_utilities.tablaPeliculas+ " as "+Data_utilities.PcampoId+" inner join "+Data_utilities.tablaTempoaradas+" as "
-                +Data_utilities.TcampoId+" on "+Data_utilities.CcampoTemporadasID+" = "+Data_utilities.TcampoId+" inner join "
-                +Data_utilities.tablaSeries+" as "+Data_utilities.ScampoId+" on "+Data_utilities.TcampoSeriesID+" = "
-                +Data_utilities.ScampoId+" where "+Data_utilities.CcampoId+" = '"+capitulo+"'";
+                +Data_utilities.tablaCapitulos+ " as "+Data_utilities.CcampoId+" inner join "+Data_utilities.tablaTempoaradas+" as "
+                +Data_utilities.TcampoId+" on "+Data_utilities.TcampoId+" = "+Data_utilities.CcampoTemporadasID+" inner join "
+                +Data_utilities.tablaSeries+" as "+Data_utilities.ScampoId+" on "+Data_utilities.ScampoId+" = "
+                +Data_utilities.TcampoSeriesID+" where "+Data_utilities.CcampoId+" = '"+capitulo+"'";
+
 
         Cursor fila = db.rawQuery(query,null);
         fila.moveToFirst();
