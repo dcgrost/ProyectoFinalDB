@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.alam.proyectofinaldb.Entidades.Entidades_capitulos;
 import com.example.alam.proyectofinaldb.Entidades.Entidades_peliculas;
 import com.example.alam.proyectofinaldb.Utilities.Data_utilities;
 
@@ -35,13 +36,13 @@ public class Ver_capitulo extends AppCompatActivity {
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administrar", null, 1);
         SQLiteDatabase db = admin.getWritableDatabase();
 
-        Entidades_peliculas pelicula = null;
+        Entidades_capitulos capituloM = null;
 
         String query = "select "+Data_utilities.CcampoId+", "+Data_utilities.CcampoTitulo+", "+Data_utilities.CcampoSinopsis+", "
-                +Data_utilities.ScampoGenero+", "+Data_utilities.ScampoIdiomaOriginal+", "+Data_utilities.TcampoFechaEstreno+" from "
+                +Data_utilities.ScampoGenero+", "+Data_utilities.ScampoIdiomaOriginal+", "+Data_utilities.TcampoFechaEstreno+", "+Data_utilities.CcampoPrecio+", "+Data_utilities.CcampoImg+" from "
                 +Data_utilities.tablaPeliculas+ " as "+Data_utilities.PcampoId+" inner join "+Data_utilities.tablaTempoaradas+" as "
-                +Data_utilities.TcampoId+" on "+Data_utilities.CcampoTemporadasID+" = "+Data_utilities.TcampoId+" inner join "+
-                Data_utilities.tablaSeries+" as "+Data_utilities.ScampoId+" on "+Data_utilities.TcampoSeriesID+" = "
+                +Data_utilities.TcampoId+" on "+Data_utilities.CcampoTemporadasID+" = "+Data_utilities.TcampoId+" inner join "
+                +Data_utilities.tablaSeries+" as "+Data_utilities.ScampoId+" on "+Data_utilities.TcampoSeriesID+" = "
                 +Data_utilities.ScampoId+" where "+Data_utilities.CcampoId+" = '"+capitulo+"'";
 
         Cursor fila = db.rawQuery(query,null);

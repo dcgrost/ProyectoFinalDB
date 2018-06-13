@@ -83,6 +83,9 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper{
         db.execSQL("insert into "+Data_utilities.LlT+" values('1','Happy: Temporada 1','2017-12-06','2017-05-15',null,'1')");
         db.execSQL("insert into "+Data_utilities.LlT+" values('2','Happy: Temporada 2','2017-12-06','2017-05-15',null,'1')");
 
+        //Llenando tabla capitulos
+        db.execSQL("insert into "+Data_utilities.LlC+" values('1','Capitulo 1','30min','10','Pasan cosas en el capitulo','1',null)");
+
         //Llenando tabla Usuarios
         db.execSQL("insert into "+Data_utilities.LlSUB+" values('1','Español','Pedro','10',null,null)");
         db.execSQL("insert into "+Data_utilities.LlSUB+" values('2','Frances','Peter','10',null,null)");
