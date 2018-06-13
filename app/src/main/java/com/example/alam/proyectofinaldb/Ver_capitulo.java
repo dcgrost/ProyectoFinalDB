@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class Ver_capitulo extends AppCompatActivity {
 
-    TextView tv_titulo, tv_sinopsis, tv_genero, tv_idiomaO, tv_fechaE, tv_precio;
+    TextView tv_titulo, tv_sinopsis, tv_genero, tv_fechaE, tv_precio, tv_serie, tv_temporada;
     ImageView img;
 
     @Override
@@ -28,7 +28,8 @@ public class Ver_capitulo extends AppCompatActivity {
         tv_titulo = (TextView)findViewById(R.id.titulo);
         tv_sinopsis = (TextView)findViewById(R.id.sinopsis);
         tv_genero = (TextView)findViewById(R.id.genero);
-        tv_idiomaO = (TextView)findViewById(R.id.idiomaO);
+        tv_serie = (TextView)findViewById(R.id.serie);
+        tv_temporada = (TextView)findViewById(R.id.temporada);
         tv_fechaE = (TextView)findViewById(R.id.fechaE);
         tv_precio = (TextView)findViewById(R.id.precio);
         img = (ImageView)findViewById(R.id.imageView);
@@ -39,7 +40,7 @@ public class Ver_capitulo extends AppCompatActivity {
         Entidades_capitulos capituloM = null;
 
         String query = "select "+Data_utilities.CcampoTitulo+", "+Data_utilities.CcampoSinopsis+", "+Data_utilities.CcampoPrecio+", "+Data_utilities.CcampoImg+", "
-                +Data_utilities.ScampoGenero+", "+Data_utilities.ScampoIdiomaOriginal+", "+Data_utilities.TcampoFechaEstreno+" from "+Data_utilities.tablaCapitulos+" inner join "
+                +Data_utilities.ScampoGenero+", "+Data_utilities.ScampoTitulo+", "+Data_utilities.TcampoTitulo+", "+Data_utilities.TcampoFechaEstreno+" from "+Data_utilities.tablaCapitulos+" inner join "
                 +Data_utilities.tablaTempoaradas+" on "+Data_utilities.TcampoId+" = "+Data_utilities.CcampoTemporadasID+" inner join "
                 +Data_utilities.tablaSeries+" on "+Data_utilities.ScampoId+" = "+Data_utilities.TcampoId+" where "+Data_utilities.CcampoId+" like '"+capitulo+"'";
 
@@ -52,8 +53,9 @@ public class Ver_capitulo extends AppCompatActivity {
         tv_precio.setText(fila.getString(2));
         img.setImageResource(fila.getInt(3));
         tv_genero.setText(fila.getString(4));
-        tv_idiomaO.setText(fila.getString(5));
-        tv_fechaE.setText(fila.getString(6));
+        tv_serie.setText(fila.getString(5));
+        tv_temporada.setText(fila.getString(6));
+        tv_fechaE.setText(fila.getString(7));
         fila.close();
     }
 }

@@ -45,4 +45,6 @@
     <string name="action_critica">Critica</string>
     <string name="prompt_temporada">Temporadas</string>
     <string name="prompt_capitulo">Capitulos</string>
+    <string name="prompt_seried">Serie:</string>
+    <string name="prompt_temporadad">Temporada:</string>
 </resources>
