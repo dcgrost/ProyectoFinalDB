@@ -38,12 +38,10 @@ public class Ver_capitulo extends AppCompatActivity {
 
         Entidades_capitulos capituloM = null;
 
-        String query = "select "+Data_utilities.CcampoId+", "+Data_utilities.CcampoTitulo+", "+Data_utilities.CcampoSinopsis+", "
-                +Data_utilities.ScampoGenero+", "+Data_utilities.ScampoIdiomaOriginal+", "+Data_utilities.TcampoFechaEstreno+", "+Data_utilities.CcampoPrecio+", "+Data_utilities.CcampoImg+" from "
-                +Data_utilities.tablaCapitulos+ " as "+Data_utilities.CcampoId+" inner join "+Data_utilities.tablaTempoaradas+" as "
-                +Data_utilities.TcampoId+" on "+Data_utilities.TcampoId+" = "+Data_utilities.CcampoTemporadasID+" inner join "
-                +Data_utilities.tablaSeries+" as "+Data_utilities.ScampoId+" on "+Data_utilities.ScampoId+" = "
-                +Data_utilities.TcampoSeriesID+" where "+Data_utilities.CcampoId+" = '"+capitulo+"'";
+        String query = "select "+Data_utilities.CcampoTitulo+", "+Data_utilities.CcampoSinopsis+", "+Data_utilities.CcampoPrecio+", "+Data_utilities.CcampoImg+", "
+                +Data_utilities.ScampoGenero+", "+Data_utilities.ScampoIdiomaOriginal+", "+Data_utilities.TcampoFechaEstreno+" from "+Data_utilities.tablaCapitulos+" inner join "
+                +Data_utilities.tablaTempoaradas+" on "+Data_utilities.TcampoId+" = "+Data_utilities.CcampoTemporadasID+" inner join "
+                +Data_utilities.tablaSeries+" on "+Data_utilities.ScampoId+" = "+Data_utilities.TcampoId+" where "+Data_utilities.CcampoId+" like '"+capitulo+"'";
 
 
         Cursor fila = db.rawQuery(query,null);
@@ -51,11 +49,11 @@ public class Ver_capitulo extends AppCompatActivity {
 
         tv_titulo.setText(fila.getString(0));
         tv_sinopsis.setText(fila.getString(1));
-        tv_genero.setText(fila.getString(2));
-        tv_idiomaO.setText(fila.getString(3));
-        tv_fechaE.setText(fila.getString(4));
-        tv_precio.setText(fila.getString(5));
-        img.setImageResource(fila.getInt(6));
+        tv_precio.setText(fila.getString(2));
+        img.setImageResource(fila.getInt(3));
+        tv_genero.setText(fila.getString(4));
+        tv_idiomaO.setText(fila.getString(5));
+        tv_fechaE.setText(fila.getString(6));
         fila.close();
     }
 }
