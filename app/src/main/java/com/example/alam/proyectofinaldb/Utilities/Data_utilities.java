@@ -76,7 +76,7 @@ public class Data_utilities {
             + TcampoTitulo +" varchar(50) not null, "
             + TcampoFechaEstreno +" date not null, "
             + TcampoFechaProduccion +" date not null, "
-            + TcampoImg +" text not null, "
+            + TcampoImg +" text, "
             + TcampoSeriesID +" integer, "
             + " FOREIGN KEY ("+TcampoSeriesID+") REFERENCES "+tablaSeries+"("+ ScampoId +"));";
 

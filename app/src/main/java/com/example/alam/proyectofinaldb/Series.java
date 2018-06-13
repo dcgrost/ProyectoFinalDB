@@ -64,38 +64,12 @@ public class Series extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(position == 0){
-                    int serie = listaSeries.get(0).getSeries_id();
-                    Intent myIntent = new Intent(view.getContext(), Ver_serie.class);
+                    int serie = listaSeries.get(position).getSeries_id();
+                    Intent myIntent = new Intent(view.getContext(), Ver_temporada.class);
                     myIntent.putExtra("serie", serie);
                     startActivity(myIntent);
-                }if(position == 1){
-                    int serie = listaSeries.get(1).getSeries_id();
-                    Intent myIntent = new Intent(view.getContext(), Ver_serie.class);
-                    myIntent.putExtra("serie", serie);
-                    startActivity(myIntent);
-                }if(position == 2){
-                    int serie = listaSeries.get(2).getSeries_id();
-                    Intent myIntent = new Intent(view.getContext(), Ver_serie.class);
-                    myIntent.putExtra("serie", serie);
-                    startActivity(myIntent);
-                }if(position == 3){
-                    int serie = listaSeries.get(3).getSeries_id();
-                    Intent myIntent = new Intent(view.getContext(), Ver_serie.class);
-                    myIntent.putExtra("serie", serie);
-                    startActivity(myIntent);
-                }if(position == 4){
-                    int serie = listaSeries.get(4).getSeries_id();
-                    Intent myIntent = new Intent(view.getContext(), Ver_serie.class);
-                    myIntent.putExtra("serie", serie);
-                    startActivity(myIntent);
-                }if(position == 5){
-                    int serie = listaSeries.get(5).getSeries_id();
-                    Intent myIntent = new Intent(view.getContext(), Ver_serie.class);
-                    myIntent.putExtra("serie", serie);
-                    startActivity(myIntent);
-                }
             }
         });
     }
 }
+
