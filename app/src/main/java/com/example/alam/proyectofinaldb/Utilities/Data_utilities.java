@@ -97,7 +97,7 @@ public class Data_utilities {
             + CcampoDuracion +" varchar(10) not null, "
             + CcampoPrecio +" real not null, "
             + CcampoSinopsis +" text not null, "
-            + CcampoImg +" text not null, "
+            + CcampoImg +" text, "
             + CcampoTemporadasID +" integer, " +
             " foreign key ('"+ CcampoTemporadasID +"') references '"+ tablaSeries +"'('"+ TcampoId +"'));";
 

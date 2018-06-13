@@ -44,4 +44,5 @@
     <string name="action_compra">Compra</string>
     <string name="action_critica">Critica</string>
     <string name="prompt_temporada">Temporadas</string>
+    <string name="prompt_capitulo">Capitulos</string>
 </resources>

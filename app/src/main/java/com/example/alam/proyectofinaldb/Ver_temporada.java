@@ -20,55 +20,56 @@ import java.util.ArrayList;
 public class Ver_temporada extends AppCompatActivity {
 
     ListView listaDatos;
-    ArrayList<datos_listView2> lista;
-    ArrayList<Entidades_temporadas> listaTemporadas;
+    ArrayList<datos_listView> lista;
+    ArrayList<Entidades_capitulos> listaCapitulos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_temporada);
 
-        String serie = getIntent().getStringExtra("serie");
-        Toast.makeText(this, "La series seleccionada es: "+serie,Toast.LENGTH_SHORT).show();
+        String temporada = getIntent().getStringExtra("temporada");
 
         listaDatos = (ListView)findViewById(R.id.listView);
 
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administrar", null, 1);
         SQLiteDatabase db = admin.getWritableDatabase();
 
-        Entidades_temporadas temporada = null;
-        listaTemporadas= new ArrayList<Entidades_temporadas>();
+        Entidades_capitulos capitulo = null;
+        listaCapitulos= new ArrayList<Entidades_capitulos>();
 
-        String query = "select " +Data_utilities.TcampoId+ ", " +Data_utilities.TcampoTitulo+ ", "+Data_utilities.TcampoImg+" from "+Data_utilities.tablaTempoaradas
-                +" inner join " +Data_utilities.tablaSeries+ " on "+Data_utilities.ScampoId+" = "+Data_utilities.TcampoSeriesID+" where " +Data_utilities.TcampoSeriesID+ " like '" +serie+"'";
+        String query = "select " +Data_utilities.CcampoId+ ", " +Data_utilities.CcampoTitulo+ ", "+Data_utilities.CcampoSinopsis+", "+Data_utilities.CcampoImg+" from "+Data_utilities.tablaCapitulos
+                +" inner join " +Data_utilities.tablaTempoaradas+ " on "+Data_utilities.TcampoId+" = "+Data_utilities.CcampoTemporadasID+" where " +Data_utilities.CcampoTemporadasID+ " like '" +temporada+"'";
 
         Cursor fila = db.rawQuery(query,null);
 
         while(fila.moveToNext()){
-            temporada = new Entidades_temporadas();
-            temporada.setTemporadas_id(fila.getInt(0));
-            temporada.setTemporadas_titulo(fila.getString(1));
-            temporada.setTemporadas_imagen(fila.getInt(2));
+            capitulo = new Entidades_capitulos();
+            capitulo.setCapitulos_id(fila.getInt(0));
+            capitulo.setCapitulos_titulo(fila.getString(1));
+            capitulo.setCapitulos_sinopsis(fila.getString(2));
+            capitulo.setCapitulos_imagen(fila.getInt(3));
 
-            listaTemporadas.add(temporada);
+            listaCapitulos.add(capitulo);
         }
 
-        lista = new ArrayList<datos_listView2>();
+        lista = new ArrayList<datos_listView>();
 
-        for (int i=0;i<listaTemporadas.size();i++){
-            lista.add(new datos_listView2(listaTemporadas.get(i).getTemporadas_id(), listaTemporadas.get(i).getTemporadas_titulo(), listaTemporadas.get(i).getTemporadas_imagen()));
+        for (int i=0;i<listaCapitulos.size();i++){
+            lista.add(new datos_listView(listaCapitulos.get(i).getCapitulos_id(), listaCapitulos.get(i).getCapitulos_titulo(), listaCapitulos.get(i).getCapitulos_sinopsis(), listaCapitulos.get(i).getCapitulos_imagen()));
         }
 
-        adaptador_listView2 miadaptador = new adaptador_listView2(getApplicationContext(), lista);
+        adaptador_listView miadaptador = new adaptador_listView(getApplicationContext(), lista);
         listaDatos.setAdapter(miadaptador);
 
         listaDatos.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                int temporada = listaTemporadas.get(position).getTemporadas_id();
-                Intent myIntent = new Intent(view.getContext(), Ver_temporada.class);
-                myIntent.putExtra("temporada", temporada);
+                int capituloId = listaCapitulos.get(position).getCapitulos_id();
+                String capitulo = String.valueOf(capituloId);
+                Intent myIntent = new Intent(view.getContext(), Ver_capitulo.class);
+                myIntent.putExtra("capitulo", capitulo);
                 startActivity(myIntent);
             }
         });

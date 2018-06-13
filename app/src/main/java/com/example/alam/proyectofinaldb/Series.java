@@ -66,7 +66,7 @@ public class Series extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     int serieId = listaSeries.get(position).getSeries_id();
                     String serie = String.valueOf(serieId);
-                    Intent myIntent = new Intent(view.getContext(), Ver_temporada.class);
+                    Intent myIntent = new Intent(view.getContext(), Ver_series.class);
                     myIntent.putExtra("serie", serie);
                     startActivity(myIntent);
             }
