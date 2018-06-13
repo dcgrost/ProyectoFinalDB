@@ -47,4 +47,8 @@
     <string name="prompt_capitulo">Capitulos</string>
     <string name="prompt_seried">Serie:</string>
     <string name="prompt_temporadad">Temporada:</string>
+    <string name="prompt_correod">Correo:</string>
+    <string name="prompt_saldod">Saldo:</string>
+    <string name="prompt_fechad">Fecha de nacimineto:</string>
+    <string name="prompt_miPerfil">Mi perfil</string>
 </resources>
