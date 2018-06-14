@@ -84,7 +84,7 @@ public class Administrador_series extends AppCompatActivity {
             actualiza.put(Data_utilities.ScampoPuntuacionM, puntuacionM);
 
             db.insert(Data_utilities.tablaSeries,Data_utilities.ScampoId,actualiza);
-            Toast.makeText(this, "Actualizacion exitosa", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Registrado correctamente", Toast.LENGTH_SHORT).show();
             db.close();
 
             et_titulo.setText("");

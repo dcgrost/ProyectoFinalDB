@@ -25,4 +25,12 @@ public class Administrador extends AppCompatActivity {
         Intent myIntent = new Intent(view.getContext(), Administrador_series.class);
         startActivity(myIntent);
     }
+    public void Temoradas (View view){
+        Intent myIntent = new Intent(view.getContext(), Administrador_temporadas.class);
+        startActivity(myIntent);
+    }
+    public void Capitulos (View view){
+        Intent myIntent = new Intent(view.getContext(), Administrador_series.class);
+        startActivity(myIntent);
+    }
 }

@@ -32,7 +32,8 @@
         <activity android:name=".Ver_temporada" />
         <activity android:name=".Ver_capitulo" />
         <activity android:name=".Ver_series" />
-        <activity android:name=".Perfil"></activity>
+        <activity android:name=".Perfil" />
+        <activity android:name=".Administrador_temporadas"></activity>
     </application>
 
 </manifest>

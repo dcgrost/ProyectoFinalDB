@@ -52,4 +52,5 @@
     <string name="prompt_fechad">Fecha de nacimineto:</string>
     <string name="prompt_miPerfil">Mi perfil</string>
     <string name="prompt_duraciond">Duración:</string>
+    <string name="prompt_fechaP">Fecha de producción (AAAA-MM-DD)</string>
 </resources>
