@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="ordenar">
+
+        <item>Ordenar por:</item>
+        <item>Por título (alfabéticamente)</item>
+        <item>Por género</item>
+        <item>Por fecha de estreno</item>
+
+    </string-array>
+
+</resources>

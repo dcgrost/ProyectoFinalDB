@@ -7,7 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.alam.proyectofinaldb.Entidades.Entidades_peliculas;
@@ -22,6 +24,7 @@ public class Todas_peliculas extends AppCompatActivity {
     ArrayList<datos_listView> lista;
     ArrayList<Entidades_peliculas> listaPeliculas;
     ArrayList<Entidades_series> listaSeries;
+    Spinner sp_ordenar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +34,19 @@ public class Todas_peliculas extends AppCompatActivity {
         String tipo = getIntent().getStringExtra("tipo");
 
         listaDatos = (ListView)findViewById(R.id.listView);
+        sp_ordenar = (Spinner)findViewById(R.id.spinner);
 
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administrar", null, 1);
         SQLiteDatabase db = admin.getWritableDatabase();
 
         String query = null;
 
+        //Spinner
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.ordenar,android.R.layout.simple_spinner_item);
+
+        sp_ordenar.setAdapter(adapter);
+
+        //Mostrado de tablas
 
         if(tipo.contentEquals("Data_utilities.tablaPeliculas")){
 
