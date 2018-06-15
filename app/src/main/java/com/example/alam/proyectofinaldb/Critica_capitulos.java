@@ -14,7 +14,7 @@ import com.example.alam.proyectofinaldb.Utilities.Data_utilities;
 
 import java.util.Calendar;
 
-public class Critica_pelicula extends AppCompatActivity {
+public class Critica_capitulos extends AppCompatActivity {
 
     EditText et_comentario;
     TextView tv_titulo;
@@ -22,20 +22,21 @@ public class Critica_pelicula extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_critica_pelicula);
+        setContentView(R.layout.activity_critica_capitulos);
 
         et_comentario = (EditText)findViewById(R.id.critica_txt);
         tv_titulo = (TextView)findViewById(R.id.titulo);
 
-        String nomPeli = getIntent().getStringExtra("nomPeli");
+        String capNom = getIntent().getStringExtra("capNom");
 
-        tv_titulo.setText(nomPeli);
+        tv_titulo.setText(capNom);
     }
+
 
     public void Criticar (View view){
 
+        String capitulo = getIntent().getStringExtra("capitulo");
         String userId = getIntent().getStringExtra("userId");
-        String peliculaId = getIntent().getStringExtra("peliculaId");
 
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administrar", null, 1);
         SQLiteDatabase db = admin.getWritableDatabase();
@@ -45,6 +46,7 @@ public class Critica_pelicula extends AppCompatActivity {
         if(comentario.isEmpty()){
             Toast.makeText(this, "Ingresa un comentario", Toast.LENGTH_SHORT).show();
         }else{
+            Toast.makeText(this,"La fecha es: ",Toast.LENGTH_SHORT).show();
 
             final Calendar calendar = Calendar.getInstance();
             int year = calendar.get(Calendar.YEAR);
@@ -58,14 +60,14 @@ public class Critica_pelicula extends AppCompatActivity {
             alta.put(Data_utilities.CRcampoComentario, comentario);
             alta.put(Data_utilities.CRcampoFecha, date);
             alta.put(Data_utilities.CRcampoUsuariosID, userId);
-            alta.put(Data_utilities.CRcampoPeliculasID, peliculaId);
+            alta.put(Data_utilities.CRcampoCapitulosID, capitulo);
 
             long x = db.insert(Data_utilities.tablaCriticas, Data_utilities.CRcampoId, alta);
             Toast.makeText(this, "Critica hecha"+x, Toast.LENGTH_SHORT).show();
             db.close();
 
-            Intent myIntent = new Intent(view.getContext(), Ver_pelicula.class);
-            myIntent.putExtra("peliculaId", peliculaId);
+            Intent myIntent = new Intent(view.getContext(), Ver_capitulo.class);
+            myIntent.putExtra("capitulo", capitulo);
             myIntent.putExtra("userId", userId);
             startActivity(myIntent);
         }

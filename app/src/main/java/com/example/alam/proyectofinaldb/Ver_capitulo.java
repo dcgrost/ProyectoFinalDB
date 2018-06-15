@@ -1,6 +1,7 @@
 package com.example.alam.proyectofinaldb;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -34,6 +35,7 @@ public class Ver_capitulo extends AppCompatActivity {
         String userId = getIntent().getStringExtra("userId");
 
         String capitulo = getIntent().getStringExtra("capitulo");
+        String capNom = getIntent().getStringExtra("capNom");
 
         tv_titulo = (TextView)findViewById(R.id.titulo);
         tv_sinopsis = (TextView)findViewById(R.id.sinopsis);
@@ -162,5 +164,17 @@ public class Ver_capitulo extends AppCompatActivity {
             Toast.makeText(this, "Compra realizada", Toast.LENGTH_SHORT).show();
             db.close();
         }
+    }
+
+
+    public void Criticar2(View view){
+        String userId = getIntent().getStringExtra("userId");
+        String capitulo = getIntent().getStringExtra("capitulo");
+        String capNom = getIntent().getStringExtra("capNom");
+        Intent myIntent = new Intent(view.getContext(), Critica_capitulos.class);
+        myIntent.putExtra("capitulo", capitulo);
+        myIntent.putExtra("capNom", capNom);
+        myIntent.putExtra("userId", userId);
+        startActivity(myIntent);
     }
 }

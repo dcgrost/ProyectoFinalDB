@@ -65,7 +65,9 @@ public class Ver_series extends AppCompatActivity {
                 String userId = getIntent().getStringExtra("userId");
                 int temporadaId = listaTemporadas.get(position).getTemporadas_id();
                 String temporada = String.valueOf(temporadaId);
+                String capNom = listaTemporadas.get(position).getTemporadas_titulo();
                 Intent myIntent = new Intent(view.getContext(), Ver_temporada.class);
+                myIntent.putExtra("capNom", capNom);
                 myIntent.putExtra("temporada", temporada);
                 myIntent.putExtra("userId", userId);
                 startActivity(myIntent);
