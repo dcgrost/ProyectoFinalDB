@@ -36,7 +36,7 @@ public class Ver_series extends AppCompatActivity {
         listaTemporadas= new ArrayList<Entidades_temporadas>();
 
         String query = "select " + Data_utilities.TcampoId+ ", " +Data_utilities.TcampoTitulo+ ", "+Data_utilities.TcampoImg+" from "+Data_utilities.tablaTempoaradas
-                +" inner join " +Data_utilities.tablaSeries+ " on "+Data_utilities.ScampoId+" = "+Data_utilities.TcampoSeriesID+" where " +Data_utilities.TcampoSeriesID+ " like '" +serie+"'";
+                +" inner join " +Data_utilities.tablaSeries+ " on "+Data_utilities.ScampoId+" = "+Data_utilities.TcampoSeriesID+" where " +Data_utilities.TcampoSeriesID+ " = '" +serie+"'";
 
         Cursor fila = db.rawQuery(query,null);
 

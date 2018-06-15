@@ -39,7 +39,7 @@ public class Ver_temporada extends AppCompatActivity {
         listaCapitulos= new ArrayList<Entidades_capitulos>();
 
         String query = "select " +Data_utilities.CcampoId+ ", " +Data_utilities.CcampoTitulo+ ", "+Data_utilities.CcampoSinopsis+", "+Data_utilities.CcampoImg+" from "+Data_utilities.tablaCapitulos
-                +" inner join " +Data_utilities.tablaTempoaradas+ " on "+Data_utilities.TcampoId+" = "+Data_utilities.CcampoTemporadasID+" where " +Data_utilities.CcampoTemporadasID+ " like '" +temporada+"'";
+                +" inner join " +Data_utilities.tablaTempoaradas+ " on "+Data_utilities.TcampoId+" = "+Data_utilities.CcampoTemporadasID+" where " +Data_utilities.CcampoTemporadasID+ " = '" +temporada+"'";
 
         Cursor fila = db.rawQuery(query,null);
 

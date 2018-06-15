@@ -42,7 +42,7 @@ public class Ver_capitulo extends AppCompatActivity {
         String query = "select "+Data_utilities.CcampoTitulo+", "+Data_utilities.CcampoSinopsis+", "+Data_utilities.CcampoPrecio+", "+Data_utilities.CcampoImg+", "
                 +Data_utilities.ScampoGenero+", "+Data_utilities.ScampoTitulo+", "+Data_utilities.TcampoTitulo+", "+Data_utilities.TcampoFechaEstreno+" from "+Data_utilities.tablaCapitulos+" inner join "
                 +Data_utilities.tablaTempoaradas+" on "+Data_utilities.TcampoId+" = "+Data_utilities.CcampoTemporadasID+" inner join "
-                +Data_utilities.tablaSeries+" on "+Data_utilities.ScampoId+" = "+Data_utilities.TcampoId+" where "+Data_utilities.CcampoId+" like '"+capitulo+"'";
+                +Data_utilities.tablaSeries+" on "+Data_utilities.ScampoId+" = "+Data_utilities.TcampoId+" where "+Data_utilities.CcampoId+" = '"+capitulo+"'";
 
 
         Cursor fila = db.rawQuery(query,null);
