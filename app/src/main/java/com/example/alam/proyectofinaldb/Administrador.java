@@ -30,7 +30,7 @@ public class Administrador extends AppCompatActivity {
         startActivity(myIntent);
     }
     public void Capitulos (View view){
-        Intent myIntent = new Intent(view.getContext(), Administrador_series.class);
+        Intent myIntent = new Intent(view.getContext(), Administrador_capitulos.class);
         startActivity(myIntent);
     }
 }

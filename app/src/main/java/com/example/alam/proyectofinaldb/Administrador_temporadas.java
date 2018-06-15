@@ -33,7 +33,6 @@ public class Administrador_temporadas extends AppCompatActivity {
     Spinner sp_series;
     ArrayList<String> list_series;
     ArrayList<Entidades_series> seriesLista;
-    int id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,7 +100,7 @@ public class Administrador_temporadas extends AppCompatActivity {
         String serieid = tv_serieid.getText().toString();
         String imagen = iv_img.getDrawable().toString();
 
-        if (titulo.isEmpty() && fechaE.isEmpty() && fechaP.isEmpty()){
+        if (titulo.isEmpty() && fechaE.isEmpty() && fechaP.isEmpty() && serieid.isEmpty()){
             Toast.makeText(this, "Ingresa todos los datos", Toast.LENGTH_SHORT).show();
         }
         if (titulo.isEmpty()){
