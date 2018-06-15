@@ -40,7 +40,8 @@
         <activity android:name=".Critica_pelicula" />
         <activity android:name=".Critica_capitulos" />
         <activity android:name=".Todas_peliculas" />
-        <activity android:name=".Intermedia"></activity>
+        <activity android:name=".Intermedia" />
+        <activity android:name=".Todo_ordenado"></activity>
     </application>
 
 </manifest>

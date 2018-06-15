@@ -10,7 +10,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.example.alam.proyectofinaldb.Entidades.Entidades_peliculas;
 import com.example.alam.proyectofinaldb.Entidades.Entidades_series;
@@ -18,7 +17,7 @@ import com.example.alam.proyectofinaldb.Utilities.Data_utilities;
 
 import java.util.ArrayList;
 
-public class Todas_peliculas extends AppCompatActivity {
+public class Todo_ordenado extends AppCompatActivity {
 
     ListView listaDatos;
     ArrayList<datos_listView> lista;
@@ -29,9 +28,10 @@ public class Todas_peliculas extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_todas_peliculas);
+        setContentView(R.layout.activity_todo_ordenado);
 
         String tipo = getIntent().getStringExtra("tipo");
+        String ordenar = getIntent().getStringExtra("ordenar");
 
         listaDatos = (ListView)findViewById(R.id.listView);
         sp_ordenar = (Spinner)findViewById(R.id.spinner);
@@ -113,7 +113,7 @@ public class Todas_peliculas extends AppCompatActivity {
             listaPeliculas = new ArrayList<Entidades_peliculas>();
 
             query = "select "+ Data_utilities.PcampoId+", "+Data_utilities.PcampoTitulo+", "+Data_utilities.PcampoSinopsis+", "
-                    +Data_utilities.PcampoImg+" from "+temporal;
+                    +Data_utilities.PcampoImg+" from "+temporal+" "+ordenar;
 
             Cursor fila = db.rawQuery(query,null);
 
@@ -160,7 +160,7 @@ public class Todas_peliculas extends AppCompatActivity {
             String temporal = "Series";
 
             query = "select "+ Data_utilities.ScampoId+", "+Data_utilities.ScampoTitulo+", "+Data_utilities.ScampoSinopsis+", "
-                    +Data_utilities.ScampoImg+" from "+temporal;
+                    +Data_utilities.ScampoImg+" from "+temporal+" "+ordenar;
 
             Entidades_series serie = null;
             listaSeries = new ArrayList<Entidades_series>();
