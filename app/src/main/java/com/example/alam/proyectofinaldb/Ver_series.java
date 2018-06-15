@@ -62,10 +62,12 @@ public class Ver_series extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String userId = getIntent().getStringExtra("userId");
                 int temporadaId = listaTemporadas.get(position).getTemporadas_id();
                 String temporada = String.valueOf(temporadaId);
                 Intent myIntent = new Intent(view.getContext(), Ver_temporada.class);
                 myIntent.putExtra("temporada", temporada);
+                myIntent.putExtra("userId", userId);
                 startActivity(myIntent);
             }
         });

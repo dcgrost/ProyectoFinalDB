@@ -64,11 +64,13 @@ public class Series extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    int serieId = listaSeries.get(position).getSeries_id();
-                    String serie = String.valueOf(serieId);
-                    Intent myIntent = new Intent(view.getContext(), Ver_series.class);
-                    myIntent.putExtra("serie", serie);
-                    startActivity(myIntent);
+                String userId = getIntent().getStringExtra("userId");
+                int serieId = listaSeries.get(position).getSeries_id();
+                String serie = String.valueOf(serieId);
+                Intent myIntent = new Intent(view.getContext(), Ver_series.class);
+                myIntent.putExtra("serie", serie);
+                myIntent.putExtra("userId", userId);
+                startActivity(myIntent);
             }
         });
     }

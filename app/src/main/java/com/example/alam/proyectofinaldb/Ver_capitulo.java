@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.alam.proyectofinaldb.Entidades.Entidades_capitulos;
 import com.example.alam.proyectofinaldb.Entidades.Entidades_peliculas;
@@ -22,6 +23,7 @@ public class Ver_capitulo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_capitulo);
+        String userId = getIntent().getStringExtra("userId");
 
         String capitulo = getIntent().getStringExtra("capitulo");
 

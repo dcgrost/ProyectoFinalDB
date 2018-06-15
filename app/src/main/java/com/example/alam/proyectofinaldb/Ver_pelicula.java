@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.alam.proyectofinaldb.Entidades.Entidades_peliculas;
 import com.example.alam.proyectofinaldb.Utilities.Data_utilities;
@@ -24,6 +25,7 @@ public class Ver_pelicula extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_pelicula);
+        String userId = getIntent().getStringExtra("userId");
 
         String titulo = getIntent().getStringExtra("titulo");
 

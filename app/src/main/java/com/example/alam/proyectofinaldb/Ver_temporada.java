@@ -66,10 +66,12 @@ public class Ver_temporada extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String userId = getIntent().getStringExtra("userId");
                 int capituloId = listaCapitulos.get(position).getCapitulos_id();
                 String capitulo = String.valueOf(capituloId);
                 Intent myIntent = new Intent(view.getContext(), Ver_capitulo.class);
                 myIntent.putExtra("capitulo", capitulo);
+                myIntent.putExtra("userId", userId);
                 startActivity(myIntent);
             }
         });

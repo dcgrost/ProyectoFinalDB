@@ -135,19 +135,19 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/compra"
+            android:id="@+id/misPeliculas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/action_compra"
+            android:text="@string/prompt_misPeliculas"
             tools:ignore="ButtonStyle" />
 
         <Button
-            android:id="@+id/critica"
+            android:id="@+id/misCapitulos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/action_critica"
+            android:text="@string/prompt_misCapitulos"
             tools:ignore="ButtonStyle" />
     </LinearLayout>
 

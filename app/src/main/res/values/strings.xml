@@ -54,4 +54,6 @@
     <string name="prompt_duraciond">Duración:</string>
     <string name="prompt_fechaP">Fecha de producción (AAAA-MM-DD)</string>
     <string name="prompt_duracion">Duración en minutos</string>
+    <string name="prompt_misPeliculas">Mis peliculas</string>
+    <string name="prompt_misCapitulos">Mis capitulos</string>
 </resources>

@@ -31,7 +31,7 @@ public class Perfil extends AppCompatActivity {
         String[] parametro = {nombre};
         String[] campos = {Data_utilities.UcampoNombre, Data_utilities.UcampoCorreo, Data_utilities.UcampoFechaN, Data_utilities.UcampoSaldo};
 
-        Cursor fila = db.query(Data_utilities.tablaUsuarios, campos, Data_utilities.UcampoNombre+ "=?", parametro, null, null, null);
+        Cursor fila = db.query(Data_utilities.tablaUsuarios, campos, Data_utilities.UcampoId+ "=?", parametro, null, null, null);
         fila.moveToFirst();
         tv_nombre.setText(fila.getString(0));
         tv_correo.setText(fila.getString(1));

@@ -65,37 +65,12 @@ public class Peliculas extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(position == 0){
-                    String titulo = listaPeliculas.get(0).getPeliculas_titulo();
-                    Intent myIntent = new Intent(view.getContext(), Ver_pelicula.class);
-                    myIntent.putExtra("titulo", titulo);
-                    startActivity(myIntent);
-                }if(position == 1){
-                    String titulo = listaPeliculas.get(1).getPeliculas_titulo();
-                    Intent myIntent = new Intent(view.getContext(), Ver_pelicula.class);
-                    myIntent.putExtra("titulo", titulo);
-                    startActivity(myIntent);
-                }if(position == 2){
-                    String titulo = listaPeliculas.get(2).getPeliculas_titulo();
-                    Intent myIntent = new Intent(view.getContext(), Ver_pelicula.class);
-                    myIntent.putExtra("titulo", titulo);
-                    startActivity(myIntent);
-                }if(position == 3){
-                    String titulo = listaPeliculas.get(3).getPeliculas_titulo();
-                    Intent myIntent = new Intent(view.getContext(), Ver_pelicula.class);
-                    myIntent.putExtra("titulo", titulo);
-                    startActivity(myIntent);
-                }if(position == 4){
-                    String titulo = listaPeliculas.get(4).getPeliculas_titulo();
-                    Intent myIntent = new Intent(view.getContext(), Ver_pelicula.class);
-                    myIntent.putExtra("titulo", titulo);
-                    startActivity(myIntent);
-                }if(position == 5){
-                    String titulo = listaPeliculas.get(5).getPeliculas_titulo();
-                    Intent myIntent = new Intent(view.getContext(), Ver_pelicula.class);
-                    myIntent.putExtra("titulo", titulo);
-                    startActivity(myIntent);
-                }
+                String userId = getIntent().getStringExtra("userId");
+                String titulo = listaPeliculas.get(position).getPeliculas_titulo();
+                Intent myIntent = new Intent(view.getContext(), Ver_pelicula.class);
+                myIntent.putExtra("titulo", titulo);
+                myIntent.putExtra("userId", userId);
+                startActivity(myIntent);
             }
         });
     }
