@@ -36,6 +36,9 @@ public class Critica_pelicula extends AppCompatActivity {
 
         String userId = getIntent().getStringExtra("userId");
         String peliculaId = getIntent().getStringExtra("peliculaId");
+        String genero = getIntent().getStringExtra("genero");
+        String tipo = getIntent().getStringExtra("tipo");
+        String nomPeli = getIntent().getStringExtra("nomPeli");
 
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administrar", null, 1);
         SQLiteDatabase db = admin.getWritableDatabase();
@@ -66,7 +69,9 @@ public class Critica_pelicula extends AppCompatActivity {
 
             Intent myIntent = new Intent(view.getContext(), Ver_pelicula.class);
             myIntent.putExtra("peliculaId", peliculaId);
+            myIntent.putExtra("genero", genero);
             myIntent.putExtra("userId", userId);
+            myIntent.putExtra("tipo", tipo);
             startActivity(myIntent);
         }
     }

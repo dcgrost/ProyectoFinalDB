@@ -7,6 +7,34 @@
     android:layout_height="match_parent"
     tools:context=".Ver_series">
 
+    <Button
+        android:id="@+id/regresa"
+        style="?android:textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:drawableLeft="@drawable/ic_atras"
+        android:drawableStart="@drawable/ic_atras"
+        android:onClick="RegresaSeries"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/perfil"
+        style="?android:textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:drawableEnd="@drawable/ic_home"
+        android:drawableLeft="@drawable/ic_home"
+        android:drawablePadding="8dp"
+        android:onClick="PerfilSs"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"

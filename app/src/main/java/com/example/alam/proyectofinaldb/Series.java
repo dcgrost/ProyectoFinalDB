@@ -67,9 +67,13 @@ public class Series extends AppCompatActivity {
                 String userId = getIntent().getStringExtra("userId");
                 int serieId = listaSeries.get(position).getSeries_id();
                 String serie = String.valueOf(serieId);
+                String genero = getIntent().getStringExtra("genero");
+                String tipo = getIntent().getStringExtra("tipo");
                 Intent myIntent = new Intent(view.getContext(), Ver_series.class);
                 myIntent.putExtra("serie", serie);
                 myIntent.putExtra("userId", userId);
+                myIntent.putExtra("genero", genero);
+                myIntent.putExtra("tipo", tipo);
                 startActivity(myIntent);
             }
         });

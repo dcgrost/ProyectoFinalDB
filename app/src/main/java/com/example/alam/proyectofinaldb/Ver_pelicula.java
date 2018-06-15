@@ -166,11 +166,14 @@ public class Ver_pelicula extends AppCompatActivity {
     public void Criticar(View view){
         String userId = getIntent().getStringExtra("userId");
         String peliculaId = getIntent().getStringExtra("peliculaId");
+        String genero = getIntent().getStringExtra("genero");
+        String tipo = getIntent().getStringExtra("tipo");
         String nomPeli = getIntent().getStringExtra("nomPeli");
         Intent myIntent = new Intent(view.getContext(), Critica_pelicula.class);
         myIntent.putExtra("peliculaId", peliculaId);
-        myIntent.putExtra("nomPeli", nomPeli);
+        myIntent.putExtra("genero", genero);
         myIntent.putExtra("userId", userId);
+        myIntent.putExtra("tipo", tipo);
         startActivity(myIntent);
     }
     public void Perfilpp (View view){
