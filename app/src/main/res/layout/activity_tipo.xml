@@ -17,6 +17,9 @@
         android:layout_marginTop="16dp"
         android:onClick="Perfil"
         android:text="@string/prompt_miPerfil"
+        android:drawableLeft="@drawable/ic_home"
+        android:drawableStart="@drawable/ic_home"
+        android:drawablePadding="8dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

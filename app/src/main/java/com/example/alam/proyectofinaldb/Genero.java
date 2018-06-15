@@ -49,11 +49,13 @@ public class Genero extends AppCompatActivity {
                         Intent myIntent = new Intent(view.getContext(), Peliculas.class);
                         myIntent.putExtra("genero", "Acción");
                         myIntent.putExtra("userId", userId);
+                        myIntent.putExtra("tipo", tipo);
                         startActivity(myIntent);
                     }else{
                         Intent myIntent = new Intent(view.getContext(), Series.class);
                         myIntent.putExtra("genero", "Acción");
                         myIntent.putExtra("userId", userId);
+                        myIntent.putExtra("tipo", tipo);
                         startActivity(myIntent);
                     }
                 }if (position == 1){
@@ -61,11 +63,13 @@ public class Genero extends AppCompatActivity {
                         Intent myIntent = new Intent(view.getContext(), Peliculas.class);
                         myIntent.putExtra("genero", "Aventura");
                         myIntent.putExtra("userId", userId);
+                        myIntent.putExtra("tipo", tipo);
                         startActivity(myIntent);
                     }else{
                         Intent myIntent = new Intent(view.getContext(), Series.class);
                         myIntent.putExtra("genero", "Aventura");
                         myIntent.putExtra("userId", userId);
+                        myIntent.putExtra("tipo", tipo);
                         startActivity(myIntent);
                     }
                 }if (position == 2){
@@ -73,11 +77,13 @@ public class Genero extends AppCompatActivity {
                         Intent myIntent = new Intent(view.getContext(), Peliculas.class);
                         myIntent.putExtra("genero", "Ciencia ficción");
                         myIntent.putExtra("userId", userId);
+                        myIntent.putExtra("tipo", tipo);
                         startActivity(myIntent);
                     }else{
                         Intent myIntent = new Intent(view.getContext(), Series.class);
                         myIntent.putExtra("genero", "Ciencia ficción");
                         myIntent.putExtra("userId", userId);
+                        myIntent.putExtra("tipo", tipo);
                         startActivity(myIntent);
                     }
                 }if (position == 3){
@@ -85,11 +91,13 @@ public class Genero extends AppCompatActivity {
                         Intent myIntent = new Intent(view.getContext(), Peliculas.class);
                         myIntent.putExtra("genero", "Comedia");
                         myIntent.putExtra("userId", userId);
+                        myIntent.putExtra("tipo", tipo);
                         startActivity(myIntent);
                     }else{
                         Intent myIntent = new Intent(view.getContext(), Series.class);
                         myIntent.putExtra("genero", "Comedia");
                         myIntent.putExtra("userId", userId);
+                        myIntent.putExtra("tipo", tipo);
                         startActivity(myIntent);
                     }
                 }if (position == 4){
@@ -97,11 +105,13 @@ public class Genero extends AppCompatActivity {
                         Intent myIntent = new Intent(view.getContext(), Peliculas.class);
                         myIntent.putExtra("genero", "Documental");
                         myIntent.putExtra("userId", userId);
+                        myIntent.putExtra("tipo", tipo);
                         startActivity(myIntent);
                     }else{
                         Intent myIntent = new Intent(view.getContext(), Series.class);
                         myIntent.putExtra("genero", "Documental");
                         myIntent.putExtra("userId", userId);
+                        myIntent.putExtra("tipo", tipo);
                         startActivity(myIntent);
                     }
                 }if (position == 5){
@@ -109,11 +119,13 @@ public class Genero extends AppCompatActivity {
                         Intent myIntent = new Intent(view.getContext(), Peliculas.class);
                         myIntent.putExtra("genero", "Horror");
                         myIntent.putExtra("userId", userId);
+                        myIntent.putExtra("tipo", tipo);
                         startActivity(myIntent);
                     }else{
                         Intent myIntent = new Intent(view.getContext(), Series.class);
                         myIntent.putExtra("genero", "Horror");
                         myIntent.putExtra("userId", userId);
+                        myIntent.putExtra("tipo", tipo);
                         startActivity(myIntent);
                     }
                 }if (position == 6){
@@ -121,11 +133,13 @@ public class Genero extends AppCompatActivity {
                         Intent myIntent = new Intent(view.getContext(), Peliculas.class);
                         myIntent.putExtra("genero", "Musical");
                         myIntent.putExtra("userId", userId);
+                        myIntent.putExtra("tipo", tipo);
                         startActivity(myIntent);
                     }else{
                         Intent myIntent = new Intent(view.getContext(), Series.class);
                         myIntent.putExtra("genero", "Musical");
                         myIntent.putExtra("userId", userId);
+                        myIntent.putExtra("tipo", tipo);
                         startActivity(myIntent);
                     }
                 }if (position == 7){
@@ -133,11 +147,13 @@ public class Genero extends AppCompatActivity {
                         Intent myIntent = new Intent(view.getContext(), Peliculas.class);
                         myIntent.putExtra("genero", "Romance");
                         myIntent.putExtra("userId", userId);
+                        myIntent.putExtra("tipo", tipo);
                         startActivity(myIntent);
                     }else{
                         Intent myIntent = new Intent(view.getContext(), Series.class);
                         myIntent.putExtra("genero", "Romance");
                         myIntent.putExtra("userId", userId);
+                        myIntent.putExtra("tipo", tipo);
                         startActivity(myIntent);
                     }
                 }if (position == 8){
@@ -145,11 +161,13 @@ public class Genero extends AppCompatActivity {
                         Intent myIntent = new Intent(view.getContext(), Peliculas.class);
                         myIntent.putExtra("genero", "Animación");
                         myIntent.putExtra("userId", userId);
+                        myIntent.putExtra("tipo", tipo);
                         startActivity(myIntent);
                     }else{
                         Intent myIntent = new Intent(view.getContext(), Series.class);
                         myIntent.putExtra("genero", "Animación");
                         myIntent.putExtra("userId", userId);
+                        myIntent.putExtra("tipo", tipo);
                         startActivity(myIntent);
                     }
                 }if (position == 9){
@@ -157,16 +175,30 @@ public class Genero extends AppCompatActivity {
                         Intent myIntent = new Intent(view.getContext(), Peliculas.class);
                         myIntent.putExtra("genero", "Drama");
                         myIntent.putExtra("userId", userId);
+                        myIntent.putExtra("tipo", tipo);
                         startActivity(myIntent);
                     }else{
                         Intent myIntent = new Intent(view.getContext(), Series.class);
                         myIntent.putExtra("genero", "Drama");
                         myIntent.putExtra("userId", userId);
+                        myIntent.putExtra("tipo", tipo);
                         startActivity(myIntent);
                     }
                 }
 
             }
         });
+    }
+    public void Perfil (View view){
+        Intent myIntent = new Intent(view.getContext(), Perfil.class);
+        String userId = getIntent().getStringExtra("userId");
+        myIntent.putExtra("userId", userId);
+        startActivity(myIntent);
+    }
+    public void RegresaTipo(View view){
+        String userId = getIntent().getStringExtra("userId");
+        Intent myIntent = new Intent(view.getContext(), Tipo.class);
+        myIntent.putExtra("userId", userId);
+        startActivity(myIntent);
     }
 }

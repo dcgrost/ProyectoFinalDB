@@ -74,5 +74,21 @@ public class Series extends AppCompatActivity {
             }
         });
     }
+    public void PerfilS(View view){
+        Intent myIntent = new Intent(view.getContext(), Perfil.class);
+        String userId = getIntent().getStringExtra("userId");
+        myIntent.putExtra("userId", userId);
+        startActivity(myIntent);
+    }
+    public void RegresaGeneroS(View view){
+        String userId = getIntent().getStringExtra("userId");
+        String genero = getIntent().getStringExtra("genero");
+        String tipo = getIntent().getStringExtra("tipo");
+        Intent myIntent = new Intent(view.getContext(), Genero.class);
+        myIntent.putExtra("genero", genero);
+        myIntent.putExtra("userId", userId);
+        myIntent.putExtra("tipo", tipo);
+        startActivity(myIntent);
+    }
 }
 

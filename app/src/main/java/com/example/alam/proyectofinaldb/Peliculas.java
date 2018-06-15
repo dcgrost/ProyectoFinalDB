@@ -66,15 +66,35 @@ public class Peliculas extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String userId = getIntent().getStringExtra("userId");
+                String genero = getIntent().getStringExtra("genero");
+                String tipo = getIntent().getStringExtra("tipo");
                 int pelicula = listaPeliculas.get(position).getPeliculas_id();
                 String nomPeli = listaPeliculas.get(position).getPeliculas_titulo();
                 String peliculaId = String.valueOf(pelicula);
                 Intent myIntent = new Intent(view.getContext(), Ver_pelicula.class);
                 myIntent.putExtra("peliculaId", peliculaId);
                 myIntent.putExtra("nomPeli", nomPeli);
+                myIntent.putExtra("tipo", tipo);
+                myIntent.putExtra("genero", genero);
                 myIntent.putExtra("userId", userId);
                 startActivity(myIntent);
             }
         });
+    }
+    public void Perfil (View view){
+        Intent myIntent = new Intent(view.getContext(), Perfil.class);
+        String userId = getIntent().getStringExtra("userId");
+        myIntent.putExtra("userId", userId);
+        startActivity(myIntent);
+    }
+    public void RegresaGenero(View view){
+        String userId = getIntent().getStringExtra("userId");
+        String genero = getIntent().getStringExtra("genero");
+        String tipo = getIntent().getStringExtra("tipo");
+        Intent myIntent = new Intent(view.getContext(), Genero.class);
+        myIntent.putExtra("genero", genero);
+        myIntent.putExtra("userId", userId);
+        myIntent.putExtra("tipo", tipo);
+        startActivity(myIntent);
     }
 }
