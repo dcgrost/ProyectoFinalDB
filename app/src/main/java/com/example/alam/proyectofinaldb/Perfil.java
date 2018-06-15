@@ -1,9 +1,11 @@
 package com.example.alam.proyectofinaldb;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.alam.proyectofinaldb.Utilities.Data_utilities;
@@ -38,5 +40,17 @@ public class Perfil extends AppCompatActivity {
         tv_fechaN.setText(fila.getString(2));
         tv_saldo.setText(fila.getString(3));
         fila.close();
+    }
+    public void misPeliculas(View view){
+        String userId = getIntent().getStringExtra("userId");
+        Intent myIntent = new Intent(view.getContext(), Mis_peliculas.class);
+        myIntent.putExtra("userId", userId);
+        startActivity(myIntent);
+    }
+    public void misCapitulos(View view){
+        String userId = getIntent().getStringExtra("userId");
+        Intent myIntent = new Intent(view.getContext(), Mis_capitulos.class);
+        myIntent.putExtra("userId", userId);
+        startActivity(myIntent);
     }
 }

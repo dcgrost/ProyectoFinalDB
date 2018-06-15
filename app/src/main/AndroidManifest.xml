@@ -34,7 +34,9 @@
         <activity android:name=".Ver_series" />
         <activity android:name=".Perfil" />
         <activity android:name=".Administrador_temporadas" />
-        <activity android:name=".Administrador_capitulos"></activity>
+        <activity android:name=".Administrador_capitulos" />
+        <activity android:name=".Mis_peliculas" />
+        <activity android:name=".Mis_capitulos" />
     </application>
 
 </manifest>

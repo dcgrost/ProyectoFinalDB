@@ -179,6 +179,10 @@ public class Data_utilities {
     public static final String LlT = ""+tablaTempoaradas+"("+TcampoId+", "+TcampoTitulo+", "+TcampoFechaEstreno+", "+TcampoFechaProduccion+", "+TcampoImg+", "+TcampoSeriesID+")";
     //Llenar capitulos
     public static final String LlC = ""+tablaCapitulos+"("+CcampoId+", "+CcampoTitulo+", "+CcampoDuracion+", "+CcampoPrecio+", "+CcampoSinopsis+", "+CcampoTemporadasID+", "+CcampoImg+")";
+    //Llenar peliculasUsuarios
+    public static final String LlPU = ""+tablaPeliculasUsuarios+"("+PUcampoId+", "+PUcampoUsuariosID+", "+PUcampoPeliculasID+")";
+    //LlenarcapitulosUsuarios
+    public static final String LlCU = ""+tablaCapitulosUsuarios+"("+CUcampoId+", "+CUcampoUsuariosID+", "+CUcampoCapitulosID+")";
     //Llenar criticas
     public static final String LlCR = ""+tablaCriticas+"("+CRcampoId+", "+CRcampoComentario+", "+CRcampoFecha+", "+CRcampoUsuariosID+", "+CRcampoPeliculasID+", "+CRcampoCapitulosID+")";
     //Llenar subtitulos

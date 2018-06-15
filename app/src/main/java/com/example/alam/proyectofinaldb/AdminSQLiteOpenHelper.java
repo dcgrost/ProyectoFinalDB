@@ -33,7 +33,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper{
         db.execSQL("insert into "+Data_utilities.LlU+" values('4','Alondra','alondra@gmail.com','1996-05-27','Alondra123','1000')");
         db.execSQL("insert into "+Data_utilities.LlU+" values('5','Oscar','oscar@gmail.com','1995-01-28','Oscar123','100')");
         db.execSQL("insert into "+Data_utilities.LlU+" values('6','Omar','omar@gmail.com','1994-11-01','Omar123','10')");
-        db.execSQL("insert into "+Data_utilities.LlU+" values('7','Prueba','aldp@admin.com','1994-11-01','Admin123','10')");
+        db.execSQL("insert into "+Data_utilities.LlU+" values('7','Prueba','aldp@admin.com','1994-11-01','Admin123','1000')");
 
         //Llenando tabla Peliculas
         db.execSQL("insert into "+Data_utilities.LlP+" values('1','Avengers','Acción','Los vengadores se unsen por primera vez','Inglés','2012-05-04','10','R.drawable.avengers')");
@@ -202,6 +202,14 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper{
         db.execSQL("insert into "+Data_utilities.LlC+" values('78','Capitulo 2','27min','10','Pasan cosas en el capitulo','39',null)");
         db.execSQL("insert into "+Data_utilities.LlC+" values('79','Capitulo 3','30min','10','Pasan cosas en el capitulo','40',null)");
         db.execSQL("insert into "+Data_utilities.LlC+" values('80','Capitulo 4','27min','10','Pasan cosas en el capitulo','40',null)");
+
+        //Llenando peliculasUsuarios
+        db.execSQL("insert into "+Data_utilities.LlPU+" values('1','7','1')");
+        db.execSQL("insert into "+Data_utilities.LlPU+" values('2','7','4')");
+
+        //Llenando capitulos usuarios
+        db.execSQL("insert into "+Data_utilities.LlCU+" values('1','7','1')");
+        db.execSQL("insert into "+Data_utilities.LlCU+" values('2','7','5')");
 
         //Llenando tabla criticas
         db.execSQL("insert into "+Data_utilities.LlCR+" values('1','No me gustó','2018-01-01','5','1','1')");

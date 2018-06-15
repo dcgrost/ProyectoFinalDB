@@ -35,37 +35,20 @@
                 android:maxLines="1"
                 android:singleLine="true"
                 android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/correo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:hint="@string/prompt_correod"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textSize="25sp" />
         </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/correo2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="@string/prompt_correod"
-            android:maxLines="1"
-            android:gravity="end"
-            android:layout_marginEnd="10dp"
-            android:singleLine="true"
-            android:textSize="25sp"
-            android:layout_marginRight="10dp" />
-
-        <TextView
-            android:id="@+id/correo"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="@string/prompt_correod"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:textSize="25sp" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -78,7 +61,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="@string/prompt_fechad"
+            android:hint="Cumpleaños:"
             android:gravity="end"
             android:layout_marginEnd="10dp"
             android:maxLines="1"
@@ -88,7 +71,7 @@
 
         <TextView
             android:id="@+id/fechaN"
-            android:layout_width="0dp"
+            android:layout_width="5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="@string/prompt_fechad"
@@ -139,6 +122,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="misPeliculas"
             android:text="@string/prompt_misPeliculas"
             tools:ignore="ButtonStyle" />
 
@@ -147,6 +131,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="misCapitulos"
             android:text="@string/prompt_misCapitulos"
             tools:ignore="ButtonStyle" />
     </LinearLayout>
