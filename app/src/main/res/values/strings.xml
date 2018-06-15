@@ -56,4 +56,7 @@
     <string name="prompt_duracion">Duración en minutos</string>
     <string name="prompt_misPeliculas">Mis peliculas</string>
     <string name="prompt_misCapitulos">Mis capitulos</string>
+    <string name="prompt_fechacd">Fecha:</string>
+    <string name="contenido">Contenido</string>
+    <string name="contenidod">Critica:</string>
 </resources>

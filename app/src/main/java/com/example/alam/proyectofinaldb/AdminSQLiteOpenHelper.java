@@ -203,7 +203,11 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper{
         db.execSQL("insert into "+Data_utilities.LlC+" values('79','Capitulo 3','30min','10','Pasan cosas en el capitulo','40',null)");
         db.execSQL("insert into "+Data_utilities.LlC+" values('80','Capitulo 4','27min','10','Pasan cosas en el capitulo','40',null)");
 
-        //Llenando tabla Usuarios
+        //Llenando tabla criticas
+        db.execSQL("insert into "+Data_utilities.LlCR+" values('1','No me gustó','2018-01-01','5','1','1')");
+        db.execSQL("insert into "+Data_utilities.LlCR+" values('2','Si me gustó','2018-01-01','7','2','1')");
+
+        //Llenando tabla subtitulos
         db.execSQL("insert into "+Data_utilities.LlSUB+" values('1','Español','Pedro','10',null,null)");
         db.execSQL("insert into "+Data_utilities.LlSUB+" values('2','Frances','Peter','10',null,null)");
         db.execSQL("insert into "+Data_utilities.LlSUB+" values('3','Portuges','Pedrinho','10',null,null)");
