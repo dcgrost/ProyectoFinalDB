@@ -145,11 +145,11 @@ public class Todas_peliculas extends AppCompatActivity {
         myIntent.putExtra("userId", userId);
         startActivity(myIntent);
     }
-    public void RegresaGenero(View view){
+    public void RegresaIntermedia(View view){
         String userId = getIntent().getStringExtra("userId");
         String genero = getIntent().getStringExtra("genero");
         String tipo = getIntent().getStringExtra("tipo");
-        Intent myIntent = new Intent(view.getContext(), Genero.class);
+        Intent myIntent = new Intent(view.getContext(), Intermedia.class);
         myIntent.putExtra("genero", genero);
         myIntent.putExtra("userId", userId);
         myIntent.putExtra("tipo", tipo);

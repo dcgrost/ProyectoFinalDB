@@ -53,4 +53,11 @@ public class Perfil extends AppCompatActivity {
         myIntent.putExtra("userId", userId);
         startActivity(myIntent);
     }
+    public void VolverTipo(View view){
+        String userId = getIntent().getStringExtra("userId");
+        Intent myIntent = new Intent(view.getContext(), Tipo.class);
+        myIntent.putExtra("userId", userId);
+        startActivity(myIntent);
+
+    }
 }

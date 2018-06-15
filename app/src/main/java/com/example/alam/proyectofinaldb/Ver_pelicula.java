@@ -186,7 +186,7 @@ public class Ver_pelicula extends AppCompatActivity {
         String userId = getIntent().getStringExtra("userId");
         String genero = getIntent().getStringExtra("genero");
         String tipo = getIntent().getStringExtra("tipo");
-        Intent myIntent = new Intent(view.getContext(), Peliculas.class);
+        Intent myIntent = new Intent(view.getContext(), Todas_peliculas.class);
         myIntent.putExtra("genero", genero);
         myIntent.putExtra("userId", userId);
         myIntent.putExtra("tipo", tipo);

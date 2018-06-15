@@ -16,7 +16,7 @@
         android:layout_marginStart="16dp"
         android:drawableLeft="@drawable/ic_atras"
         android:drawableStart="@drawable/ic_atras"
-        android:onClick="RegresaGenero"
+        android:onClick="RegresaIntermedia"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
