@@ -67,9 +67,21 @@ public class Mis_capitulos extends AppCompatActivity {
                 String userId = getIntent().getStringExtra("userId");
                 int capituloId = listaCapitulos.get(position).getCapitulos_id();
                 String capitulo = String.valueOf(capituloId);
+                String serie = getIntent().getStringExtra("serie");
+                String capNom = getIntent().getStringExtra("capNom");
+                String temporada = getIntent().getStringExtra("temporada");
+                String genero = getIntent().getStringExtra("genero");
+                String tipo = getIntent().getStringExtra("tipo");
                 Intent myIntent = new Intent(view.getContext(), Ver_capitulo.class);
                 myIntent.putExtra("capitulo", capitulo);
                 myIntent.putExtra("userId", userId);
+                myIntent.putExtra("genero", genero);
+                myIntent.putExtra("temporada", temporada);
+                myIntent.putExtra("capNom", capNom);
+                myIntent.putExtra("serie", serie);
+                myIntent.putExtra("capitulo", capitulo);
+                myIntent.putExtra("userId", userId);
+                myIntent.putExtra("tipo", tipo);
                 startActivity(myIntent);
             }
         });

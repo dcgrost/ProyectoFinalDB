@@ -171,10 +171,56 @@ public class Ver_capitulo extends AppCompatActivity {
         String userId = getIntent().getStringExtra("userId");
         String capitulo = getIntent().getStringExtra("capitulo");
         String capNom = getIntent().getStringExtra("capNom");
+        String serie = getIntent().getStringExtra("serie");
+        String temporada = getIntent().getStringExtra("temporada");
+        String genero = getIntent().getStringExtra("genero");
+        String tipo = getIntent().getStringExtra("tipo");
         Intent myIntent = new Intent(view.getContext(), Critica_capitulos.class);
-        myIntent.putExtra("capitulo", capitulo);
+        myIntent.putExtra("genero", genero);
+        myIntent.putExtra("temporada", temporada);
         myIntent.putExtra("capNom", capNom);
+        myIntent.putExtra("serie", serie);
+        myIntent.putExtra("capitulo", capitulo);
         myIntent.putExtra("userId", userId);
+        myIntent.putExtra("tipo", tipo);
+        startActivity(myIntent);
+    }
+    public void PerfilC(View view){
+        Intent myIntent = new Intent(view.getContext(), Perfil.class);
+        String userId = getIntent().getStringExtra("userId");
+        myIntent.putExtra("userId", userId);
+        startActivity(myIntent);
+    }
+    public void RegresaCapitulos(View view){
+        String capitulo = getIntent().getStringExtra("capitulo");
+        String serie = getIntent().getStringExtra("serie");
+        String capNom = getIntent().getStringExtra("capNom");
+        String temporada = getIntent().getStringExtra("temporada");
+        String userId = getIntent().getStringExtra("userId");
+        String genero = getIntent().getStringExtra("genero");
+        String tipo = getIntent().getStringExtra("tipo");
+        Intent myIntent = new Intent(view.getContext(), Ver_temporada.class);
+        myIntent.putExtra("genero", genero);
+        myIntent.putExtra("temporada", temporada);
+        myIntent.putExtra("capNom", capNom);
+        myIntent.putExtra("serie", serie);
+        myIntent.putExtra("capitulo", capitulo);
+        myIntent.putExtra("userId", userId);
+        myIntent.putExtra("tipo", tipo);
+        startActivity(myIntent);
+    }
+    public void misCapitulos(View view){
+        String userId = getIntent().getStringExtra("userId");
+        String genero = getIntent().getStringExtra("genero");
+        String temporada = getIntent().getStringExtra("temporada");
+        String tipo = getIntent().getStringExtra("tipo");
+        String serie = getIntent().getStringExtra("serie");
+        Intent myIntent = new Intent(view.getContext(), Mis_capitulos.class);
+        myIntent.putExtra("genero", genero);
+        myIntent.putExtra("temporada", temporada);
+        myIntent.putExtra("serie", serie);
+        myIntent.putExtra("userId", userId);
+        myIntent.putExtra("tipo", tipo);
         startActivity(myIntent);
     }
 }

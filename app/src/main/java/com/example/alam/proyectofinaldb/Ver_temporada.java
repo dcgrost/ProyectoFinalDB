@@ -67,15 +67,43 @@ public class Ver_temporada extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String userId = getIntent().getStringExtra("userId");
+                String temporada = getIntent().getStringExtra("temporada");
+                String serie = getIntent().getStringExtra("serie");
                 int capituloId = listaCapitulos.get(position).getCapitulos_id();
                 String capNom = listaCapitulos.get(position).getCapitulos_titulo();
                 String capitulo = String.valueOf(capituloId);
+                String genero = getIntent().getStringExtra("genero");
+                String tipo = getIntent().getStringExtra("tipo");
                 Intent myIntent = new Intent(view.getContext(), Ver_capitulo.class);
                 myIntent.putExtra("capitulo", capitulo);
                 myIntent.putExtra("capNom", capNom);
+                myIntent.putExtra("temporada", temporada);
+                myIntent.putExtra("serie", serie);
                 myIntent.putExtra("userId", userId);
+                myIntent.putExtra("tipo", tipo);
+                myIntent.putExtra("genero", genero);
                 startActivity(myIntent);
             }
         });
+    }
+    public void PerfilT(View view){
+        Intent myIntent = new Intent(view.getContext(), Perfil.class);
+        String userId = getIntent().getStringExtra("userId");
+        myIntent.putExtra("userId", userId);
+        startActivity(myIntent);
+    }
+    public void RegresaTemporadas(View view){
+        String serie = getIntent().getStringExtra("serie");
+        String temporada = getIntent().getStringExtra("temporada");
+        String userId = getIntent().getStringExtra("userId");
+        String genero = getIntent().getStringExtra("genero");
+        String tipo = getIntent().getStringExtra("tipo");
+        Intent myIntent = new Intent(view.getContext(), Ver_series.class);
+        myIntent.putExtra("genero", genero);
+        myIntent.putExtra("temporada", temporada);
+        myIntent.putExtra("serie", serie);
+        myIntent.putExtra("userId", userId);
+        myIntent.putExtra("tipo", tipo);
+        startActivity(myIntent);
     }
 }
