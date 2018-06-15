@@ -60,8 +60,8 @@ public class Critica_pelicula extends AppCompatActivity {
             alta.put(Data_utilities.CRcampoUsuariosID, userId);
             alta.put(Data_utilities.CRcampoPeliculasID, peliculaId);
 
-            long x = db.insert(Data_utilities.tablaCriticas, Data_utilities.CRcampoId, alta);
-            Toast.makeText(this, "Critica hecha"+x, Toast.LENGTH_SHORT).show();
+            db.insert(Data_utilities.tablaCriticas, Data_utilities.CRcampoId, alta);
+            Toast.makeText(this, "Critica hecha", Toast.LENGTH_SHORT).show();
             db.close();
 
             Intent myIntent = new Intent(view.getContext(), Ver_pelicula.class);

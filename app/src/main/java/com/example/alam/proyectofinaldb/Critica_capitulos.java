@@ -46,7 +46,6 @@ public class Critica_capitulos extends AppCompatActivity {
         if(comentario.isEmpty()){
             Toast.makeText(this, "Ingresa un comentario", Toast.LENGTH_SHORT).show();
         }else{
-            Toast.makeText(this,"La fecha es: ",Toast.LENGTH_SHORT).show();
 
             final Calendar calendar = Calendar.getInstance();
             int year = calendar.get(Calendar.YEAR);
@@ -62,8 +61,8 @@ public class Critica_capitulos extends AppCompatActivity {
             alta.put(Data_utilities.CRcampoUsuariosID, userId);
             alta.put(Data_utilities.CRcampoCapitulosID, capitulo);
 
-            long x = db.insert(Data_utilities.tablaCriticas, Data_utilities.CRcampoId, alta);
-            Toast.makeText(this, "Critica hecha"+x, Toast.LENGTH_SHORT).show();
+            db.insert(Data_utilities.tablaCriticas, Data_utilities.CRcampoId, alta);
+            Toast.makeText(this, "Critica hecha", Toast.LENGTH_SHORT).show();
             db.close();
 
             Intent myIntent = new Intent(view.getContext(), Ver_capitulo.class);
