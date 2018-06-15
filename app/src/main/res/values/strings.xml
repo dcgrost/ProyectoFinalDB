@@ -33,6 +33,7 @@
     <string name="prompt_fechaE">Fecha de estreno (AAAA-MM-DD)</string>
     <string name="prompt_precio">Precio</string>
     <string name="ver">¿Qué deseas ver?</string>
+    <string name="cver">¿Cómo lo deseas ver?</string>
     <string name="genero">Selecciona el género</string>
     <string name="img">Imágen</string>
     <string name="prompt_generod">Género:</string>
@@ -61,4 +62,7 @@
     <string name="contenidod">Critica:</string>
     <string name="tusaldo">Tu saldo :</string>
     <string name="regresa">Regresa</string>
+    <string name="pgenero">Por género</string>
+    <string name="ptodos">Todo lo que hay</string>
+    <string name="todos">Todo</string>
 </resources>

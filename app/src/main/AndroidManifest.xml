@@ -38,7 +38,9 @@
         <activity android:name=".Mis_peliculas" />
         <activity android:name=".Mis_capitulos" />
         <activity android:name=".Critica_pelicula" />
-        <activity android:name=".Critica_capitulos"></activity>
+        <activity android:name=".Critica_capitulos" />
+        <activity android:name=".Todas_peliculas" />
+        <activity android:name=".Intermedia"></activity>
     </application>
 
 </manifest>
