@@ -66,13 +66,10 @@ public class Peliculas extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String userId = getIntent().getStringExtra("userId");
-                int pelicula = listaPeliculas.get(position).getPeliculas_id();
-                String peiluclaId = String.valueOf(pelicula);
                 String titulo = listaPeliculas.get(position).getPeliculas_titulo();
                 Intent myIntent = new Intent(view.getContext(), Ver_pelicula.class);
                 myIntent.putExtra("titulo", titulo);
                 myIntent.putExtra("userId", userId);
-                myIntent.putExtra("peiluclaId", peiluclaId);
                 startActivity(myIntent);
             }
         });

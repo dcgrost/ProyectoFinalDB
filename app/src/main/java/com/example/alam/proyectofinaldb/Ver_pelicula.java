@@ -37,7 +37,6 @@ public class Ver_pelicula extends AppCompatActivity {
         setContentView(R.layout.activity_ver_pelicula);
         String userId = getIntent().getStringExtra("userId");
         String titulo = getIntent().getStringExtra("titulo");
-        String peiluclaId = getIntent().getStringExtra("peiluclaId");
 
         tv_titulo = (TextView)findViewById(R.id.titulo);
         tv_sinopsis = (TextView)findViewById(R.id.sinopsis);
