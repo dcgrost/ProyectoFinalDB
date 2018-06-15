@@ -110,6 +110,7 @@ public class Ver_pelicula extends AppCompatActivity {
         adaptador_listView3 miadaptador = new adaptador_listView3(getApplicationContext(), lista);
         listaDatos.setAdapter(miadaptador);
     }
+
     public void Comprar(View view){
         String userId = getIntent().getStringExtra("userId");
         String peliculaId = getIntent().getStringExtra("peliculaId");
@@ -133,7 +134,7 @@ public class Ver_pelicula extends AppCompatActivity {
             String y = String.valueOf(peliId);
 
             if (userId.contentEquals(x) && peliculaId.contentEquals(y)){
-                Toast.makeText(this,"Película comprada anteriormente",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"Película ya comprada",Toast.LENGTH_SHORT).show();
             }
         }catch (Exception e){
             String precio = tv_precio.getText().toString();
@@ -159,9 +160,9 @@ public class Ver_pelicula extends AppCompatActivity {
             Toast.makeText(this, "Compra realizada", Toast.LENGTH_SHORT).show();
             db.close();
         }
-
-
     }
+
+
     public void Criticar(View view){
         String userId = getIntent().getStringExtra("userId");
         String peliculaId = getIntent().getStringExtra("peliculaId");

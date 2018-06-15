@@ -1,9 +1,11 @@
 package com.example.alam.proyectofinaldb;
 
+import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -18,7 +20,7 @@ import java.util.ArrayList;
 
 public class Ver_capitulo extends AppCompatActivity {
 
-    TextView tv_titulo, tv_sinopsis, tv_genero, tv_fechaE, tv_precio, tv_serie, tv_temporada;
+    TextView tv_titulo, tv_sinopsis, tv_genero, tv_fechaE, tv_precio, tv_serie, tv_temporada, tv_saldo;
     ImageView img;
 
     ListView listaDatos;
@@ -40,6 +42,7 @@ public class Ver_capitulo extends AppCompatActivity {
         tv_temporada = (TextView)findViewById(R.id.temporada);
         tv_fechaE = (TextView)findViewById(R.id.fechaE);
         tv_precio = (TextView)findViewById(R.id.precio);
+        tv_saldo = (TextView)findViewById(R.id.saldo);
         img = (ImageView)findViewById(R.id.imageView);
 
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administrar", null, 1);
@@ -65,6 +68,17 @@ public class Ver_capitulo extends AppCompatActivity {
         tv_temporada.setText(fila2.getString(6));
         tv_fechaE.setText(fila2.getString(7));
         fila2.close();
+
+        //Saldo del usuario
+
+        String nombre = userId;
+        String[] idusuario = {nombre};
+        String[] saldo = {Data_utilities.UcampoSaldo};
+
+        Cursor cursor = db.query(Data_utilities.tablaUsuarios,saldo, Data_utilities.UcampoId+"=?",idusuario,null, null,null);
+        cursor.moveToFirst();
+        tv_saldo.setText(cursor.getString(0));
+        cursor.close();
 
         //Llenado de list view criticas
 
@@ -97,5 +111,56 @@ public class Ver_capitulo extends AppCompatActivity {
 
         adaptador_listView3 miadaptador = new adaptador_listView3(getApplicationContext(), lista);
         listaDatos.setAdapter(miadaptador);
+    }
+
+    public void Comprar(View view){
+        String userId = getIntent().getStringExtra("userId");
+        String capitulo = getIntent().getStringExtra("capitulo");
+
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administrar", null, 1);
+        SQLiteDatabase db = admin.getWritableDatabase();
+
+        String query = "select "+ Data_utilities.CUcampoId+", "+Data_utilities.CUcampoUsuariosID+", "+Data_utilities.CUcampoCapitulosID+" from "+Data_utilities.tablaCapitulosUsuarios
+                +" where "+Data_utilities.CUcampoUsuariosID+" = '"+userId+"' and "+Data_utilities.CUcampoCapitulosID+" = '"+capitulo+"'";
+
+        Cursor fila = db.rawQuery(query,null);
+
+        try{
+            fila.moveToFirst();
+            int id = fila.getInt(0);
+            int usuarioId = fila.getInt(1);
+            int capId = fila.getInt(2);
+            fila.close();
+
+            String x = String.valueOf(usuarioId);
+            String y = String.valueOf(capId);
+
+            if (userId.contentEquals(x) && capitulo.contentEquals(y)){
+                Toast.makeText(this,"Capitulo ya comprado",Toast.LENGTH_SHORT).show();
+            }
+        }catch (Exception e){
+            String precio = tv_precio.getText().toString();
+            String saldo = tv_saldo.getText().toString();
+
+            int saldo_actual = Integer.parseInt(saldo) - Integer.parseInt(precio);
+            String saldoString = String.valueOf(saldo_actual);
+
+            String[] parametro = {userId};
+
+            ContentValues actualiza = new ContentValues();
+            actualiza.put(Data_utilities.UcampoSaldo, saldoString);
+
+            db.update(Data_utilities.tablaUsuarios, actualiza, Data_utilities.UcampoId+ "=?",parametro);
+
+            tv_saldo.setText(saldoString);
+
+            ContentValues alta = new ContentValues();
+            alta.put(Data_utilities.CUcampoUsuariosID, userId);
+            alta.put(Data_utilities.CUcampoCapitulosID, capitulo);
+
+            db.insert(Data_utilities.tablaCapitulosUsuarios,Data_utilities.CUcampoId,alta);
+            Toast.makeText(this, "Compra realizada", Toast.LENGTH_SHORT).show();
+            db.close();
+        }
     }
 }
