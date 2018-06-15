@@ -37,6 +37,7 @@
         <activity android:name=".Administrador_capitulos" />
         <activity android:name=".Mis_peliculas" />
         <activity android:name=".Mis_capitulos" />
+        <activity android:name=".Critica_pelicula"></activity>
     </application>
 
 </manifest>

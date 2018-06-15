@@ -166,6 +166,11 @@ public class Ver_pelicula extends AppCompatActivity {
     public void Criticar(View view){
         String userId = getIntent().getStringExtra("userId");
         String peliculaId = getIntent().getStringExtra("peliculaId");
-
+        String nomPeli = getIntent().getStringExtra("nomPeli");
+        Intent myIntent = new Intent(view.getContext(), Critica_pelicula.class);
+        myIntent.putExtra("peliculaId", peliculaId);
+        myIntent.putExtra("nomPeli", nomPeli);
+        myIntent.putExtra("userId", userId);
+        startActivity(myIntent);
     }
 }
