@@ -59,4 +59,5 @@
     <string name="prompt_fechacd">Fecha:</string>
     <string name="contenido">Contenido</string>
     <string name="contenidod">Critica:</string>
+    <string name="tusaldo">Tu saldo :</string>
 </resources>

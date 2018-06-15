@@ -34,13 +34,15 @@ public class LogIn extends AppCompatActivity {
 
         String correo = et_correo.getText().toString();
         String contra = et_contra.getText().toString();
-        Cursor fila = db.rawQuery("select "+Data_utilities.UcampoId+", "+Data_utilities.UcampoCorreo+", "+Data_utilities.UcampoContra+" from "+Data_utilities.tablaUsuarios+" where "+Data_utilities.UcampoCorreo+" = '"+correo+"' and "+Data_utilities.UcampoContra+" = '"+contra+"'",null);
+        Cursor fila = db.rawQuery("select "+Data_utilities.UcampoId+", "+Data_utilities.UcampoCorreo+", "+Data_utilities.UcampoContra+" from "
+                +Data_utilities.tablaUsuarios+" where "+Data_utilities.UcampoCorreo+" = '"+correo+"' and "+Data_utilities.UcampoContra+" = '"+contra+"'",null);
 
         if (correo.length() != 0 && contra.length() !=0 && validarContra(contra) && validarEmail(correo)){
             if (correo.contentEquals("ldp@admin.com") && contra.contentEquals("Admin123")){
                 Intent myIntent = new Intent(view.getContext(), Administrador.class);
                 startActivity(myIntent);
-            }else{//Metodo para verificar usuario en DB
+            }else{
+                //Metodo para verificar usuario en DB
                 try{
                     fila.moveToFirst();
                     int id = fila.getInt(0);
