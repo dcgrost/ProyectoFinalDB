@@ -60,6 +60,8 @@ public class Todas_peliculas extends AppCompatActivity {
                     }
                     Intent myIntent = new Intent(view.getContext(), Todo_ordenado.class);
                     String userId = getIntent().getStringExtra("userId");
+                    String pocision = "1";
+                    myIntent.putExtra("pocision", pocision);
                     myIntent.putExtra("userId", userId);
                     myIntent.putExtra("tipo", tipo);
                     myIntent.putExtra("ordenar", ordenar);
@@ -75,6 +77,8 @@ public class Todas_peliculas extends AppCompatActivity {
                     }
                     Intent myIntent = new Intent(view.getContext(), Todo_ordenado.class);
                     String userId = getIntent().getStringExtra("userId");
+                    String pocision = "2";
+                    myIntent.putExtra("pocision", pocision);
                     myIntent.putExtra("userId", userId);
                     myIntent.putExtra("tipo", tipo);
                     myIntent.putExtra("ordenar", ordenar);
@@ -90,6 +94,8 @@ public class Todas_peliculas extends AppCompatActivity {
                     }
                     Intent myIntent = new Intent(view.getContext(), Todo_ordenado.class);
                     String userId = getIntent().getStringExtra("userId");
+                    String pocision = "3";
+                    myIntent.putExtra("pocision", pocision);
                     myIntent.putExtra("userId", userId);
                     myIntent.putExtra("tipo", tipo);
                     myIntent.putExtra("ordenar", ordenar);

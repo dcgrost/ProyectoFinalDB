@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.alam.proyectofinaldb.Entidades.Entidades_peliculas;
 import com.example.alam.proyectofinaldb.Entidades.Entidades_series;
@@ -32,6 +33,7 @@ public class Todo_ordenado extends AppCompatActivity {
 
         String tipo = getIntent().getStringExtra("tipo");
         String ordenar = getIntent().getStringExtra("ordenar");
+        String pocision = getIntent().getStringExtra("pocision");
 
         listaDatos = (ListView)findViewById(R.id.listView);
         sp_ordenar = (Spinner)findViewById(R.id.spinner);
@@ -40,6 +42,14 @@ public class Todo_ordenado extends AppCompatActivity {
         SQLiteDatabase db = admin.getWritableDatabase();
 
         String query = null;
+
+        if(pocision.contentEquals("1")){
+            Toast.makeText(this, "Título", Toast.LENGTH_SHORT).show();
+        }if(pocision.contentEquals("2")){
+            Toast.makeText(this, "Género", Toast.LENGTH_SHORT).show();
+        }if(pocision.contentEquals("3")){
+            Toast.makeText(this, "Fecha de estreno", Toast.LENGTH_SHORT).show();
+        }
 
         //Spinner
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.ordenar,android.R.layout.simple_spinner_item);
@@ -60,6 +70,8 @@ public class Todo_ordenado extends AppCompatActivity {
                     }
                     Intent myIntent = new Intent(view.getContext(), Todo_ordenado.class);
                     String userId = getIntent().getStringExtra("userId");
+                    String pocision = "1";
+                    myIntent.putExtra("pocision", pocision);
                     myIntent.putExtra("userId", userId);
                     myIntent.putExtra("tipo", tipo);
                     myIntent.putExtra("ordenar", ordenar);
@@ -75,6 +87,8 @@ public class Todo_ordenado extends AppCompatActivity {
                     }
                     Intent myIntent = new Intent(view.getContext(), Todo_ordenado.class);
                     String userId = getIntent().getStringExtra("userId");
+                    String pocision = "2";
+                    myIntent.putExtra("pocision", pocision);
                     myIntent.putExtra("userId", userId);
                     myIntent.putExtra("tipo", tipo);
                     myIntent.putExtra("ordenar", ordenar);
@@ -90,6 +104,8 @@ public class Todo_ordenado extends AppCompatActivity {
                     }
                     Intent myIntent = new Intent(view.getContext(), Todo_ordenado.class);
                     String userId = getIntent().getStringExtra("userId");
+                    String pocision = "3";
+                    myIntent.putExtra("pocision", pocision);
                     myIntent.putExtra("userId", userId);
                     myIntent.putExtra("tipo", tipo);
                     myIntent.putExtra("ordenar", ordenar);
